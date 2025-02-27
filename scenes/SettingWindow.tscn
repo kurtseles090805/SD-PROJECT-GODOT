@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://61t8ywqgrash"]
+
+[ext_resource type="Texture2D" uid="uid://cua5lod4h6adx" path="res://scripts/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="1_h3tdg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1dxx"]
+texture = ExtResource("1_h3tdg")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tmyyu"]
+
+[node name="SettingWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a1dxx")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52
+anchor_top = 0.5
+anchor_right = 0.52
+anchor_bottom = 0.5
+offset_left = -159.04
+offset_top = -102.0
+offset_right = 95.96
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "TIMEOUT?"
+
+[node name="Cancel" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 202.0
+offset_right = 777.0
+offset_bottom = 233.0
+text = "Cancel"
+
+[node name="Label" type="Label" parent="Panel/Cancel"]
+layout_mode = 0
+offset_left = -259.0
+offset_top = 112.0
+offset_right = -32.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 50
+text = "LEVEL 6-9"
+
+[node name="Pause" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 410.0
+offset_right = 654.0
+offset_bottom = 451.0
+text = "PAUSE"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 413.0
+offset_right = 561.0
+offset_bottom = 447.0
+text = "SETTINGS"
+icon = SubResource("ViewportTexture_tmyyu")
+text_overrun_behavior = 3

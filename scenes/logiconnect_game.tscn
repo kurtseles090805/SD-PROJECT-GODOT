@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl2u36ul310aa"]
+
+[ext_resource type="Texture2D" uid="uid://cua5lod4h6adx" path="res://scripts/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="1_w4kac"]
+[ext_resource type="Texture2D" uid="uid://bq53qtal1ogch" path="res://476350686_1028560895775183_2809825063710963474_n.jpg" id="2_t4ehx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0bun"]
+texture = ExtResource("1_w4kac")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lnfl"]
+texture = ExtResource("2_t4ehx")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jasmv"]
+load_path = "res://.godot/imported/electrical-resistance.png-bc6c3d6ef4badedd3c18f243cf4d457a.ctex"
+
+[node name="LOGICONNECT GAME" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_g0bun")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 373.0
+offset_top = 63.0
+offset_right = 706.0
+offset_bottom = 86.0
+text = "TASK: Create a circuit with 10Ω resistance   "
+
+[node name="TOOLBAR" type="Panel" parent="."]
+custom_minimum_size = Vector2(250, 500)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 45.0
+offset_top = 82.0
+offset_right = 295.0
+offset_bottom = 582.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8lnfl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TOOLBAR"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 248.0
+offset_bottom = 498.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 104.0
+offset_top = 111.0
+offset_right = 616.0
+offset_bottom = 623.0
+scale = Vector2(0.21218, 0.105571)
+texture_normal = SubResource("CompressedTexture2D_jasmv")
+
+[node name="Electrical-resistance" type="Sprite2D" parent="."]
+position = Vector2(165, 313)
+scale = Vector2(0.238281, 0.197266)
+texture = SubResource("CompressedTexture2D_jasmv")

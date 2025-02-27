@@ -1,0 +1,228 @@
+[gd_scene load_steps=8 format=3 uid="uid://tkk4ph7fp2aq"]
+
+[ext_resource type="Texture2D" uid="uid://bq53qtal1ogch" path="res://476350686_1028560895775183_2809825063710963474_n.jpg" id="1_d1qtq"]
+[ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7kgtb"]
+
+[sub_resource type="GDScript" id="GDScript_wus0f"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Main_Game.tscn\")
+	print (\"Start Game pressed\")
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/SettingWindow.tscn\")
+	print(\"Settings Pressed\")
+
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_about_us_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/AboutUsScene.tscn\")
+	print(\"About Us Pressed\")
+
+
+func _on_User_guide_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/UserGuideScene.tscn\")
+	print(\"User Manual Pressed\")
+	
+	
+func _on_StartSimulating_pressed(): 
+	print(\"Simulating Started!\") 
+	#SIMULATION STARTS...
+	
+func _on_ClearInput_pressed(): 
+	print(\"INPUT CLEARED\") 
+	#CLEAR INPUT and reset the game area
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1f72i"]
+texture = ExtResource("1_d1qtq")
+modulate_color = Color(0.513233, 0.513233, 0.513233, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rokf"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2okqp"]
+bg_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nikw0"]
+bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_wus0f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1f72i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -66.0
+offset_right = 124.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_colors/font_hover_color = Color(0.114897, 0.114897, 0.114897, 1)
+theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_colors/font_focus_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
+theme_override_constants/icon_max_width = 20
+theme_override_constants/align_to_largest_stylebox = 20
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_6rokf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2okqp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2okqp")
+text = "Start Game"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_colors/font_hover_color = Color(0.114897, 0.114897, 0.114897, 1)
+theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_colors/font_focus_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
+theme_override_constants/icon_max_width = 20
+theme_override_constants/align_to_largest_stylebox = 20
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_6rokf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2okqp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2okqp")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_colors/font_hover_color = Color(0.114897, 0.114897, 0.114897, 1)
+theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_colors/font_focus_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
+theme_override_constants/icon_max_width = 20
+theme_override_constants/align_to_largest_stylebox = 20
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_6rokf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2okqp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2okqp")
+text = "Quit Game"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -316.0
+offset_top = -93.0
+offset_right = -100.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="AboutUsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.111197, 0.111197, 0.111197, 1)
+theme_override_colors/font_hover_color = Color(0.136826, 0.136826, 0.136826, 1)
+theme_override_colors/font_pressed_color = Color(0.154876, 0.154876, 0.154876, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/hover = SubResource("StyleBoxFlat_nikw0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2okqp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2okqp")
+text = "About us "
+
+[node name="UserGuideButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.111197, 0.111197, 0.111197, 1)
+theme_override_colors/font_hover_color = Color(0.136826, 0.136826, 0.136826, 1)
+theme_override_colors/font_pressed_color = Color(0.154876, 0.154876, 0.154876, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/hover = SubResource("StyleBoxFlat_nikw0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2okqp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2okqp")
+text = "User Manual"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -241.0
+offset_right = 177.5
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 20
+theme_override_fonts/font = ExtResource("2_7kgtb")
+theme_override_font_sizes/font_size = 57
+text = "LOGICONNECT"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/AboutUsButton" to="." method="_on_about_us_pressed"]
+[connection signal="pressed" from="HBoxContainer/UserGuideButton" to="." method="_on_User_guide_pressed"]
