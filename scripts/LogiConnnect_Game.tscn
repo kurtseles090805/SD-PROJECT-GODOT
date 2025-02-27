@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cquibhiulqc3t"]
+[gd_scene load_steps=8 format=3 uid="uid://cquibhiulqc3t"]
 
 [ext_resource type="Script" path="res://scripts/LogiConnect_Game.gd" id="1_t2ut6"]
 [ext_resource type="Texture2D" uid="uid://cv7pepu6wh3ew" path="res://scenes/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="2_2c3tw"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_22l2o"]
+[ext_resource type="Script" path="res://scripts/PauseButton.gd" id="4_a5uyg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpmdq"]
 texture = ExtResource("2_2c3tw")
@@ -16,8 +17,6 @@ texture = SubResource("CompressedTexture2D_0sc4n")
 [node name="Node2D" type="Node2D"]
 position = Vector2(-57, -24)
 script = ExtResource("1_t2ut6")
-RedClr = Color(0.85098, 0, 0, 1)
-OrigClr = Color(4.62055e-06, 0.578379, 0.819615, 1)
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 63.0
@@ -56,16 +55,25 @@ theme_override_font_sizes/font_size = 18
 text = "TASK: Create a circuit with 10Ω resistance   "
 
 [node name="Label" type="Label" parent="TOP BAR"]
-offset_left = 759.274
-offset_top = 60.0
-offset_right = 905.274
-offset_bottom = 91.0
+offset_left = 743.247
+offset_top = 39.6923
+offset_right = 889.247
+offset_bottom = 70.6923
 theme_override_fonts/font = ExtResource("3_22l2o")
 theme_override_font_sizes/font_size = 30
 text = "TIMER"
 
 [node name="Timer" type="Timer" parent="TOP BAR/Label"]
-wait_time = 10.0
+wait_time = 15.0
+one_shot = true
+
+[node name="Button" type="Button" parent="TOP BAR"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(2.09737, 1.90408)
+text = "PAUSE"
+script = ExtResource("4_a5uyg")
 
 [node name="GAME AREA" type="PanelContainer" parent="."]
 anchors_preset = -1
@@ -131,3 +139,5 @@ text = "START SIMULATING"
 [node name="Clear input" type="Button" parent="BOTTOM CONTROLS/HBoxContainer"]
 layout_mode = 2
 text = "CLEAR INPUT"
+
+[connection signal="pressed" from="TOP BAR/Button" to="TOP BAR/Button" method="_on_pressed"]

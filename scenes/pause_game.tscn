@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://nl4c6okm1ulw"]
+[gd_scene load_steps=2 format=3 uid="uid://nl4c6okm1ulw"]
+
+[ext_resource type="Script" path="res://scenes/paused.gd" id="1_65wl1"]
 
 [node name="PauseGame" type="Control"]
 layout_mode = 3
@@ -8,59 +10,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.52
-anchor_top = 0.5
-anchor_right = 0.52
-anchor_bottom = 0.5
-offset_left = -140.04
-offset_top = -18.0
-offset_right = 114.96
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "TIMEOUT?"
-
-[node name="Pause" type="Button" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 617.0
-offset_top = 459.0
-offset_right = 695.0
-offset_bottom = 500.0
-text = "PAUSE"
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Settings" type="Button" parent="Panel/Pause"]
-layout_mode = 0
-offset_left = -158.0
-offset_top = 5.0
-offset_right = -76.0
-offset_bottom = 36.0
-text = "SETTINGS"
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 
-[node name="Cancel" type="Button" parent="Panel/Pause/Settings"]
-layout_mode = 0
-offset_left = 279.0
-offset_top = -183.0
-offset_right = 339.0
-offset_bottom = -152.0
-text = "Cancel"
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 452.0
-offset_top = 382.0
-offset_right = 679.0
-offset_bottom = 459.0
-theme_override_font_sizes/font_size = 50
-text = "LEVEL 6-9"
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_65wl1")
