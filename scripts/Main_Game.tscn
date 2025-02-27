@@ -1,16 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyt11twibtudr"]
+[gd_scene load_steps=5 format=3 uid="uid://4r3bmtmywoho"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dt5rq"]
-load_path = "res://.godot/imported/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg-372026e1fb2522e417421747e53a5235.ctex"
+[ext_resource type="Texture2D" uid="uid://cua5lod4h6adx" path="res://scripts/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="1_lp58c"]
+[ext_resource type="Texture2D" uid="uid://bq53qtal1ogch" path="res://476350686_1028560895775183_2809825063710963474_n.jpg" id="2_yhtnr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ippok"]
-texture = SubResource("CompressedTexture2D_dt5rq")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0sc4n"]
-load_path = "res://.godot/imported/476350686_1028560895775183_2809825063710963474_n.jpg-38c0a612bb2daec425362fcca7b6672d.ctex"
+texture = ExtResource("1_lp58c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgd76"]
-texture = SubResource("CompressedTexture2D_0sc4n")
+texture = ExtResource("2_yhtnr")
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
@@ -18,20 +15,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -36.0
-offset_right = 64.0
-offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.03918)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 31.0
-offset_right = 98.0
-offset_bottom = 72.0
+offset_right = 40.0
+offset_bottom = 40.0
 scale = Vector2(31.8996, 18.0394)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ippok")
 
@@ -39,23 +30,20 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ippok")
 layout_mode = 1
 anchors_preset = -1
 offset_left = 173.0
-offset_top = 140.0
+offset_top = 96.0
 offset_right = 241.0
-offset_bottom = 187.0
+offset_bottom = 142.0
 scale = Vector2(16.1188, 11.658)
 
 [node name="TOP BAR" type="Panel" parent="."]
 custom_minimum_size = Vector2(1080, 100)
 layout_mode = 1
 anchors_preset = -1
-offset_left = 64.0
-offset_top = 31.7558
-offset_right = 1272.0
-offset_bottom = 131.756
-scale = Vector2(0.998322, 1.08333)
+offset_right = 1273.0
+offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rgd76")
 
-[node name="LABEL BOX" type="Label" parent="TOP BAR"]
+[node name="TASK BAR" type="Label" parent="TOP BAR"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -72,30 +60,15 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "TASK: Create a circuit with 10Ω resistance   "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TOP BAR"]
-layout_mode = 0
-offset_left = 826.387
-offset_top = 31.0896
-offset_right = 939.387
-offset_bottom = 71.0896
-
-[node name="minutes" type="Label" parent="TOP BAR/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "00:"
-horizontal_alignment = 2
-
-[node name="seconds" type="Label" parent="TOP BAR/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "00:"
-horizontal_alignment = 2
-
-[node name="milliseconds" type="Label" parent="TOP BAR/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "00"
-horizontal_alignment = 2
+[node name="Timer" type="Label" parent="TOP BAR"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1036.0
+offset_top = 33.6804
+offset_right = 1219.0
+offset_bottom = 75.6804
+theme_override_font_sizes/font_size = 30
+text = "TIMER: 01:30"
 
 [node name="TOOLBOX" type="Panel" parent="."]
 layout_mode = 0
@@ -117,7 +90,6 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="RESISTOR" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
@@ -132,18 +104,18 @@ layout_mode = 2
 [node name="BOTTOM CONTROLS" type="Panel" parent="."]
 custom_minimum_size = Vector2(1080, 40)
 layout_mode = 0
-offset_left = 64.0
-offset_top = 693.0
-offset_right = 1209.0
-offset_bottom = 771.0
+offset_left = -4.0
+offset_top = 631.0
+offset_right = 1319.0
+offset_bottom = 709.0
 scale = Vector2(0.966698, 1.10208)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM CONTROLS"]
 layout_mode = 0
-offset_left = 370.333
-offset_top = 12.9649
-offset_right = 757.333
-offset_bottom = 52.9649
+offset_left = 569.0
+offset_top = 14.2363
+offset_right = 840.0
+offset_bottom = 54.2363
 rotation = 0.00015471
 theme_override_constants/separation = 120
 
@@ -154,8 +126,3 @@ text = "START SIMULATING"
 [node name="Clear input" type="Button" parent="BOTTOM CONTROLS/HBoxContainer"]
 layout_mode = 2
 text = "CLEAR INPUT"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0

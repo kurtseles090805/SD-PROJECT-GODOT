@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://61t8ywqgrash"]
 
-[ext_resource type="Texture2D" uid="uid://cua5lod4h6adx" path="res://scripts/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="1_h3tdg"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dt5rq"]
+load_path = "res://.godot/imported/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg-372026e1fb2522e417421747e53a5235.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1dxx"]
-texture = ExtResource("1_h3tdg")
+texture = SubResource("CompressedTexture2D_dt5rq")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tmyyu"]
 
@@ -42,10 +43,10 @@ text = "TIMEOUT?"
 
 [node name="Cancel" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 717.0
-offset_top = 202.0
-offset_right = 777.0
-offset_bottom = 233.0
+offset_left = 307.0
+offset_top = 311.0
+offset_right = 367.0
+offset_bottom = 342.0
 text = "Cancel"
 
 [node name="Label" type="Label" parent="Panel/Cancel"]

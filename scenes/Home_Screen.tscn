@@ -1,6 +1,5 @@
 [gd_scene load_steps=8 format=3 uid="uid://tkk4ph7fp2aq"]
 
-[ext_resource type="Texture2D" uid="uid://bq53qtal1ogch" path="res://476350686_1028560895775183_2809825063710963474_n.jpg" id="1_d1qtq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7kgtb"]
 
 [sub_resource type="GDScript" id="GDScript_wus0f"]
@@ -49,8 +48,11 @@ func _on_ClearInput_pressed():
 	#CLEAR INPUT and reset the game area
 "
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0sc4n"]
+load_path = "res://.godot/imported/476350686_1028560895775183_2809825063710963474_n.jpg-38c0a612bb2daec425362fcca7b6672d.ctex"
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1f72i"]
-texture = ExtResource("1_d1qtq")
+texture = SubResource("CompressedTexture2D_0sc4n")
 modulate_color = Color(0.513233, 0.513233, 0.513233, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rokf"]
