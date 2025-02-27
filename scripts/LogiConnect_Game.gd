@@ -1,4 +1,3 @@
-# Home_Screen.gd
 extends Node2D
 
 var label: Label
@@ -10,6 +9,7 @@ var blink_timer: Timer  # Timer for blinking effect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Initialize label and timer references
 	label = $"TOP BAR/Label"
 	time = $"TOP BAR/Label/Timer"
 	
@@ -19,75 +19,80 @@ func _ready() -> void:
 	blink_timer.wait_time = 0.5  # Blink interval (0.5 seconds)
 	blink_timer.one_shot = false  # Make it repeat
 	blink_timer.timeout.connect(_on_blink_timer_timeout)  # Connect timeout signal
-
-	OrigClrRet()
+	
+	# Set the label to its original color
+	reset_label_color()
+	
+	# Start the countdown timer
 	time.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	update_label_text()
+	update_label_text()  # Update the time on the label
+
+	# When time is under 30 seconds, start blinking and change color
 	if time.time_left <= 0: 
 		print("Timer Ended")
-	if time.time_left <= 30: 
+		stop_blinking()  # Ensure blinking stops when timer ends
+	elif time.time_left <= 30: 
 		if blink_timer.is_stopped():  # Start blinking if not already
 			blink_timer.start()
-		label.modulate = RedClr  # Change color to red
+		label.modulate = RedClr  # Change label color to red
 	else: 
-		if not blink_timer.is_stopped():  # Stop blinking if time is above 10 seconds
-			blink_timer.stop()
-			label.visible = true  # Ensure the label is visible when not blinking
-		OrigClrRet()  # Reset to original color
+		stop_blinking()  # Stop blinking if time is above 30 seconds
+		reset_label_color()  # Reset color to original
 
-	
-func OrigClrRet(): 
+# Function to reset the label's color to the original color
+func reset_label_color(): 
 	label.modulate = OrigClr
 
+# Function to stop the blinking effect
+func stop_blinking():
+	if not blink_timer.is_stopped():
+		blink_timer.stop()
+		label.visible = true  # Make sure label is visible when not blinking
+
+# Update the label text with the formatted time
 func update_label_text(): 
 	var time_left = ceil(time.time_left)
 	var minutes = int(time_left) / 60
 	var seconds = int(time_left) % 60
 	label.text = "%02d:%02d" % [minutes, seconds]
 
-# Blink timer timeout function
+# Blink timer timeout function, toggles label visibility for blinking effect
 func _on_blink_timer_timeout() -> void:
 	label.visible = not label.visible  # Toggle visibility for blinking effect
 
-# Start button pressed
+# Start button pressed: Change to the main game scene
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scripts/LogiConnnect_Game.tscn")
 	print("Start Game pressed")
 
-
-
-# Settings button pressed
+# Settings button pressed: Change to the settings scene
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/SettingWindow.tscn")
 	print("Settings Pressed")
 
-# Quit button pressed
+# Quit button pressed: Quit the game
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
 
-# About Us button pressed
+# About Us button pressed: Change to the About Us scene
 func _on_about_us_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/AboutUsScene.tscn")
 	print("About Us Pressed")
 
-# User Guide button pressed
+# User Guide button pressed: Change to the User Guide scene
 func _on_User_guide_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/UserGuideScene.tscn")
 	print("User Manual Pressed")
 
-# Start simulation button pressed
+# Start simulation button pressed: Start the simulation
 func _on_StartSimulating_pressed() -> void:
 	print("Simulating Started!") 
 	# SIMULATION STARTS...
 
-# Clear Input button pressed
+# Clear Input button pressed: Clear inputs and reset game area
 func _on_ClearInput_pressed() -> void:
 	print("INPUT CLEARED") 
 	# CLEAR INPUT and reset the game area
-
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.

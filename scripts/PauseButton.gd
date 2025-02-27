@@ -1,34 +1,30 @@
 extends Button
 
-var is_paused = false
+var isPaused = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# Connect the button's pressed signal to the _on_pressed function
-	connect("pressed", Callable(self, "_on_pressed"))
-	text = "PAUSE"  # Set the initial button text
+func _ready():
+	# Initialize the button text
+	text = "PAUSE"
+	# Connect the pressed signal to the _on_pressed function using a Callable
+	if connect("pressed", Callable(self, "_on_pressed")) != OK:
+		print("Failed to connect 'pressed' signal.")
 
-# Function to pause the game
-func pause_game() -> void:
-	is_paused = true
-	get_tree().paused = true  # Pause the game
-	text = "UNPAUSE"  # Change button text to "UNPAUSE"
-	# You can also stop any active timers here, for example:
-	if has_node("Timer"):
-		$Timer.stop()  # Stop the timer if you have a Timer node
+func pause_game():
+	isPaused = true
+	get_tree().paused = true
+	text = "UNPAUSE"
+	print("Game paused. isPaused:", isPaused, " | Scene tree paused:", get_tree().paused)
 
-# Function to resume the game
-func resume_game() -> void:
-	is_paused = false
-	get_tree().paused = false  # Unpause the game
-	text = "PAUSE"  # Change button text back to "PAUSE"
-	# Start or restart any timers if needed:
-	if has_node("Timer"):
-		$Timer.start()  # Start the timer again when the game is resumed
+func resume_game():
+	isPaused = false
+	get_tree().paused = false
+	text = "PAUSE"
+	print("Game resumed. isPaused:", isPaused, " | Scene tree paused:", get_tree().paused)
 
-# Called when the button is pressed
 func _on_pressed() -> void:
-	if is_paused:
-		resume_game()  # Unpause the game
+	print("Button pressed. Current isPaused:", isPaused)
+	if isPaused:
+		resume_game()
 	else:
-		pause_game()  # Pause the game
+		pause_game()
+	print("Button action completed. New isPaused:", isPaused)
