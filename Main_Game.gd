@@ -1,4 +1,4 @@
-extends Control  # Only extend Control (remove Panel)
+extends Control
 
 var game_started : bool = false
 var time: float = 0.0
@@ -39,14 +39,14 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	if not game_started: 
 		game_started = true
-		get_tree().change_scene_to_file("res://Main_Game.tscn")
+		get_tree().change_scene("res://Main_Game.tscn")
 		print("Start Game pressed")
 	else: 
 		print("Game has already Started")  
 
 # Settings button pressed
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/SettingWindow.tscn")
+	get_tree().change_scene("res://scenes/SettingWindow.tscn")
 	print("Settings Pressed")
 
 # Quit button pressed
@@ -55,21 +55,21 @@ func _on_quit_game_pressed() -> void:
 
 # About Us button pressed
 func _on_about_us_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/AboutUsScene.tscn")
+	get_tree().change_scene("res://scenes/AboutUsScene.tscn")
 	print("About Us Pressed")
 
 # User Guide button pressed
-func _on_User_guide_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/UserGuideScene.tscn")
+func _on_user_guide_pressed() -> void:
+	get_tree().change_scene("res://scenes/UserGuideScene.tscn")
 	print("User Manual Pressed")
 
 # Start simulation button pressed
-func _on_StartSimulating_pressed(): 
+func _on_start_simulating_pressed() -> void:
 	print("Simulating Started!") 
 	# Simulation starts...
 
 # Clear Input button pressed
-func _on_ClearInput_pressed(): 
+func _on_clear_input_pressed() -> void:
 	print("INPUT CLEARED") 
 	game_started = false
 	time = 0.0
@@ -77,3 +77,6 @@ func _on_ClearInput_pressed():
 	seconds_label.text = "00:"
 	msec_label.text = "000"
 	set_process(false)  # Stop the update process when clearing
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

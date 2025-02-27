@@ -1,52 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://tkk4ph7fp2aq"]
 
+[ext_resource type="Script" path="res://scenes/home_screen.gd" id="1_magpt"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7kgtb"]
-
-[sub_resource type="GDScript" id="GDScript_wus0f"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://Main_Game.tscn\")
-	print (\"Start Game pressed\")
-
-func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/SettingWindow.tscn\")
-	print(\"Settings Pressed\")
-
-
-func _on_quit_game_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_about_us_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/AboutUsScene.tscn\")
-	print(\"About Us Pressed\")
-
-
-func _on_User_guide_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/UserGuideScene.tscn\")
-	print(\"User Manual Pressed\")
-	
-	
-func _on_StartSimulating_pressed(): 
-	print(\"Simulating Started!\") 
-	#SIMULATION STARTS...
-	
-func _on_ClearInput_pressed(): 
-	print(\"INPUT CLEARED\") 
-	#CLEAR INPUT and reset the game area
-"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0sc4n"]
 load_path = "res://.godot/imported/476350686_1028560895775183_2809825063710963474_n.jpg-38c0a612bb2daec425362fcca7b6672d.ctex"
@@ -89,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_wus0f")
+script = ExtResource("1_magpt")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyt11twibtudr"]
+[gd_scene load_steps=6 format=3 uid="uid://dyt11twibtudr"]
+
+[ext_resource type="Script" path="res://main_game.gd" id="1_wrkg8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dt5rq"]
 load_path = "res://.godot/imported/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg-372026e1fb2522e417421747e53a5235.ctex"
@@ -25,6 +27,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.03918)
+script = ExtResource("1_wrkg8")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -38,11 +41,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ippok")
 [node name="GAME AREA" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 173.0
-offset_top = 140.0
-offset_right = 241.0
-offset_bottom = 187.0
+offset_left = 882.0
+offset_top = 269.0
+offset_right = 937.0
+offset_bottom = 316.0
 scale = Vector2(16.1188, 11.658)
+pivot_offset = Vector2(39.1426, 11.4264)
 
 [node name="TOP BAR" type="Panel" parent="."]
 custom_minimum_size = Vector2(1080, 100)
@@ -69,6 +73,7 @@ offset_right = 137.0
 offset_bottom = 28.946
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(839.022, 316.593)
 theme_override_font_sizes/font_size = 18
 text = "TASK: Create a circuit with 10Ω resistance   "
 
@@ -85,17 +90,23 @@ theme_override_font_sizes/font_size = 25
 text = "00:"
 horizontal_alignment = 2
 
+[node name="Timer" type="Timer" parent="TOP BAR/HBoxContainer/minutes"]
+
 [node name="seconds" type="Label" parent="TOP BAR/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "00:"
 horizontal_alignment = 2
 
+[node name="Timer" type="Timer" parent="TOP BAR/HBoxContainer/seconds"]
+
 [node name="milliseconds" type="Label" parent="TOP BAR/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "00"
 horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="TOP BAR/HBoxContainer/milliseconds"]
 
 [node name="TOOLBOX" type="Panel" parent="."]
 layout_mode = 0
@@ -107,10 +118,10 @@ scale = Vector2(1, 1.04175)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TOOLBOX"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 44.0
-offset_right = 146.0
-offset_bottom = 545.0
+offset_left = 52.0
+offset_top = 82.0
+offset_right = 245.0
+offset_bottom = 583.0
 
 [node name="JUMPER" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -159,3 +170,7 @@ text = "CLEAR INPUT"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="timeout" from="TOP BAR/HBoxContainer/minutes/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TOP BAR/HBoxContainer/seconds/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TOP BAR/HBoxContainer/milliseconds/Timer" to="." method="_on_timer_timeout"]
