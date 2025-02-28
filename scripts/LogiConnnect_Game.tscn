@@ -1,18 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://cquibhiulqc3t"]
+[gd_scene load_steps=19 format=3 uid="uid://cquibhiulqc3t"]
 
 [ext_resource type="Script" path="res://scripts/LogiConnect_Game.gd" id="1_t2ut6"]
-[ext_resource type="Texture2D" uid="uid://cv7pepu6wh3ew" path="res://scenes/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="2_2c3tw"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_22l2o"]
 [ext_resource type="Script" path="res://scripts/PauseButton.gd" id="4_a5uyg"]
+[ext_resource type="Texture2D" uid="uid://bwmkfr10xuvwr" path="res://addons/pause_resume_buttons/pause_button.svg" id="4_bqo7o"]
+[ext_resource type="PackedScene" uid="uid://dyi3j7obn2oxe" path="res://texture_rect.tscn" id="5_1pbgb"]
+[ext_resource type="Texture2D" uid="uid://dgooji2i4udgd" path="res://assets/sprites/26f1db3f-a7cd-405c-aeb4-c0cc3df7e9bc (1).jpg" id="6_8q17l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpmdq"]
-texture = ExtResource("2_2c3tw")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0sc4n"]
-load_path = "res://.godot/imported/476350686_1028560895775183_2809825063710963474_n.jpg-38c0a612bb2daec425362fcca7b6672d.ctex"
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47k5d"]
+texture = ExtResource("4_bqo7o")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_icgu7"]
-texture = SubResource("CompressedTexture2D_0sc4n")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scxun"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4hy8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhpna"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcfv1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6owq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_by5st"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8bwu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hg87v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyypq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0oey4"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-57, -24)
@@ -28,13 +46,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_lpmdq")
 
 [node name="TOP BAR" type="Panel" parent="."]
 custom_minimum_size = Vector2(1080, 100)
-anchors_preset = -1
 offset_left = 57.0
 offset_top = 33.0
 offset_right = 1151.0
 offset_bottom = 133.0
 scale = Vector2(0.998322, 1.08333)
-theme_override_styles/panel = SubResource("StyleBoxTexture_icgu7")
 
 [node name="LABEL BOX" type="Label" parent="TOP BAR"]
 custom_minimum_size = Vector2(50, 50)
@@ -55,6 +71,7 @@ theme_override_font_sizes/font_size = 18
 text = "TASK: Create a circuit with 10Ω resistance   "
 
 [node name="Label" type="Label" parent="TOP BAR"]
+layout_mode = 0
 offset_left = 743.247
 offset_top = 39.6923
 offset_right = 889.247
@@ -69,20 +86,22 @@ one_shot = true
 
 [node name="Button" type="Button" parent="TOP BAR"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-scale = Vector2(2.09737, 1.90408)
-text = "PAUSE"
+offset_right = 47.0
+offset_bottom = 23.0
+scale = Vector2(1.13618, 3.42807)
+theme_override_styles/focus = SubResource("StyleBoxTexture_47k5d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_scxun")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x4hy8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_mhpna")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kcfv1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_w6owq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_by5st")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_j8bwu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hg87v")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_iyypq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0oey4")
+text = "pause"
 script = ExtResource("4_a5uyg")
-
-[node name="GAME AREA" type="PanelContainer" parent="."]
-anchors_preset = -1
-offset_left = 882.0
-offset_top = 269.0
-offset_right = 935.0
-offset_bottom = 316.0
-scale = Vector2(16.1188, 11.658)
-pivot_offset = Vector2(39.1426, 11.4264)
 
 [node name="TOOLBOX" type="Panel" parent="."]
 offset_left = 20.0
@@ -139,5 +158,18 @@ text = "START SIMULATING"
 [node name="Clear input" type="Button" parent="BOTTOM CONTROLS/HBoxContainer"]
 layout_mode = 2
 text = "CLEAR INPUT"
+
+[node name="TextureRect" parent="." instance=ExtResource("5_1pbgb")]
+offset_left = 133.0
+offset_top = 166.0
+offset_right = 173.0
+offset_bottom = 206.0
+texture = ExtResource("6_8q17l")
+
+[node name="TextureRect2" parent="." instance=ExtResource("5_1pbgb")]
+offset_left = 262.0
+offset_top = 169.0
+offset_right = 302.0
+offset_bottom = 209.0
 
 [connection signal="pressed" from="TOP BAR/Button" to="TOP BAR/Button" method="_on_pressed"]

@@ -29,6 +29,10 @@ window/size/window_height_override=768
 
 enabled=PackedStringArray("res://addons/pause_resume_buttons/plugin.cfg", "res://addons/pause_visible_control/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 pause={
