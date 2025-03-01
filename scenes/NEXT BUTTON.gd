@@ -1,14 +1,20 @@
-extends Button
+extends Control
 
-func _ready() -> void:
-	# Connect the button's pressed signal to our function
-	connect("pressed", Callable(self, "_next_button"))
+func _ready():
+	connect("pressed", _on_next_button_pressed)
+	connect("pressed", _on_back_button_pressed)
 
-func _next_button() -> void:
-	# Load the target scene and change to it
-	var next_scene = load("res://scenes/AboutUsSceneSecond.tscn")
-	if next_scene:
-		get_tree().change_scene_to_packed(next_scene)
-		print("Changing scene to AboutUsSceneSecond")
+# Function to go back to the previous scene
+func _on_back_button_pressed():
+	if ResourceLoader.exists("res://scenes/AboutUsScene.tscn"):
+		get_tree().change_scene_to_file("res://scenes/AboutUsScene.tscn")
 	else:
-		print("Error: Scene not found at path")
+		print("Previous scene not found!", "res://scenes/AboutUsScene.tscn")
+
+
+# Function to go to the next scene
+func _on_next_button_pressed():
+	if ResourceLoader.exists("res://scenes/AboutUsSceneSecond.tscn"):
+		get_tree().change_scene_to_file("res://scenes/AboutUsSceneSecond.tscn")
+	else:
+		print("Next scene not found!", "res://scenes/AboutUsSceneSecond.tscn")
