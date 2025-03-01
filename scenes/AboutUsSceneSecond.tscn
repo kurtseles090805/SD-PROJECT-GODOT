@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://h6desmrh7tkr"]
+[gd_scene load_steps=7 format=3 uid="uid://h6desmrh7tkr"]
 
 [ext_resource type="Texture2D" uid="uid://bebxkdh6xtplv" path="res://ABOUTUSECOND.jpg" id="1_13xyh"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_h1m72"]
+[ext_resource type="Script" path="res://scenes/NEXT BUTTON.gd" id="3_y8q12"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dm7t"]
 texture = ExtResource("1_13xyh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os53y"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Theme" id="Theme_bux6w"]
+Button/styles/normal = SubResource("StyleBoxFlat_os53y")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,8 +32,20 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1254.0
-offset_bottom = 646.0
+offset_right = 1250.0
+offset_bottom = 597.0
 scale = Vector2(0.916497, 1)
 pivot_offset = Vector2(65, 46)
 theme_override_styles/panel = SubResource("StyleBoxTexture_8dm7t")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 115.0
+pivot_offset = Vector2(59, 46)
+theme = SubResource("Theme_bux6w")
+icon = ExtResource("2_h1m72")
+expand_icon = true
+script = ExtResource("3_y8q12")
