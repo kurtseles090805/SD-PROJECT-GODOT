@@ -25,6 +25,10 @@ window/size/initial_position=Vector2i(1280, 720)
 window/size/window_width_override=1024
 window/size/window_height_override=768
 
+[dotnet]
+
+project/assembly_name="LOGICONNECT"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/pause_resume_buttons/plugin.cfg", "res://addons/pause_visible_control/plugin.cfg")
