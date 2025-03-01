@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://h6desmrh7tkr"]
+
+[ext_resource type="Texture2D" uid="uid://cdv3r78a7qns4" path="res://scenes/PAGE2.jpg" id="1_n28n5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dm7t"]
+texture = ExtResource("1_n28n5")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1254.0
+offset_bottom = 646.0
+scale = Vector2(0.916497, 1)
+pivot_offset = Vector2(65, 46)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8dm7t")
