@@ -20,11 +20,12 @@ offset_right = 1153.0
 offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_24mc0")
 
-[node name="Button" type="Button" parent="."]
+[node name="NextButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1020.0
 offset_top = 558.0
 offset_right = 1138.0
 offset_bottom = 640.0
+pivot_offset = Vector2(59, 46)
 text = "NEXT"
 script = ExtResource("2_i6xr0")
