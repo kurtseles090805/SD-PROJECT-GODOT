@@ -17,9 +17,6 @@ run/low_processor_mode=true
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=768
-window/size/mode=3
 window/size/initial_position=Vector2i(1280, 720)
 window/size/window_width_override=1024
 window/size/window_height_override=768
