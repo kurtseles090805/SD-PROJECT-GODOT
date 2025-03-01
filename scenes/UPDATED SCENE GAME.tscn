@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=5 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
+[ext_resource type="Texture2D" uid="uid://b4jpv8s16ndka" path="res://assets/resistor (1).png" id="3_q8ywy"]
 
 [sub_resource type="GDScript" id="GDScript_yok0s"]
 script/source = "extends Label
@@ -18,32 +19,40 @@ func _process(delta: float) -> void:
 "
 
 [node name="Control" type="Control"]
+layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.01001, 0.985575)
 script = ExtResource("1_8yfa2")
-metadata/_edit_use_anchors_ = true
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.037037
-anchor_right = 1.00163
-anchor_bottom = 0.98525
-offset_right = -1.87219
-offset_bottom = 33.5582
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.998024, 0.971911)
-metadata/_edit_use_anchors_ = true
+scale = Vector2(0.991759, 1.01297)
+
+[node name="GraphFrame" type="GraphFrame" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 584.0
+scale = Vector2(1.00737, 0.982539)
+tint_color_enabled = true
+tint_color = Color(0.359069, 0.359069, 0.359069, 0.75)
 
 [node name="TOP BOX" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 65.0
+scale = Vector2(0.898448, 0.949751)
 
 [node name="LABEL BOX" type="Label" parent="TOP BOX"]
 layout_mode = 0
@@ -81,10 +90,10 @@ one_shot = true
 [node name="BOTTOM SCREEN" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 585.0
+offset_top = 609.0
 offset_right = 42.0
-offset_bottom = 609.0
-scale = Vector2(29.4744, 2.73776)
+offset_bottom = 629.0
+scale = Vector2(25.6831, 5.95057)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM SCREEN"]
 layout_mode = 1
@@ -115,8 +124,583 @@ offset_right = 40.0
 offset_bottom = 100.0
 scale = Vector2(4.85965, 14.398)
 
-[node name="TextureRect" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
+clip_contents = true
 layout_mode = 0
-offset_top = 72.0
-offset_bottom = 112.0
-scale = Vector2(4.60247, 6.38509)
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("3_q8ywy")
+
+[node name="TextureRect2" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 0
+offset_top = 9.0
+offset_bottom = 49.0
+scale = Vector2(0.921261, 0.225715)
+
+[node name="TextureRect3" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 0
+offset_top = 18.0
+offset_bottom = 58.0
+scale = Vector2(0.918964, 0.215558)
+
+[node name="TextureRect4" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
+clip_contents = true
+offset_top = 27.1258
+offset_bottom = 67.1258
+scale = Vector2(0.918964, 0.215558)
+
+[node name="TextureRect" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185759
+anchor_top = 0.00130096
+anchor_right = -0.00478728
+anchor_bottom = 0.00130096
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.57794, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185759
+anchor_top = 0.0914908
+anchor_right = -0.00185759
+anchor_bottom = 0.0914908
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185758
+anchor_top = 0.181681
+anchor_right = -0.00185758
+anchor_bottom = 0.181681
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185758
+anchor_top = 0.27187
+anchor_right = -0.00185758
+anchor_bottom = 0.27187
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect5" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185759
+anchor_top = 0.36206
+anchor_right = -0.00185759
+anchor_bottom = 0.36206
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect6" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185758
+anchor_top = 0.45225
+anchor_right = -0.00185758
+anchor_bottom = 0.45225
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect7" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185759
+anchor_top = 0.54244
+anchor_right = -0.00185759
+anchor_bottom = 0.54244
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect8" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185759
+anchor_top = 0.54244
+anchor_right = -0.00185759
+anchor_bottom = 0.54244
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect9" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00185758
+anchor_top = 0.63263
+anchor_right = -0.00185758
+anchor_bottom = 0.63263
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.47561, 1.61102)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect10" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.00130096
+anchor_right = 0.0600232
+anchor_bottom = 0.00130096
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect11" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.0914908
+anchor_right = 0.0600232
+anchor_bottom = 0.0914908
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect12" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.181681
+anchor_right = 0.0600232
+anchor_bottom = 0.181681
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect13" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.27187
+anchor_right = 0.0600232
+anchor_bottom = 0.27187
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect14" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.36206
+anchor_right = 0.0600232
+anchor_bottom = 0.36206
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect15" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.45225
+anchor_right = 0.0600232
+anchor_bottom = 0.45225
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect16" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.54244
+anchor_right = 0.0600232
+anchor_bottom = 0.54244
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect17" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.54244
+anchor_right = 0.0600232
+anchor_bottom = 0.54244
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect18" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0600232
+anchor_top = 0.63263
+anchor_right = 0.0600232
+anchor_bottom = 0.63263
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect19" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.00130096
+anchor_right = 0.121904
+anchor_bottom = 0.00130096
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect20" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.0914908
+anchor_right = 0.121904
+anchor_bottom = 0.0914908
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect21" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.0914908
+anchor_right = 0.121904
+anchor_bottom = 0.0914908
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect22" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.181681
+anchor_right = 0.121904
+anchor_bottom = 0.181681
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect23" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.27187
+anchor_right = 0.121904
+anchor_bottom = 0.27187
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect24" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.36206
+anchor_right = 0.121904
+anchor_bottom = 0.36206
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect25" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.45225
+anchor_right = 0.121904
+anchor_bottom = 0.45225
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect26" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.54244
+anchor_right = 0.121904
+anchor_bottom = 0.54244
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect27" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121904
+anchor_top = 0.621356
+anchor_right = 0.121904
+anchor_bottom = 0.621356
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect28" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.183785
+anchor_top = 0.00130097
+anchor_right = 0.183785
+anchor_bottom = 0.00130097
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect29" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245666
+anchor_top = 0.00130096
+anchor_right = 0.245666
+anchor_bottom = 0.00130096
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect30" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.307546
+anchor_top = 0.00130097
+anchor_right = 0.307546
+anchor_bottom = 0.00130097
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect31" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369427
+anchor_top = 0.00130096
+anchor_right = 0.369427
+anchor_bottom = 0.00130096
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect32" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431308
+anchor_top = 0.00130097
+anchor_right = 0.431308
+anchor_bottom = 0.00130097
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect38" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.493189
+anchor_top = 0.00130097
+anchor_right = 0.493189
+anchor_bottom = 0.00130097
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect39" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55507
+anchor_top = 0.00130097
+anchor_right = 0.55507
+anchor_bottom = 0.00130097
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect40" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.616951
+anchor_top = 0.00130097
+anchor_right = 0.616951
+anchor_bottom = 0.00130097
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect41" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.678831
+anchor_top = 0.00130096
+anchor_right = 0.678831
+anchor_bottom = 0.00130096
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect42" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.183785
+anchor_top = 0.0914908
+anchor_right = 0.183785
+anchor_bottom = 0.0914908
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.48892, 1.59314)
+metadata/_edit_use_anchors_ = true
