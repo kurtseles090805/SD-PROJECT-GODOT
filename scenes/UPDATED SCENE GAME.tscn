@@ -20,18 +20,24 @@ func _process(delta: float) -> void:
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_right = 1148.0
-offset_bottom = 654.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_8yfa2")
+metadata/_edit_use_anchors_ = true
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = -8.0
-offset_right = 1156.0
-offset_bottom = 645.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.037037
+anchor_right = 1.0
+anchor_bottom = 1.03704
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.820036, 1.19444)
+metadata/_edit_use_anchors_ = true
 
 [node name="TOP BOX" type="Panel" parent="."]
 layout_mode = 0
@@ -104,15 +110,14 @@ layout_mode = 0
 offset_top = 64.0
 offset_right = 127.0
 offset_bottom = 584.0
+theme_override_constants/separation = 50
+
+[node name="TextureRect" parent="VBoxContainer" instance=ExtResource("2_d44vy")]
+custom_minimum_size = Vector2(103, 128)
+layout_mode = 2
+texture = ExtResource("3_1scrj")
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="TextureRect" parent="Node2D" instance=ExtResource("2_d44vy")]
-offset_left = -1.0
-offset_top = 64.0
-offset_right = 127.0
-offset_bottom = 192.0
-texture = ExtResource("3_1scrj")
 
 [node name="TextureRect2" parent="Node2D" instance=ExtResource("2_d44vy")]
 offset_left = 391.0
