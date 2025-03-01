@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4jpv8s16ndka"
-path="res://.godot/imported/resistor (1).png-a74a2f1d1345801ff4485e01bf0d125e.ctex"
+uid="uid://d1yro8c6a1rlv"
+path="res://.godot/imported/REDLED onz.png-bb5376c47e361c9f6025b043cc3e43f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resistor (1).png"
-dest_files=["res://.godot/imported/resistor (1).png-a74a2f1d1345801ff4485e01bf0d125e.ctex"]
+source_file="res://assets/Sprite Animation/LED/REDLED onz.png"
+dest_files=["res://.godot/imported/REDLED onz.png-bb5376c47e361c9f6025b043cc3e43f0.ctex"]
 
 [params]
 

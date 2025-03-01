@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://4r3bmtmywoho"]
+[gd_scene load_steps=4 format=3 uid="uid://4r3bmtmywoho"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ippok"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hjb4o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgd76"]
 
@@ -31,6 +33,7 @@ offset_bottom = 142.0
 scale = Vector2(16.1188, 11.658)
 
 [node name="TOP BAR" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_hjb4o")
 custom_minimum_size = Vector2(1080, 100)
 layout_mode = 1
 anchors_preset = -1
@@ -85,6 +88,8 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="RESISTOR" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
+modulate = Color(0.105882, 1, 1, 1)
+self_modulate = Color(0.235294, 0.286275, 1, 1)
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
