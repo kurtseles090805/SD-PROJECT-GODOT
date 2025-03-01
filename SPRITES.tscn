@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://do3ffg7ahar16"]
+[gd_scene load_steps=5 format=3 uid="uid://do3ffg7ahar16"]
+
+[ext_resource type="SpriteFrames" uid="uid://c2gb2mmcw22jp" path="res://assets/sprites/tres spritesz/Electricity.tres" id="1_4650h"]
+[ext_resource type="SpriteFrames" uid="uid://da8xat1ksap2s" path="res://assets/sprites/tres spritesz/Fire.tres" id="2_rhps5"]
+[ext_resource type="SpriteFrames" uid="uid://dls4bexctqu1b" path="res://assets/sprites/tres spritesz/Star.tres" id="3_8khcc"]
+[ext_resource type="SpriteFrames" uid="uid://w082poojyno8" path="res://assets/sprites/tres spritesz/LCD.tres" id="4_837e4"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Electricity" type="AnimatedSprite2D" parent="."]
+position = Vector2(182, 146)
+sprite_frames = ExtResource("1_4650h")
+animation = &"Diagonal Left"
+frame = 7
+frame_progress = 0.845918
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(52, 46)
+sprite_frames = ExtResource("2_rhps5")
+
+[node name="Star" type="AnimatedSprite2D" parent="."]
+position = Vector2(137, 63)
+sprite_frames = ExtResource("3_8khcc")
+
+[node name="LCD" type="AnimatedSprite2D" parent="."]
+position = Vector2(42, 112)
+sprite_frames = ExtResource("4_837e4")
