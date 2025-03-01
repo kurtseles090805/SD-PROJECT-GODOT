@@ -1,17 +1,18 @@
-extends Node2D
+extends Control
 
 var label: Label
 var time: Timer
 var blink_timer: Timer  # Timer for blinking effect
 
-@export var RedClr: Color
-@export var OrigClr: Color
+# Properly initialize colors using Color() constructor
+@export var RedClr: Color = Color(1, 0, 0)  # Red color
+@export var OrigClr: Color = Color(1, 1, 1)  # White color (original color)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Initialize label and timer references
-	label = $"TOP BAR/Label"
-	time = $"TOP BAR/Label/Timer"
+	label = $"TOP BOX/LABEL BOX"
+	time = $"TOP BOX/Label/Timer"
 	
 	# Initialize and configure the blink timer
 	blink_timer = Timer.new()
@@ -65,7 +66,7 @@ func _on_blink_timer_timeout() -> void:
 
 # Start button pressed: Change to the main game scene
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scripts/LogiConnnect_Game.tscn")
+	get_tree().change_scene_to_file("res://UPDATED SCENE GAME.tscn")
 	print("Start Game pressed")
 
 # Settings button pressed: Change to the settings scene

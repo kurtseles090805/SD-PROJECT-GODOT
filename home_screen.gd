@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 # Start button pressed
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scripts/LogiConnnect_Game.tscn")
+	get_tree().change_scene_to_file("res://UPDATED SCENE GAME.tscn")
 	print("Start Game pressed")
 
 # Settings button pressed

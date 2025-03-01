@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ggc5eile3fx"]
+
+[ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
+
+[sub_resource type="GDScript" id="GDScript_yok0s"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+script = ExtResource("1_8yfa2")
+
+[node name="PANEL SCREEN" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 653.0
+
+[node name="TOP BOX" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 115.0
+
+[node name="LABEL BOX" type="Label" parent="TOP BOX"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 40.0
+offset_right = 538.0
+offset_bottom = 63.0
+text = "asdasdas"
+
+[node name="Label" type="Label" parent="TOP BOX"]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 56.0
+offset_right = 896.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+text = "TIMER"
+script = SubResource("GDScript_yok0s")
+
+[node name="Timer" type="Timer" parent="TOP BOX/Label"]
+wait_time = 30.0
+
+[node name="BOTTOM SCREEN" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 577.0
+offset_right = 31.0
+offset_bottom = 602.0
+scale = Vector2(29.0325, 2.72028)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM SCREEN"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.361
+anchor_bottom = 1.6
+offset_left = 14.811
+offset_top = 5.88174
+offset_right = 342.371
+offset_bottom = 5.88174
+scale = Vector2(0.0288333, 0.458436)
+theme_override_constants/separation = 75
+
+[node name="Button" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
+layout_mode = 2
+text = "START SIMULATING"
+
+[node name="Button2" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
+layout_mode = 2
+text = "CLEAR INPUT"
