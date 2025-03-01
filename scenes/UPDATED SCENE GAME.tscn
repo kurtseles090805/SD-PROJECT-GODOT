@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=4 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
-[ext_resource type="Texture2D" uid="uid://dgooji2i4udgd" path="res://assets/sprites/26f1db3f-a7cd-405c-aeb4-c0cc3df7e9bc (1).jpg" id="3_1scrj"]
 
 [sub_resource type="GDScript" id="GDScript_yok0s"]
 script/source = "extends Label
@@ -32,11 +31,13 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.037037
-anchor_right = 1.0
-anchor_bottom = 1.03704
+anchor_right = 1.00163
+anchor_bottom = 0.98525
+offset_right = -1.87219
+offset_bottom = 33.5582
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.820036, 1.19444)
+scale = Vector2(0.998024, 0.971911)
 metadata/_edit_use_anchors_ = true
 
 [node name="TOP BOX" type="Panel" parent="."]
@@ -105,22 +106,16 @@ text = "START SIMULATING"
 layout_mode = 2
 text = "CLEAR INPUT"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 64.0
-offset_right = 127.0
-offset_bottom = 584.0
-theme_override_constants/separation = 50
-
-[node name="TextureRect" parent="VBoxContainer" instance=ExtResource("2_d44vy")]
-custom_minimum_size = Vector2(103, 128)
-layout_mode = 2
-texture = ExtResource("3_1scrj")
-
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="TextureRect2" parent="Node2D" instance=ExtResource("2_d44vy")]
-offset_left = 391.0
-offset_top = 72.0
-offset_right = 431.0
-offset_bottom = 112.0
+[node name="TOOLBOX" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 40.0
+offset_bottom = 100.0
+scale = Vector2(4.85965, 14.398)
+
+[node name="TextureRects" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
+custom_minimum_size = Vector2(20, 1)
+layout_mode = 0
+scale = Vector2(0.984478, 0.608795)
