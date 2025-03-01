@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=4 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="2_qt4yf"]
 
 [sub_resource type="GDScript" id="GDScript_yok0s"]
 script/source = "extends Label
@@ -94,3 +95,9 @@ text = "START SIMULATING"
 [node name="Button2" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
 layout_mode = 2
 text = "CLEAR INPUT"
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="TileMap"]
+script = ExtResource("2_qt4yf")
