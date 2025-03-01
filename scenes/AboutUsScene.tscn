@@ -22,7 +22,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_24mc0")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 1098.0
 offset_left = 1020.0
 offset_top = 558.0
 offset_right = 1138.0
