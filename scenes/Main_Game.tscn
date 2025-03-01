@@ -1,13 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4r3bmtmywoho"]
-
-[ext_resource type="Texture2D" uid="uid://cua5lod4h6adx" path="res://scripts/b51e06d6-4325-4000-b0e2-0bdb360d6af6.jpg" id="1_lp58c"]
-[ext_resource type="Texture2D" uid="uid://bq53qtal1ogch" path="res://476350686_1028560895775183_2809825063710963474_n.jpg" id="2_yhtnr"]
+[gd_scene load_steps=3 format=3 uid="uid://4r3bmtmywoho"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ippok"]
-texture = ExtResource("1_lp58c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgd76"]
-texture = ExtResource("2_yhtnr")
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(1280, 720)
