@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjafirhvm804y"
-path="res://.godot/imported/Fire.png-919c0b758ae42cba129990045a6859a7.ctex"
+uid="uid://iepyw2esy7i3"
+path="res://.godot/imported/lcd.png-f176f3c596bfe74b7d0a49bffae50952.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tres spritesz/Fire.png"
-dest_files=["res://.godot/imported/Fire.png-919c0b758ae42cba129990045a6859a7.ctex"]
+source_file="res://assets/sprites/Sprite Animations/lcd.png"
+dest_files=["res://.godot/imported/lcd.png-f176f3c596bfe74b7d0a49bffae50952.ctex"]
 
 [params]
 

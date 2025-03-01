@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iepyw2esy7i3"
-path="res://.godot/imported/lcd.png-0d402cbd9a1239ac56af3a2c65b7ee7a.ctex"
+uid="uid://cglc8nggnty62"
+path="res://.godot/imported/coin.png-4b2ec1de1b8a70a0b8955add2344f427.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tres spritesz/lcd.png"
-dest_files=["res://.godot/imported/lcd.png-0d402cbd9a1239ac56af3a2c65b7ee7a.ctex"]
+source_file="res://assets/sprites/Sprite Animations/coin.png"
+dest_files=["res://.godot/imported/coin.png-4b2ec1de1b8a70a0b8955add2344f427.ctex"]
 
 [params]
 

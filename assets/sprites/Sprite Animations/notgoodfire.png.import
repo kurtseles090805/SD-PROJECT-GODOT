@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2pd60iv4av8y"
-path="res://.godot/imported/Electricity.png-2a3f3296b0399697a60ae2bdbb9f0907.ctex"
+uid="uid://2ccdj1n82tmd"
+path="res://.godot/imported/notgoodfire.png-bb924be1c1760407f3250c2de2382a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tres spritesz/Electricity.png"
-dest_files=["res://.godot/imported/Electricity.png-2a3f3296b0399697a60ae2bdbb9f0907.ctex"]
+source_file="res://assets/sprites/Sprite Animations/notgoodfire.png"
+dest_files=["res://.godot/imported/notgoodfire.png-bb924be1c1760407f3250c2de2382a1d.ctex"]
 
 [params]
 
