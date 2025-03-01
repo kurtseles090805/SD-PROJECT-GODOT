@@ -1,4 +1,4 @@
-tool
+
 extends Node2D
 
 class_name Connector
@@ -94,4 +94,3 @@ func draw_connector():
 func _draw():
 	for i in range(curve.get_baked_points().size() - 1):
 		draw_line(curve.get_baked_points()[i],curve.get_baked_points()[i+1],Color("ff0000"),5)
-
