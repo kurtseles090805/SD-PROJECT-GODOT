@@ -15,10 +15,6 @@ run/main_scene="res://scenes/Home_Screen.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 run/low_processor_mode=true
 
-[autoload]
-
-GlobalAutoload="*res://GlobalAutoload.gd"
-
 [display]
 
 window/size/initial_position=Vector2i(1280, 720)

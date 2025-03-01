@@ -42,7 +42,7 @@ offset_right = 538.0
 offset_bottom = 63.0
 text = "asdasdas"
 
-[node name="Label" type="Label" parent="TOP BOX"]
+[node name="TimerBox" type="Label" parent="TOP BOX"]
 layout_mode = 0
 offset_left = 848.0
 offset_top = 56.0
@@ -53,8 +53,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
 text = "TIMER"
 script = SubResource("GDScript_yok0s")
 
-[node name="Timer" type="Timer" parent="TOP BOX/Label"]
-wait_time = 30.0
+[node name="Timer" type="Timer" parent="TOP BOX/TimerBox"]
+wait_time = 60.0
+one_shot = true
 
 [node name="BOTTOM SCREEN" type="Panel" parent="."]
 layout_mode = 0
