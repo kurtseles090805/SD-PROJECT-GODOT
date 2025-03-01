@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://do3ffg7ahar16"]
+
+[ext_resource type="SpriteFrames" uid="uid://c2gb2mmcw22jp" path="res://assets/sprites/Sprite Animations/Electricity.tres" id="1_4650h"]
+[ext_resource type="SpriteFrames" uid="uid://da8xat1ksap2s" path="res://assets/sprites/Sprite Animations/Fire.tres" id="2_rhps5"]
+[ext_resource type="SpriteFrames" uid="uid://dls4bexctqu1b" path="res://assets/sprites/Sprite Animations/Star.tres" id="3_8khcc"]
+[ext_resource type="SpriteFrames" uid="uid://w082poojyno8" path="res://assets/sprites/Sprite Animations/LCD.tres" id="4_837e4"]
+[ext_resource type="SpriteFrames" uid="uid://2jyhft7qimnj" path="res://assets/sprites/Sprite Animations/Coins.tres" id="5_pwud3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Electricity" type="AnimatedSprite2D" parent="."]
+position = Vector2(182, 146)
+sprite_frames = ExtResource("1_4650h")
+animation = &"rotating wala lang"
+frame_progress = 0.0738958
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(52, 46)
+sprite_frames = ExtResource("2_rhps5")
+frame_progress = 0.280896
+
+[node name="Star" type="AnimatedSprite2D" parent="."]
+position = Vector2(137, 63)
+sprite_frames = ExtResource("3_8khcc")
+frame_progress = 0.540405
+
+[node name="LCD" type="AnimatedSprite2D" parent="."]
+position = Vector2(42, 112)
+sprite_frames = ExtResource("4_837e4")
+frame_progress = 0.242689
+
+[node name="Coins" type="AnimatedSprite2D" parent="."]
+position = Vector2(211, 32)
+scale = Vector2(2.8125, 2.8125)
+sprite_frames = ExtResource("5_pwud3")
+frame_progress = 0.480638

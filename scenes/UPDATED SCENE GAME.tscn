@@ -1,21 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=5 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
-[ext_resource type="PackedScene" uid="uid://c60wwqhvp6xhl" path="res://scenes/drag comp.tscn" id="2_d44vy"]
+[ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
 [ext_resource type="Texture2D" uid="uid://dgooji2i4udgd" path="res://assets/sprites/26f1db3f-a7cd-405c-aeb4-c0cc3df7e9bc (1).jpg" id="3_1scrj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oa7y"]
-bg_color = Color(1, 1, 1, 1)
-draw_center = false
-border_width_left = 9
-shadow_color = Color(0.991164, 0.991164, 0.991164, 0.6)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfdwd"]
-
-[sub_resource type="Theme" id="Theme_ob7be"]
-GraphFrame/styles/panel = SubResource("StyleBoxFlat_7oa7y")
-GraphFrame/styles/titlebar = SubResource("StyleBoxEmpty_dfdwd")
-GraphFrame/styles/titlebar_selected = null
 
 [sub_resource type="GDScript" id="GDScript_yok0s"]
 script/source = "extends Label
@@ -33,210 +20,24 @@ func _process(delta: float) -> void:
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_right = 1148.0
-offset_bottom = 654.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_8yfa2")
+metadata/_edit_use_anchors_ = true
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
-layout_mode = 0
-offset_left = -129.0
-offset_top = 23.0
-offset_right = 1020.0
-offset_bottom = 676.0
-
-[node name="GraphFrame" type="GraphFrame" parent="PANEL SCREEN"]
-layout_mode = 0
-offset_left = 408.0
-offset_top = 73.0
-offset_right = 768.0
-offset_bottom = 558.0
-theme = SubResource("Theme_ob7be")
-selected = true
-tint_color_enabled = true
-tint_color = Color(0.482736, 0.464277, 0.514388, 0.75)
-
-[node name="TextureRect3" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 97.0
-offset_right = 488.0
-offset_bottom = 137.0
-rotation = 0.0037663
-
-[node name="TextureRect5" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 177.0
-offset_right = 488.0
-offset_bottom = 217.0
-rotation = 0.0037663
-
-[node name="TextureRect7" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 177.0
-offset_right = 568.0
-offset_bottom = 217.0
-rotation = 0.0037663
-
-[node name="TextureRect8" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 257.0
-offset_right = 648.0
-offset_bottom = 297.0
-rotation = 0.0037663
-
-[node name="TextureRect9" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 688.0
-offset_top = 257.0
-offset_right = 728.0
-offset_bottom = 297.0
-rotation = 0.0037663
-
-[node name="TextureRect10" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 337.0
-offset_right = 488.0
-offset_bottom = 377.0
-rotation = 0.0037663
-
-[node name="TextureRect11" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 337.0
-offset_right = 568.0
-offset_bottom = 377.0
-rotation = 0.0037663
-
-[node name="TextureRect12" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 337.0
-offset_right = 648.0
-offset_bottom = 377.0
-rotation = 0.0037663
-
-[node name="TextureRect14" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 257.0
-offset_right = 568.0
-offset_bottom = 297.0
-rotation = 0.0037663
-
-[node name="TextureRect15" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 257.0
-offset_right = 488.0
-offset_bottom = 297.0
-rotation = 0.0037663
-
-[node name="TextureRect16" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 688.0
-offset_top = 177.0
-offset_right = 728.0
-offset_bottom = 217.0
-rotation = 0.0037663
-
-[node name="TextureRect17" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 97.0
-offset_right = 648.0
-offset_bottom = 137.0
-rotation = 0.0037663
-
-[node name="TextureRect18" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 177.0
-offset_right = 648.0
-offset_bottom = 217.0
-rotation = 0.0037663
-
-[node name="TextureRect13" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 688.0
-offset_top = 97.0
-offset_right = 728.0
-offset_bottom = 137.0
-rotation = 0.0037663
-
-[node name="TextureRect19" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 688.0
-offset_top = 337.0
-offset_right = 728.0
-offset_bottom = 377.0
-rotation = 0.0037663
-
-[node name="TextureRect20" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 448.0
-offset_top = 417.0
-offset_right = 488.0
-offset_bottom = 457.0
-rotation = 0.0037663
-
-[node name="TextureRect20" parent="PANEL SCREEN/TextureRect20" instance=ExtResource("2_d44vy")]
-offset_left = 448.0
-offset_top = 417.0
-offset_right = 488.0
-offset_bottom = 457.0
-rotation = 0.0037663
-
-[node name="TextureRect21" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 528.0
-offset_top = 417.0
-offset_right = 568.0
-offset_bottom = 457.0
-rotation = 0.0037663
-
-[node name="TextureRect22" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 608.0
-offset_top = 417.0
-offset_right = 648.0
-offset_bottom = 457.0
-rotation = 0.0037663
-
-[node name="TextureRect23" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 688.0
-offset_top = 417.0
-offset_right = 728.0
-offset_bottom = 457.0
-rotation = 0.0037663
-
-[node name="TextureRect24" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 448.0
-offset_top = 497.0
-offset_right = 488.0
-offset_bottom = 537.0
-rotation = 0.0037663
-
-[node name="TextureRect25" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 528.0
-offset_top = 497.0
-offset_right = 568.0
-offset_bottom = 537.0
-rotation = 0.0037663
-
-[node name="TextureRect26" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 608.0
-offset_top = 497.0
-offset_right = 648.0
-offset_bottom = 537.0
-rotation = 0.0037663
-
-[node name="TextureRect27" parent="PANEL SCREEN" instance=ExtResource("2_d44vy")]
-offset_left = 688.0
-offset_top = 497.0
-offset_right = 728.0
-offset_bottom = 537.0
-rotation = 0.0037663
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.037037
+anchor_right = 1.0
+anchor_bottom = 1.03704
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.820036, 1.19444)
+metadata/_edit_use_anchors_ = true
 
 [node name="TOP BOX" type="Panel" parent="."]
 layout_mode = 0
@@ -278,10 +79,10 @@ one_shot = true
 
 [node name="BOTTOM SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -99.0
-offset_top = 596.0
-offset_right = -60.0
-offset_bottom = 620.0
+offset_left = 3.0
+offset_top = 585.0
+offset_right = 42.0
+offset_bottom = 609.0
 scale = Vector2(29.4744, 2.73776)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM SCREEN"]
@@ -292,13 +93,12 @@ anchor_bottom = 1.6
 offset_left = 14.0121
 offset_top = 3.65262
 offset_right = 341.933
-offset_bottom = 3.65262
+offset_bottom = 3.65265
 scale = Vector2(0.0288333, 0.458436)
 theme_override_constants/separation = 75
 
 [node name="START SIMULATION" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
 text = "START SIMULATING"
 
 [node name="CLEAR INPUT" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
@@ -310,20 +110,17 @@ layout_mode = 0
 offset_top = 64.0
 offset_right = 127.0
 offset_bottom = 584.0
+theme_override_constants/separation = 50
+
+[node name="TextureRect" parent="VBoxContainer" instance=ExtResource("2_d44vy")]
+custom_minimum_size = Vector2(103, 128)
+layout_mode = 2
+texture = ExtResource("3_1scrj")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="TextureRect" parent="Node2D" instance=ExtResource("2_d44vy")]
-offset_left = 31.0
-offset_top = 127.0
-offset_right = 115.0
-offset_bottom = 207.0
-texture = ExtResource("3_1scrj")
-
-[node name="TextureRect3" parent="." instance=ExtResource("2_d44vy")]
-layout_mode = 0
-offset_left = 399.0
-offset_top = 120.0
-offset_right = 439.0
-offset_bottom = 160.0
-rotation = 0.0037663
+[node name="TextureRect2" parent="Node2D" instance=ExtResource("2_d44vy")]
+offset_left = 391.0
+offset_top = 72.0
+offset_right = 431.0
+offset_bottom = 112.0
