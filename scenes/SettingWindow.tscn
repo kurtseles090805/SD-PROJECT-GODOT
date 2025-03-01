@@ -1,9 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://61t8ywqgrash"]
+[gd_scene load_steps=14 format=3 uid="uid://61t8ywqgrash"]
 
 [ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="1_a826e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1dxx"]
 texture = ExtResource("1_a826e")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_570k6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ele1y"]
+border_width_left = 5
+
+[sub_resource type="Theme" id="Theme_um5c4"]
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_570k6")
+Button/styles/normal = SubResource("StyleBoxFlat_ele1y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tme8k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40ff3"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_oo5gf"]
+Button/styles/normal = SubResource("StyleBoxFlat_40ff3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bj8j"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="Theme" id="Theme_0exf3"]
+Button/styles/normal = SubResource("StyleBoxFlat_3bj8j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sv7xu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="Theme" id="Theme_dhmhx"]
+Button/styles/normal = SubResource("StyleBoxFlat_sv7xu")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tmyyu"]
 
@@ -27,41 +70,53 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_a1dxx")
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.52
-anchor_top = 0.5
-anchor_right = 0.52
-anchor_bottom = 0.5
-offset_left = -131.04
-offset_top = -135.0
-offset_right = 123.96
-offset_bottom = -59.0
+anchor_left = 0.367188
+anchor_top = 0.3375
+anchor_right = 0.648438
+anchor_bottom = 0.444444
 grow_horizontal = 2
-grow_vertical = 2
+theme = SubResource("Theme_um5c4")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_tme8k")
 text = "TIMEOUT?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Cancel" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 748.0
-offset_top = 156.0
-offset_right = 808.0
-offset_bottom = 187.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.602539
+anchor_top = 0.272222
+anchor_right = 0.679688
+anchor_bottom = 0.326389
+offset_top = 1.52588e-05
+theme = SubResource("Theme_oo5gf")
 text = "Cancel"
+metadata/_edit_use_anchors_ = true
 
 [node name="Pause" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 616.0
-offset_top = 428.0
-offset_right = 694.0
-offset_bottom = 469.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53125
+anchor_top = 0.444444
+anchor_right = 0.607422
+anchor_bottom = 0.501389
+theme = SubResource("Theme_0exf3")
 text = "PAUSE"
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="."]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 435.0
-offset_right = 482.0
-offset_bottom = 469.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.400391
+anchor_top = 0.445833
+anchor_right = 0.491211
+anchor_bottom = 0.501389
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dhmhx")
 text = "SETTINGS"
 icon = SubResource("ViewportTexture_tmyyu")
 text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true

@@ -21,6 +21,8 @@ GlobalAutoload="*res://GlobalAutoload.gd"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=720
 window/size/initial_position=Vector2i(1280, 720)
 window/size/window_width_override=1024
 window/size/window_height_override=768
