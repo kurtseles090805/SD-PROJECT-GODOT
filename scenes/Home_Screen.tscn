@@ -1,11 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://tkk4ph7fp2aq"]
 
-[ext_resource type="Script" path="res://home_screen.gd" id="1_magpt"]
+[ext_resource type="Script" path="res://scenes/home_screen.gd" id="1_magpt"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7kgtb"]
-[ext_resource type="Texture2D" uid="uid://cxyi8mcptkig" path="res://scenes/476350686_1028560895775183_2809825063710963474_n (1).jpg" id="2_kuxni"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0jtf"]
-texture = ExtResource("2_kuxni")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0sc4n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1f72i"]
+texture = SubResource("CompressedTexture2D_0sc4n")
+modulate_color = Color(0.513233, 0.513233, 0.513233, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rokf"]
 bg_color = Color(0.165656, 0.165656, 0.165656, 1)
@@ -39,8 +41,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_magpt")
@@ -52,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_g0jtf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1f72i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
