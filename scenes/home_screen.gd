@@ -1,3 +1,4 @@
+
 extends Control
 
 # Called when the node enters the scene tree for the first time.
@@ -10,9 +11,8 @@ func _process(delta: float) -> void:
 
 # Start button pressed
 func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file("res://scripts/LogiConnnect_Game.tscn")
 	print("Start Game pressed")
-	get_tree().change_scene_to_file("res://scenes/UPDATED SCENE GAME.tscn")
-	
 
 # Settings button pressed
 func _on_settings_pressed() -> void:
