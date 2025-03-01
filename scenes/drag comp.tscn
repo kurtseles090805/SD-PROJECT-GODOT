@@ -1,17 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkrj6e6dse2oh"]
+[gd_scene load_steps=4 format=3 uid="uid://bkrj6e6dse2oh"]
 
 [ext_resource type="Script" path="res://texture_rect.gd" id="1_miyef"]
+[ext_resource type="Texture2D" uid="uid://b0n6hs3q66ll5" path="res://assets/resistor (1).png" id="2_hysd7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbuy3"]
+texture = ExtResource("2_hysd7")
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.776992, 0.912981)
 expand_mode = 1
 script = ExtResource("1_miyef")
 
 [node name="Panel" type="Panel" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 16.0
+scale = Vector2(1.8236, 1.68949)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hbuy3")
