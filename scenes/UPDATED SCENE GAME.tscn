@@ -24,6 +24,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.01001, 0.985575)
@@ -34,17 +36,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = -128.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.991759, 1.01297)
+scale = Vector2(1.11342, 0.98467)
 
 [node name="GraphFrame" type="GraphFrame" parent="."]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 64.0
 offset_right = 960.0
-offset_bottom = 584.0
-scale = Vector2(1.00737, 0.982539)
+offset_bottom = 519.0
+scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(0.359069, 0.359069, 0.359069, 0.75)
 
@@ -52,7 +57,7 @@ tint_color = Color(0.359069, 0.359069, 0.359069, 0.75)
 layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 65.0
-scale = Vector2(0.898448, 0.949751)
+scale = Vector2(0.993078, 1.0087)
 
 [node name="LABEL BOX" type="Label" parent="TOP BOX"]
 layout_mode = 0
@@ -89,21 +94,20 @@ one_shot = true
 
 [node name="BOTTOM SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 609.0
-offset_right = 42.0
-offset_bottom = 629.0
-scale = Vector2(25.6831, 5.95057)
+offset_top = 511.376
+offset_right = 27.0
+offset_bottom = 549.376
+scale = Vector2(42.2566, 2.31184)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM SCREEN"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.361
 anchor_bottom = 1.6
-offset_left = 14.0121
-offset_top = 3.65262
-offset_right = 341.933
-offset_bottom = 3.65265
+offset_left = 8.80987
+offset_top = 3.5111
+offset_right = 341.063
+offset_bottom = 11.7111
 scale = Vector2(0.0288333, 0.458436)
 theme_override_constants/separation = 75
 
@@ -116,6 +120,7 @@ layout_mode = 2
 text = "CLEAR INPUT"
 
 [node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.778434, 1.28022)
 
 [node name="TOOLBOX" type="Panel" parent="."]
 layout_mode = 0
@@ -146,6 +151,7 @@ scale = Vector2(0.918964, 0.215558)
 
 [node name="TextureRect4" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
 clip_contents = true
+layout_mode = 0
 offset_top = 27.1258
 offset_bottom = 67.1258
 scale = Vector2(0.918964, 0.215558)
@@ -154,7 +160,7 @@ scale = Vector2(0.918964, 0.215558)
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00185759
+anchor_left = -0.00478728
 anchor_top = 0.00130096
 anchor_right = -0.00478728
 anchor_bottom = 0.00130096
