@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbl8n6ourksjt"]
+
+[ext_resource type="Script" path="res://main_game.gd" id="1_wrkg8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dt5rq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ippok"]
+texture = SubResource("CompressedTexture2D_dt5rq")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0sc4n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgd76"]
+texture = SubResource("CompressedTexture2D_0sc4n")
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.03918)
+script = ExtResource("1_wrkg8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 31.0
+offset_right = 98.0
+offset_bottom = 72.0
+scale = Vector2(31.8996, 18.0394)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ippok")
+
+[node name="GAME AREA" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 882.0
+offset_top = 269.0
+offset_right = 937.0
+offset_bottom = 316.0
+scale = Vector2(16.1188, 11.658)
+pivot_offset = Vector2(39.1426, 11.4264)
+
+[node name="TOP BAR" type="Panel" parent="."]
+custom_minimum_size = Vector2(1080, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 64.0
+offset_top = 31.7558
+offset_right = 1272.0
+offset_bottom = 131.756
+scale = Vector2(0.998322, 1.08333)
+theme_override_styles/panel = SubResource("StyleBoxTexture_rgd76")
+
+[node name="LABEL BOX" type="Label" parent="TOP BAR"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -21.054
+offset_right = 137.0
+offset_bottom = 28.946
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(839.022, 316.593)
+theme_override_font_sizes/font_size = 18
+text = "TASK: Create a circuit with 10Ω resistance   "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TOP BAR"]
+layout_mode = 0
+offset_left = 826.387
+offset_top = 31.0896
+offset_right = 939.387
+offset_bottom = 71.0896
+
+[node name="minutes" type="Label" parent="TOP BAR/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="TOP BAR/HBoxContainer/minutes"]
+
+[node name="seconds" type="Label" parent="TOP BAR/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="TOP BAR/HBoxContainer/seconds"]
+
+[node name="milliseconds" type="Label" parent="TOP BAR/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "00"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="TOP BAR/HBoxContainer/milliseconds"]
+
+[node name="TOOLBOX" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 59.3801
+offset_right = 60.0
+offset_bottom = 99.3801
+scale = Vector2(1, 1.04175)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TOOLBOX"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 82.0
+offset_right = 245.0
+offset_bottom = 583.0
+
+[node name="JUMPER" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="RESISTOR" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="BATTERY" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="SWITCH" type="TextureButton" parent="TOOLBOX/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="BOTTOM CONTROLS" type="Panel" parent="."]
+custom_minimum_size = Vector2(1080, 40)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 693.0
+offset_right = 1209.0
+offset_bottom = 771.0
+scale = Vector2(0.966698, 1.10208)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM CONTROLS"]
+layout_mode = 0
+offset_left = 370.333
+offset_top = 12.9649
+offset_right = 757.333
+offset_bottom = 52.9649
+rotation = 0.00015471
+theme_override_constants/separation = 120
+
+[node name="START SIMULATING" type="Button" parent="BOTTOM CONTROLS/HBoxContainer"]
+layout_mode = 2
+text = "START SIMULATING"
+
+[node name="Clear input" type="Button" parent="BOTTOM CONTROLS/HBoxContainer"]
+layout_mode = 2
+text = "CLEAR INPUT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="TOP BAR/HBoxContainer/minutes/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TOP BAR/HBoxContainer/seconds/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TOP BAR/HBoxContainer/milliseconds/Timer" to="." method="_on_timer_timeout"]
