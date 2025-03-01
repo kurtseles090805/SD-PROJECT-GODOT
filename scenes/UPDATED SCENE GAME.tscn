@@ -20,8 +20,8 @@ func _process(delta: float) -> void:
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1.0
-offset_right = 41.0
-offset_bottom = 40.0
+offset_right = 1148.0
+offset_bottom = 654.0
 script = ExtResource("1_8yfa2")
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
@@ -32,14 +32,15 @@ offset_bottom = 653.0
 [node name="TOP BOX" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1148.0
-offset_bottom = 115.0
+offset_bottom = 65.0
 
 [node name="LABEL BOX" type="Label" parent="TOP BOX"]
 layout_mode = 0
-offset_left = 466.0
-offset_top = 40.0
-offset_right = 538.0
-offset_bottom = 63.0
+offset_left = 384.0
+offset_top = 7.0
+offset_right = 517.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
 text = "asdasdas"
 
 [node name="TimerBox" type="Label" parent="TOP BOX"]
@@ -50,20 +51,29 @@ offset_right = 896.0
 offset_bottom = 79.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
-text = "TIMER"
+theme_override_font_sizes/font_size = 25
 script = SubResource("GDScript_yok0s")
 
+[node name="Label" type="Label" parent="TOP BOX/TimerBox"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -42.0
+offset_right = 9.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 25
+text = "TIMER"
+
 [node name="Timer" type="Timer" parent="TOP BOX/TimerBox"]
-wait_time = 60.0
+wait_time = 15.0
 one_shot = true
 
 [node name="BOTTOM SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -9.0
-offset_top = 577.0
-offset_right = 31.0
-offset_bottom = 602.0
-scale = Vector2(29.0325, 2.72028)
+offset_left = 3.0
+offset_top = 585.0
+offset_right = 42.0
+offset_bottom = 609.0
+scale = Vector2(29.4744, 2.73776)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM SCREEN"]
 layout_mode = 1
