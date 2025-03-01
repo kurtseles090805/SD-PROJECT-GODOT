@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://5ofc7v8w7sv"]
+[gd_scene load_steps=3 format=3 uid="uid://5ofc7v8w7sv"]
+
+[ext_resource type="Texture2D" uid="uid://db6gihagy2a1i" path="res://assets/sprites/482412615_652513160590621_4170154965774944890_n.jpg" id="1_q0a2a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_24mc0"]
+texture = ExtResource("1_q0a2a")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_24mc0")

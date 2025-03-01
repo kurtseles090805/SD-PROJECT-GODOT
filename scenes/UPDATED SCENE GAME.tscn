@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=5 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
+[ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
+[ext_resource type="Texture2D" uid="uid://dgooji2i4udgd" path="res://assets/sprites/26f1db3f-a7cd-405c-aeb4-c0cc3df7e9bc (1).jpg" id="3_1scrj"]
 
 [sub_resource type="GDScript" id="GDScript_yok0s"]
 script/source = "extends Label
@@ -20,26 +22,29 @@ func _process(delta: float) -> void:
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1.0
-offset_right = 41.0
-offset_bottom = 40.0
+offset_right = 1148.0
+offset_bottom = 654.0
 script = ExtResource("1_8yfa2")
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1149.0
-offset_bottom = 653.0
+offset_left = -129.0
+offset_top = 24.0
+offset_right = 1020.0
+offset_bottom = 677.0
 
 [node name="TOP BOX" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1148.0
-offset_bottom = 115.0
+offset_bottom = 65.0
 
 [node name="LABEL BOX" type="Label" parent="TOP BOX"]
 layout_mode = 0
-offset_left = 466.0
-offset_top = 40.0
-offset_right = 538.0
-offset_bottom = 63.0
+offset_left = 384.0
+offset_top = 7.0
+offset_right = 517.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
 text = "asdasdas"
 
 [node name="TimerBox" type="Label" parent="TOP BOX"]
@@ -50,37 +55,67 @@ offset_right = 896.0
 offset_bottom = 79.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
-text = "TIMER"
+theme_override_font_sizes/font_size = 25
 script = SubResource("GDScript_yok0s")
 
+[node name="Label" type="Label" parent="TOP BOX/TimerBox"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -42.0
+offset_right = 9.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 25
+text = "TIMER"
+
 [node name="Timer" type="Timer" parent="TOP BOX/TimerBox"]
-wait_time = 60.0
+wait_time = 15.0
 one_shot = true
 
 [node name="BOTTOM SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -9.0
-offset_top = 577.0
-offset_right = 31.0
-offset_bottom = 602.0
-scale = Vector2(29.0325, 2.72028)
+offset_left = 3.0
+offset_top = 585.0
+offset_right = 42.0
+offset_bottom = 609.0
+scale = Vector2(29.4744, 2.73776)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BOTTOM SCREEN"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.361
 anchor_bottom = 1.6
-offset_left = 14.811
-offset_top = 5.88174
-offset_right = 342.371
-offset_bottom = 5.88174
+offset_left = 14.0121
+offset_top = 3.65262
+offset_right = 341.933
+offset_bottom = 3.65262
 scale = Vector2(0.0288333, 0.458436)
 theme_override_constants/separation = 75
 
-[node name="Button" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
+[node name="START SIMULATION" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
 layout_mode = 2
 text = "START SIMULATING"
 
-[node name="Button2" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
+[node name="CLEAR INPUT" type="Button" parent="BOTTOM SCREEN/HBoxContainer"]
 layout_mode = 2
 text = "CLEAR INPUT"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 127.0
+offset_bottom = 584.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureRect" parent="Node2D" instance=ExtResource("2_d44vy")]
+offset_left = 71.0
+offset_top = 88.0
+offset_right = 111.0
+offset_bottom = 128.0
+texture = ExtResource("3_1scrj")
+
+[node name="TextureRect2" parent="Node2D" instance=ExtResource("2_d44vy")]
+offset_left = 223.0
+offset_top = 184.0
+offset_right = 263.0
+offset_bottom = 224.0
