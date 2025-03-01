@@ -28,10 +28,10 @@ script = ExtResource("1_8yfa2")
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -129.0
-offset_top = 24.0
-offset_right = 1020.0
-offset_bottom = 677.0
+offset_left = -145.0
+offset_top = -8.0
+offset_right = 1004.0
+offset_bottom = 645.0
 
 [node name="TOP BOX" type="Panel" parent="."]
 layout_mode = 0
@@ -108,14 +108,14 @@ offset_bottom = 584.0
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="TextureRect" parent="Node2D" instance=ExtResource("2_d44vy")]
-offset_left = 71.0
-offset_top = 88.0
-offset_right = 111.0
-offset_bottom = 128.0
+offset_left = -1.0
+offset_top = 64.0
+offset_right = 127.0
+offset_bottom = 192.0
 texture = ExtResource("3_1scrj")
 
 [node name="TextureRect2" parent="Node2D" instance=ExtResource("2_d44vy")]
-offset_left = 223.0
-offset_top = 184.0
-offset_right = 263.0
-offset_bottom = 224.0
+offset_left = 391.0
+offset_top = 72.0
+offset_right = 431.0
+offset_bottom = 112.0

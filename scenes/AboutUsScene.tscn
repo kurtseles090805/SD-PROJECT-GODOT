@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ofc7v8w7sv"]
+[gd_scene load_steps=4 format=3 uid="uid://5ofc7v8w7sv"]
 
 [ext_resource type="Texture2D" uid="uid://db6gihagy2a1i" path="res://assets/sprites/482412615_652513160590621_4170154965774944890_n.jpg" id="1_q0a2a"]
+[ext_resource type="Script" path="res://scenes/NEXT BUTTON.gd" id="2_i6xr0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_24mc0"]
 texture = ExtResource("1_q0a2a")
@@ -18,3 +19,13 @@ layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_24mc0")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1098.0
+offset_left = 1020.0
+offset_top = 558.0
+offset_right = 1138.0
+offset_bottom = 640.0
+text = "NEXT"
+script = ExtResource("2_i6xr0")
