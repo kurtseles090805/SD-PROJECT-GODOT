@@ -1,15 +1,14 @@
 extends Button
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Connect the button's pressed signal to our function
+	connect("pressed", Callable(self, "_next_button"))
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-func _next_button() -> void: 
-	get_tree().change_scene_to_file("res://scenes/AboutUsSceneSecond.tscn")
-	
+func _next_button() -> void:
+	# Load the target scene and change to it
+	var next_scene = load("res://scenes/AboutUsSceneSecond.tscn")
+	if next_scene:
+		get_tree().change_scene_to_packed(next_scene)
+		print("Changing scene to AboutUsSceneSecond")
+	else:
+		print("Error: Scene not found at path")

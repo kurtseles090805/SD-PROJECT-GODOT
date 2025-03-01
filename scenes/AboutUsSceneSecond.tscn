@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://h6desmrh7tkr"]
 
-[ext_resource type="Texture2D" uid="uid://cdv3r78a7qns4" path="res://scenes/PAGE2.jpg" id="1_n28n5"]
+[ext_resource type="Texture2D" uid="uid://bebxkdh6xtplv" path="res://ABOUTUSECOND.jpg" id="1_13xyh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dm7t"]
-texture = ExtResource("1_n28n5")
+texture = ExtResource("1_13xyh")
 
 [node name="Control" type="Control"]
 layout_mode = 3
