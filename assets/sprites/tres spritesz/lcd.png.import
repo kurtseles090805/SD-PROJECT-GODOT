@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iepyw2esy7i3"
-path="res://.godot/imported/lcd.png-adbdeac9856e45af47db23db3ee94375.ctex"
+path="res://.godot/imported/lcd.png-0d402cbd9a1239ac56af3a2c65b7ee7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://things/Sprites/tres sprites/lcd.png"
-dest_files=["res://.godot/imported/lcd.png-adbdeac9856e45af47db23db3ee94375.ctex"]
+source_file="res://assets/sprites/tres spritesz/lcd.png"
+dest_files=["res://.godot/imported/lcd.png-0d402cbd9a1239ac56af3a2c65b7ee7a.ctex"]
 
 [params]
 
