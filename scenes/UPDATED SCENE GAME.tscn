@@ -28,9 +28,9 @@ script = ExtResource("1_8yfa2")
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -145.0
+offset_left = 7.0
 offset_top = -8.0
-offset_right = 1004.0
+offset_right = 1156.0
 offset_bottom = 645.0
 
 [node name="TOP BOX" type="Panel" parent="."]
@@ -87,7 +87,7 @@ anchor_bottom = 1.6
 offset_left = 14.0121
 offset_top = 3.65262
 offset_right = 341.933
-offset_bottom = 3.65262
+offset_bottom = 3.65265
 scale = Vector2(0.0288333, 0.458436)
 theme_override_constants/separation = 75
 
