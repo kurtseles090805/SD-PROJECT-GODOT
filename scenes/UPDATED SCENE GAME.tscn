@@ -175,8 +175,9 @@ tint_color = Color(1, 1, 1, 0.75)
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1069.3
+offset_top = -8.11709
 offset_right = 1130.3
-offset_bottom = 65.0
+offset_bottom = 56.8829
 theme = SubResource("Theme_3nx04")
 icon = ExtResource("6_d8xet")
 expand_icon = true
@@ -233,7 +234,8 @@ Circuit"
 
 [node name="Button6" type="Button" parent="."]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 8.0
+offset_top = -8.0
 offset_right = 71.0
 offset_bottom = 57.0
 theme = SubResource("Theme_rgojy")
@@ -1112,3 +1114,8 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
