@@ -10,7 +10,7 @@ var blink_timer: Timer  # Timer for blinking effect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	$"PAUSE GAME".pressed.connect(_pause_Game)
 	$"SHOW CIRCUIT".pressed.connect(_show_Circuit2)
 	
 	# Initialize TimerBox and timer references
@@ -127,3 +127,6 @@ func _on_ClearInput_pressed() -> void:
 	
 func _show_Circuit2() -> void: 
 	get_tree().change_scene_to_file("res://scenes/ShowCircuit2.tscn")
+	
+func _pause_Game() -> void: 
+	get_tree().change_scene_to_file("res://PauseTab.tscn")

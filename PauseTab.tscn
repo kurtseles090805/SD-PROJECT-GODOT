@@ -24,6 +24,7 @@ texture = ExtResource("1_cywnk")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 288.0
 offset_top = -48.0
 offset_right = 888.0
@@ -52,6 +53,7 @@ icon = ExtResource("5_8n0uy")
 icon_alignment = 1
 
 [node name="Resume" type="Button" parent="."]
+layout_mode = 0
 offset_left = 672.0
 offset_top = 264.0
 offset_right = 736.0
@@ -63,6 +65,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="Home" type="Button" parent="."]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 264.0
 offset_right = 608.0
