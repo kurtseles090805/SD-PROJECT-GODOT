@@ -123,6 +123,7 @@ offset_right = 736.0
 offset_bottom = 248.0
 
 [node name="EXIT BUTTON" type="Button" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 96.0
