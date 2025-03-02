@@ -160,7 +160,7 @@ scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 
-[node name="Button" type="Button" parent="."]
+[node name="NEXT BUTTON" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1069.3
 offset_top = -8.11709
@@ -170,7 +170,7 @@ theme = SubResource("Theme_3nx04")
 icon = ExtResource("6_d8xet")
 expand_icon = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="SHOW SIMULATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 167.325
 offset_top = 495.142
@@ -184,7 +184,7 @@ alignment = 0
 icon_alignment = 2
 expand_icon = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="STOP SIMULATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 388.115
 offset_top = 495.142
@@ -198,7 +198,7 @@ alignment = 0
 icon_alignment = 2
 expand_icon = true
 
-[node name="Button4" type="Button" parent="."]
+[node name="CLEAR INPUT" type="Button" parent="."]
 layout_mode = 0
 offset_left = 586.133
 offset_top = 495.142
@@ -210,7 +210,7 @@ Inputs"
 icon = ExtResource("9_7nybu")
 icon_alignment = 2
 
-[node name="Button5" type="Button" parent="."]
+[node name="SHOW CIRCUIT" type="Button" parent="."]
 layout_mode = 0
 offset_left = 744.547
 offset_top = 495.142
@@ -220,7 +220,7 @@ theme = SubResource("Theme_3nx04")
 text = "Show 
 Circuit"
 
-[node name="Button6" type="Button" parent="."]
+[node name="PAUSE GAME" type="Button" parent="."]
 layout_mode = 0
 offset_left = 8.0
 offset_top = -8.0

@@ -18,7 +18,6 @@ run/low_processor_mode=true
 [display]
 
 window/size/viewport_height=610
-window/size/mode=3
 window/size/initial_position_type=0
 window/size/window_width_override=1024
 window/size/window_height_override=768

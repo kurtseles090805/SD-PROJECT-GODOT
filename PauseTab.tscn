@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw2kof7tcbbed"]
+
+[ext_resource type="Texture2D" uid="uid://bw1uwhixt06k1" path="res://PauseBackground.png" id="1_cywnk"]
+[ext_resource type="Texture2D" uid="uid://dq06jt1785coc" path="res://—Pngtree—purple long strip e-commerce border_5919820.png" id="2_xagw1"]
+[ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_vvawv"]
+[ext_resource type="Theme" uid="uid://bo7vlgbvvl5li" path="res://PauseButtons.tres" id="4_87m7b"]
+[ext_resource type="Texture2D" uid="uid://s078l724b73o" path="res://icons8-settings-50.png" id="5_8n0uy"]
+[ext_resource type="Texture2D" uid="uid://ctgnqyhf1fut0" path="res://media.png" id="6_t1i5h"]
+[ext_resource type="Texture2D" uid="uid://dkyyc2whnt0q3" path="res://icons8-home-50.png" id="7_g0ynf"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 610.0
+texture = ExtResource("1_cywnk")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = -48.0
+offset_right = 888.0
+offset_bottom = 600.0
+texture = ExtResource("2_xagw1")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 224.0
+offset_right = 792.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("3_vvawv")
+theme_override_font_sizes/font_size = 25
+text = "Gotta take a Break?"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 264.0
+offset_right = 480.0
+offset_bottom = 328.0
+theme = ExtResource("4_87m7b")
+icon = ExtResource("5_8n0uy")
+icon_alignment = 1
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 264.0
+offset_right = 736.0
+offset_bottom = 328.0
+theme = ExtResource("4_87m7b")
+icon = ExtResource("6_t1i5h")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Home" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 264.0
+offset_right = 608.0
+offset_bottom = 328.0
+theme = ExtResource("4_87m7b")
+icon = ExtResource("7_g0ynf")
+icon_alignment = 1
