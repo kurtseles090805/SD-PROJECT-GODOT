@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bo7vlgbvvl5li"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjoof"]
+bg_color = Color(0.805138, 0.397668, 0.919833, 1)
+border_width_bottom = 7
+border_color = Color(0.8, 0.0862745, 0.8, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_rjoof")
