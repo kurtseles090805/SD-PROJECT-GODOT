@@ -630,6 +630,165 @@ offset_bottom = 104.0
 scale = Vector2(1.48892, 1.59314)
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< HEAD
+=======
+[node name="GraphFrame" type="GraphFrame" parent="."]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 114.0
+offset_right = 1116.0
+offset_bottom = 493.0
+scale = Vector2(1.00642, 0.982539)
+tint_color_enabled = true
+tint_color = Color(1, 1, 1, 0.75)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1069.3
+offset_top = -8.11709
+offset_right = 1130.3
+offset_bottom = 56.8829
+theme = SubResource("Theme_3nx04")
+icon = ExtResource("6_d8xet")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 503.0
+offset_right = 364.0
+offset_bottom = 576.0
+theme = SubResource("Theme_3nx04")
+text = "   Start
+   Simulation"
+icon = ExtResource("5_7qht5")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 385.145
+offset_top = 503.26
+offset_right = 562.145
+offset_bottom = 576.26
+theme = SubResource("Theme_3nx04")
+text = "   Stop
+   Simulation"
+icon = ExtResource("8_pnaxa")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 586.133
+offset_top = 503.26
+offset_right = 729.133
+offset_bottom = 576.26
+theme = SubResource("Theme_3nx04")
+text = "Clear
+Inputs"
+icon = ExtResource("9_7nybu")
+icon_alignment = 2
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 503.0
+offset_right = 898.0
+offset_bottom = 576.0
+theme = SubResource("Theme_3nx04")
+text = "Show 
+Circuit"
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 71.0
+offset_bottom = 57.0
+theme = SubResource("Theme_rgojy")
+icon = ExtResource("6_64prq")
+expand_icon = true
+
+[node name="TextureRect27" parent="." instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0602288
+anchor_top = 0.0150897
+anchor_right = 0.0602288
+anchor_bottom = 0.0150897
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect28" parent="." instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.335254
+anchor_top = 0.285659
+anchor_right = 0.335254
+anchor_bottom = 0.285659
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect29" parent="." instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40401
+anchor_top = 0.285659
+anchor_right = 0.40401
+anchor_bottom = 0.285659
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect30" parent="." instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472766
+anchor_top = 0.285659
+anchor_right = 0.472766
+anchor_bottom = 0.285659
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 104.0
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+>>>>>>> 439865756e8d902520894017dfb0acf524a3431d
 [node name="TextureRect32" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 layout_mode = 1
@@ -719,3 +878,8 @@ offset_right = 235.0
 offset_bottom = 104.0
 scale = Vector2(1.48892, 1.59314)
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
