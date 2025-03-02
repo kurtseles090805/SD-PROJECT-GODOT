@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bftjd1ujk5rym"]
+[gd_scene load_steps=10 format=3 uid="uid://bp82aq0cpfhju"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_ep2xd"]
 [ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_rp820"]
 [ext_resource type="Texture2D" uid="uid://b27f2382ep6kq" path="res://blank-white-7sn5o1woonmklx1h.jpg" id="3_u4prp"]
 [ext_resource type="Texture2D" uid="uid://bqubm3c6kja0l" path="res://showciruit.png" id="4_eebml"]
+[ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="5_mhf1s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unp58"]
 bg_color = Color(0, 0, 0, 1)
@@ -20,6 +21,22 @@ corner_radius_bottom_left = 100
 
 [sub_resource type="Theme" id="Theme_o0v1o"]
 Button/styles/normal = SubResource("StyleBoxFlat_unp58")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5552"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Theme" id="Theme_h82cj"]
+Button/styles/normal = SubResource("StyleBoxFlat_c5552")
 
 [node name="ShowCircuit" type="Control"]
 layout_mode = 3
@@ -58,17 +75,28 @@ expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 80.0
-offset_right = 1000.0
-offset_bottom = 568.0
+offset_left = 126.0
+offset_top = 79.0
+offset_right = 966.0
+offset_bottom = 567.0
 texture = ExtResource("3_u4prp")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 232.0
-offset_top = 104.0
-offset_right = 920.0
-offset_bottom = 544.0
+layout_mode = 0
+offset_left = 156.0
+offset_top = 85.0
+offset_right = 930.0
+offset_bottom = 561.0
 texture = ExtResource("4_eebml")
 expand_mode = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1010.0
+offset_top = 245.0
+offset_right = 1114.0
+offset_bottom = 352.0
+theme = SubResource("Theme_h82cj")
+icon = ExtResource("5_mhf1s")
+expand_icon = true
