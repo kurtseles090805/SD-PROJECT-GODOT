@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3fd4enx41bg"]
+[gd_scene load_steps=8 format=3 uid="uid://d3fd4enx41bg"]
 
+[ext_resource type="Script" path="res://scenes/CIRCUIT 2.gd" id="1_1dd1l"]
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_t0oyc"]
 [ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_oldea"]
 [ext_resource type="Texture2D" uid="uid://b27f2382ep6kq" path="res://blank-white-7sn5o1woonmklx1h.jpg" id="3_cwlim"]
@@ -28,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1dd1l")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
