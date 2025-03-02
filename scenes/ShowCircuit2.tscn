@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bftjd1ujk5rym"]
+
+[ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_t0oyc"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_oldea"]
+[ext_resource type="Texture2D" uid="uid://b27f2382ep6kq" path="res://blank-white-7sn5o1woonmklx1h.jpg" id="3_cwlim"]
+[ext_resource type="Texture2D" uid="uid://cufs17f5704g7" path="res://basic-electrical-circuit.png" id="4_vkfll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unp58"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Theme" id="Theme_o0v1o"]
+Button/styles/normal = SubResource("StyleBoxFlat_unp58")
+
+[node name="ShowCircuit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 610.0
+texture = ExtResource("1_t0oyc")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 241.0
+offset_right = 147.0
+offset_bottom = 360.0
+theme = SubResource("Theme_o0v1o")
+action_mode = 0
+icon = ExtResource("2_oldea")
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 43.0
+offset_right = 1095.0
+offset_bottom = 561.0
+texture = ExtResource("3_cwlim")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 215.0
+offset_top = 67.0
+offset_right = 1062.0
+offset_bottom = 534.0
+texture = ExtResource("4_vkfll")
+expand_mode = 1

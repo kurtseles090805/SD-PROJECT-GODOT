@@ -1195,14 +1195,20 @@ scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("13_wsjam")
 
 [node name="LABEL BOX5" type="Label" parent="."]
+<<<<<<< HEAD
 layout_mode = 0
 offset_left = 102.969
 offset_top = 267.864
 offset_right = 132.969
 offset_bottom = 285.864
+=======
+offset_left = 99.0089
+offset_top = 264.82
+offset_right = 135.009
+offset_bottom = 282.82
+>>>>>>> 0dba24ec1a1c18c1ee430ca5b33a260af8531ffa
 theme_override_font_sizes/font_size = 13
-text = "Wire
-"
+text = "Wires"
 
 [node name="TextureRect8" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
