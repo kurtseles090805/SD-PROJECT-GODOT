@@ -22,7 +22,7 @@ corner_radius_bottom_left = 100
 [sub_resource type="Theme" id="Theme_bux6w"]
 Button/styles/normal = SubResource("StyleBoxFlat_os53y")
 
-[node name="Control3" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
