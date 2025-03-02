@@ -8,7 +8,3 @@ func _on_next_button_pressed():
 		get_tree().change_scene_to_file("res://scenes/AboutUsSceneSecond.tscn")
 	else:
 		print("Next scene not found!", "res://scenes/AboutUsSceneSecond.tscn")
-
-
-func _on_pressed() -> void:
-	pass # Replace with function body.

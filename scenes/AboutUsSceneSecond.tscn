@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://h6desmrh7tkr"]
 
-[ext_resource type="Script" path="res://scenes/about_us_scene_second.gd" id="1_11ee5"]
 [ext_resource type="Texture2D" uid="uid://bebxkdh6xtplv" path="res://ABOUTUSECOND.jpg" id="1_13xyh"]
 [ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_h1m72"]
+[ext_resource type="Script" path="res://scenes/NEXT BUTTON.gd" id="3_y8q12"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dm7t"]
 texture = ExtResource("1_13xyh")
@@ -29,7 +29,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_11ee5")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -50,3 +49,4 @@ pivot_offset = Vector2(59, 46)
 theme = SubResource("Theme_bux6w")
 icon = ExtResource("2_h1m72")
 expand_icon = true
+script = ExtResource("3_y8q12")
