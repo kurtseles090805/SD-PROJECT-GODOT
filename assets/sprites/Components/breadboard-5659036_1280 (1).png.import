@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkk7bl3o470lk"
-path="res://.godot/imported/LED.png-1ebbb0d705ca4cc0759cbf8ccb316cc2.ctex"
+uid="uid://di1o72rxgufch"
+path="res://.godot/imported/breadboard-5659036_1280 (1).png-5db673b415c5e97bf6587f3d5fde8e0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/LED.png"
-dest_files=["res://.godot/imported/LED.png-1ebbb0d705ca4cc0759cbf8ccb316cc2.ctex"]
+source_file="res://assets/Components/breadboard-5659036_1280 (1).png"
+dest_files=["res://.godot/imported/breadboard-5659036_1280 (1).png-5db673b415c5e97bf6587f3d5fde8e0d.ctex"]
 
 [params]
 
