@@ -47,7 +47,7 @@ corner_radius_bottom_left = 100
 [sub_resource type="Theme" id="Theme_rgojy"]
 Button/styles/normal = SubResource("StyleBoxFlat_xauue")
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
@@ -1109,6 +1109,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LABEL BOX3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 195.0
 offset_right = 78.0
@@ -1120,6 +1121,7 @@ text = "Capacitor
 [node name="TextureRect2" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 95.0486
 offset_top = 56.8196
 offset_right = 138.049
@@ -1130,6 +1132,7 @@ texture = ExtResource("10_j60ak")
 [node name="TextureRect2" parent="TextureRect2" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = -94.5746
 offset_top = 256.227
 offset_right = -34.5746
@@ -1140,6 +1143,7 @@ texture = ExtResource("10_j60ak")
 [node name="TextureRect3" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 8.0
 offset_top = 284.0
 offset_right = 76.0
@@ -1150,6 +1154,7 @@ texture = ExtResource("10_6223x")
 [node name="TextureRect4" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 7.92071
 offset_top = 56.8196
 offset_right = 75.9207
@@ -1160,6 +1165,7 @@ texture = ExtResource("3_nrnpn")
 [node name="TextureRect5" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 7.92071
 offset_top = 137.991
 offset_right = 75.9207
@@ -1168,6 +1174,7 @@ scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("12_tf71c")
 
 [node name="LABEL BOX4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 15.8414
 offset_top = 340.918
 offset_right = 62.8414
@@ -1179,6 +1186,7 @@ text = "Battery
 [node name="TextureRect6" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 7.92071
 offset_top = 227.278
 offset_right = 75.9207
@@ -1187,6 +1195,7 @@ scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("13_wsjam")
 
 [node name="LABEL BOX5" type="Label" parent="."]
+layout_mode = 0
 offset_left = 102.969
 offset_top = 267.864
 offset_right = 132.969
@@ -1198,6 +1207,7 @@ text = "Wire
 [node name="TextureRect8" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 87.1279
 offset_top = 137.991
 offset_right = 155.128
@@ -1208,6 +1218,7 @@ texture = ExtResource("14_42ody")
 [node name="TextureRect9" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 87.1279
 offset_top = 202.927
 offset_right = 155.128
@@ -1216,6 +1227,7 @@ scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("15_u52de")
 
 [node name="LABEL BOX6" type="Label" parent="."]
+layout_mode = 0
 offset_left = 19.8018
 offset_top = 560.079
 offset_right = 56.8018
@@ -1227,6 +1239,7 @@ text = "Diode
 [node name="TextureRect56" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 5.94054
 offset_top = 512.391
 offset_right = 71.9405
@@ -1237,6 +1250,7 @@ texture = ExtResource("16_3br8e")
 [node name="TextureRect7" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 8.9108
 offset_top = 353.093
 offset_right = 76.9108
@@ -1247,17 +1261,19 @@ texture = ExtResource("17_quaiw")
 [node name="TextureRect57" parent="." instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 8.9108
-offset_top = 416.001
+offset_top = 424.118
 offset_right = 76.9108
-offset_bottom = 674.001
+offset_bottom = 636.118
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("18_xto0e")
 
 [node name="LABEL BOX7" type="Label" parent="."]
-offset_left = 13.8612
-offset_top = 481.952
-offset_right = 55.8612
-offset_bottom = 499.952
+layout_mode = 0
+offset_left = 5.94053
+offset_top = 487.025
+offset_right = 93.9405
+offset_bottom = 505.025
 theme_override_font_sizes/font_size = 13
-text = "Switch"
+text = "OPEN SWITCH"
