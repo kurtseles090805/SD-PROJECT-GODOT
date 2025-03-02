@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolntw8ayvkwl"
-path="res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"
+uid="uid://bv7kqgkstfl5d"
+path="res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Components/LED/REDLED off.png"
-dest_files=["res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"]
+source_file="res://assets/pause-button.png"
+dest_files=["res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"]
 
 [params]
 

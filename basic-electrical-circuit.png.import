@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolntw8ayvkwl"
-path="res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"
+uid="uid://cufs17f5704g7"
+path="res://.godot/imported/basic-electrical-circuit.png-acab5cba2aa12920333ac3e791ad807b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Components/LED/REDLED off.png"
-dest_files=["res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"]
+source_file="res://basic-electrical-circuit.png"
+dest_files=["res://.godot/imported/basic-electrical-circuit.png-acab5cba2aa12920333ac3e791ad807b.ctex"]
 
 [params]
 

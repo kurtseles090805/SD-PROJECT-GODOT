@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolntw8ayvkwl"
-path="res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"
+uid="uid://t8da0twrt0te"
+path="res://.godot/imported/wire.png-f156d5acff631375f3a2999df23e95ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Components/LED/REDLED off.png"
-dest_files=["res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"]
+source_file="res://assets/sprites/Components/wire/wire.png"
+dest_files=["res://.godot/imported/wire.png-f156d5acff631375f3a2999df23e95ef.ctex"]
 
 [params]
 
