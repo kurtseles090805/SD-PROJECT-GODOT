@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7kqgkstfl5d"
-path="res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"
+uid="uid://buc6gobw047no"
+path="res://.godot/imported/Resistorz Vertical.png-b01a0caed5c7ec33f9370a046421d025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pause-button.png"
-dest_files=["res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"]
+source_file="res://assets/sprites/Components/Resistorz Vertical.png"
+dest_files=["res://.godot/imported/Resistorz Vertical.png-b01a0caed5c7ec33f9370a046421d025.ctex"]
 
 [params]
 

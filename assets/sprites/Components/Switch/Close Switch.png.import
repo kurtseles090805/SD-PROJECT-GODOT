@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7kqgkstfl5d"
-path="res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"
+uid="uid://b7dsv2peipkb5"
+path="res://.godot/imported/Close Switch.png-370b740d0899c072702349a4c7181753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pause-button.png"
-dest_files=["res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"]
+source_file="res://assets/sprites/Components/Switch/Close Switch.png"
+dest_files=["res://.godot/imported/Close Switch.png-370b740d0899c072702349a4c7181753.ctex"]
 
 [params]
 

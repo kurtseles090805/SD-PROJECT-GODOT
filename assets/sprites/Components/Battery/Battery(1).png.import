@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7kqgkstfl5d"
-path="res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"
+uid="uid://dj54aa2y8goh2"
+path="res://.godot/imported/Battery(1).png-4ee44f3895577b11169576bb81cb0cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pause-button.png"
-dest_files=["res://.godot/imported/pause-button.png-feb87f99bf583122eb86351484cf84e9.ctex"]
+source_file="res://assets/sprites/Components/Battery/Battery(1).png"
+dest_files=["res://.godot/imported/Battery(1).png-4ee44f3895577b11169576bb81cb0cd6.ctex"]
 
 [params]
 

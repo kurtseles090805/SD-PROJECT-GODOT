@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkk7bl3o470lk"
-path="res://.godot/imported/LED.png-1ebbb0d705ca4cc0759cbf8ccb316cc2.ctex"
+uid="uid://l10oxdn8rx14"
+path="res://.godot/imported/wire (1).png-0950f359c8f5ac9878825afa006f7819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/LED.png"
-dest_files=["res://.godot/imported/LED.png-1ebbb0d705ca4cc0759cbf8ccb316cc2.ctex"]
+source_file="res://assets/sprites/Components/wire/wire (1).png"
+dest_files=["res://.godot/imported/wire (1).png-0950f359c8f5ac9878825afa006f7819.ctex"]
 
 [params]
 

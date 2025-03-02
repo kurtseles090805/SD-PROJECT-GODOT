@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4jpv8s16ndka"
-path="res://.godot/imported/resistor (1).png-a74a2f1d1345801ff4485e01bf0d125e.ctex"
+uid="uid://di1o72rxgufch"
+path="res://.godot/imported/breadboard-5659036_1280 (1).png-4634ce2437b650c9e0ab2a0d526e1c4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resistor (1).png"
-dest_files=["res://.godot/imported/resistor (1).png-a74a2f1d1345801ff4485e01bf0d125e.ctex"]
+source_file="res://assets/sprites/Components/breadboard-5659036_1280 (1).png"
+dest_files=["res://.godot/imported/breadboard-5659036_1280 (1).png-4634ce2437b650c9e0ab2a0d526e1c4f.ctex"]
 
 [params]
 
