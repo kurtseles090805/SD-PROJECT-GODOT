@@ -1,15 +1,21 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene load_steps=6 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
 [ext_resource type="Texture2D" uid="uid://b4jpv8s16ndka" path="res://assets/resistor (1).png" id="3_q8ywy"]
 [ext_resource type="Texture2D" uid="uid://cxyi8mcptkig" path="res://scenes/476350686_1028560895775183_2809825063710963474_n (1).jpg" id="4_bbunq"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [sub_resource type="GDScript" id="GDScript_yok0s"]

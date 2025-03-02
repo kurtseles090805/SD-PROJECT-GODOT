@@ -130,6 +130,7 @@ text = "PAUSE"
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 offset_left = 440.0
 offset_top = 288.0
 offset_right = 736.0
@@ -142,6 +143,8 @@ offset_top = 200.0
 offset_right = 736.0
 offset_bottom = 248.0
 =======
+=======
+>>>>>>> Stashed changes
 offset_left = 405.0
 offset_top = 341.0
 offset_right = 511.0
