@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://5ofc7v8w7sv"]
 
 [ext_resource type="Texture2D" uid="uid://db6gihagy2a1i" path="res://assets/sprites/482412615_652513160590621_4170154965774944890_n.jpg" id="1_q0a2a"]
-[ext_resource type="Script" path="res://scenes/NEXT BUTTON.gd" id="2_i6xr0"]
+[ext_resource type="Script" path="res://scenes/about_us_scene.gd" id="1_slu7d"]
 [ext_resource type="Texture2D" uid="uid://dgjqkf2jtx2at" path="res://icons8-exit-button-50.png" id="2_s3o55"]
 [ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="2_t50rk"]
 
@@ -33,6 +33,7 @@ offset_right = -116.0
 offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_slu7d")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -53,7 +54,6 @@ pivot_offset = Vector2(59, 46)
 theme = SubResource("Theme_5vm1g")
 icon = ExtResource("2_t50rk")
 expand_icon = true
-script = ExtResource("2_i6xr0")
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
@@ -65,4 +65,3 @@ pivot_offset = Vector2(59, 46)
 theme = SubResource("Theme_5vm1g")
 icon = ExtResource("2_s3o55")
 expand_icon = true
-script = ExtResource("2_i6xr0")

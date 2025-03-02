@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bftjd1ujk5rym"]
+[gd_scene load_steps=7 format=3 uid="uid://d3fd4enx41bg"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_t0oyc"]
 [ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_oldea"]
@@ -57,6 +57,7 @@ texture = ExtResource("3_cwlim")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 215.0
 offset_top = 67.0
 offset_right = 1062.0

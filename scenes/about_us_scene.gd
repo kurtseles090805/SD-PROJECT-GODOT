@@ -2,9 +2,10 @@ extends Control
 
 func _ready() -> void:
 	# Connect ExitButton to _exit_Button
-	$"EXIT BUTTON".pressed.connect(_exit_Button)
+	$ExitButton.pressed.connect(_exit_Button)
 	# Connect NextButton to _next_Button
-	$"NEXT BUTTON".pressed.connect(_next_Button)
+	$NextButton.pressed.connect(_next_Button)
+	pass
 
 func _exit_Button() -> void: 
 	print("Exiting to Home Screen")
