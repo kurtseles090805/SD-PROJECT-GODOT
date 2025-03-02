@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_ep2xd"]
 [ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_rp820"]
 [ext_resource type="Texture2D" uid="uid://b27f2382ep6kq" path="res://blank-white-7sn5o1woonmklx1h.jpg" id="3_u4prp"]
-[ext_resource type="Texture2D" uid="uid://bqubm3c6kja0l" path="res://showciruit.png" id="4_eebml"]
+[ext_resource type="Texture2D" uid="uid://xburqi022o3g" path="res://asd.png" id="4_aou08"]
 [ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="5_mhf1s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unp58"]
@@ -88,14 +88,14 @@ offset_left = 156.0
 offset_top = 85.0
 offset_right = 930.0
 offset_bottom = 561.0
-texture = ExtResource("4_eebml")
+texture = ExtResource("4_aou08")
 expand_mode = 1
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1010.0
+offset_left = 1003.0
 offset_top = 245.0
-offset_right = 1114.0
+offset_right = 1107.0
 offset_bottom = 352.0
 theme = SubResource("Theme_h82cj")
 icon = ExtResource("5_mhf1s")
