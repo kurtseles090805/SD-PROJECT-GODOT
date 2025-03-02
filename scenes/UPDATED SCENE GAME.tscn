@@ -1,9 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=14 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
-[ext_resource type="Texture2D" path="res://assets/resistor (1).png" id="3_q8ywy"]
-[ext_resource type="Texture2D" path="res://assets/LED.png" id="4_2p5o0"]
 [ext_resource type="Texture2D" uid="uid://b84waqejfd6s3" path="res://9ebba7cbb17df5947ee54f0f76e4b8cf.png" id="5_7qht5"]
 [ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="5_167sb"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="6_64prq"]
@@ -115,7 +113,6 @@ offset_top = 4.78387
 offset_right = 20.0
 offset_bottom = 24.7839
 scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("3_q8ywy")
 
 [node name="TextureRect2" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
 clip_contents = true
@@ -125,7 +122,6 @@ offset_top = 10.0
 offset_right = 20.0
 offset_bottom = 30.0
 scale = Vector2(0.921261, 0.225715)
-texture = ExtResource("4_2p5o0")
 
 [node name="TextureRect10" parent="." instance=ExtResource("2_d44vy")]
 texture_filter = 4

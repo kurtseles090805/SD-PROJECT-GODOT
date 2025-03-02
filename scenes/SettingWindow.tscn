@@ -114,6 +114,7 @@ offset_right = 736.0
 offset_bottom = 336.0
 
 [node name="SoundAdjust" type="HSlider" parent="Panel"]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 200.0
 offset_right = 736.0
