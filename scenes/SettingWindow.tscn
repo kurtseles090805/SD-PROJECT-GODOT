@@ -125,6 +125,7 @@ offset_right = 736.0
 offset_bottom = 336.0
 
 [node name="HSlider2" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 200.0
 offset_right = 736.0
