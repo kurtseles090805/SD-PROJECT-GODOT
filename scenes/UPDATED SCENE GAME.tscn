@@ -1,13 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=24 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
+[ext_resource type="Texture2D" uid="uid://bkwin6xm7bkq1" path="res://assets/sprites/Components/Resistorz horizontal.png" id="3_nrnpn"]
 [ext_resource type="Texture2D" uid="uid://b84waqejfd6s3" path="res://9ebba7cbb17df5947ee54f0f76e4b8cf.png" id="5_7qht5"]
 [ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="5_167sb"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="6_64prq"]
 [ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="6_d8xet"]
 [ext_resource type="Texture2D" uid="uid://choa8e5ufef0q" path="res://—Pngtree—white player stop button icon_4545797.png" id="8_pnaxa"]
 [ext_resource type="Texture2D" uid="uid://bdrm8a5fstug8" path="res://icons8-trash-50.png" id="9_7nybu"]
+[ext_resource type="Texture2D" uid="uid://0nigwtgdp7j5" path="res://assets/sprites/Components/Battery/Battery.png" id="10_6223x"]
+[ext_resource type="Texture2D" uid="uid://bfh5dhb1702wf" path="res://assets/sprites/Components/LED/REDLED 30p lit.png" id="10_j60ak"]
+[ext_resource type="Texture2D" uid="uid://5qvpsof7umwc" path="res://assets/sprites/Components/Capacitor.png" id="12_tf71c"]
+[ext_resource type="Texture2D" uid="uid://dj54aa2y8goh2" path="res://assets/sprites/Components/Battery/Battery(1).png" id="13_wsjam"]
+[ext_resource type="Texture2D" uid="uid://t8da0twrt0te" path="res://assets/sprites/Components/wire/wire.png" id="14_42ody"]
+[ext_resource type="Texture2D" uid="uid://dbjhxsjgwwko1" path="res://assets/sprites/Components/wire/vertical wire.png" id="15_u52de"]
+[ext_resource type="Texture2D" uid="uid://cu8not74u3tu6" path="res://assets/sprites/Components/Diode.png" id="16_3br8e"]
+[ext_resource type="Texture2D" uid="uid://b7dsv2peipkb5" path="res://assets/sprites/Components/Switch/Close Switch.png" id="17_quaiw"]
+[ext_resource type="Texture2D" uid="uid://dar6rfein8g52" path="res://assets/sprites/Components/Switch/Open Switch.png" id="18_xto0e"]
 
 [sub_resource type="Theme" id="Theme_vhbye"]
 
@@ -104,24 +114,6 @@ offset_top = -8.0
 offset_right = 33.0
 offset_bottom = 34.0
 scale = Vector2(4.85965, 14.398)
-
-[node name="TextureRect" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_top = 4.78387
-offset_right = 20.0
-offset_bottom = 24.7839
-scale = Vector2(0.932262, 0.220647)
-
-[node name="TextureRect2" parent="TOOLBOX" instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_top = 10.0
-offset_right = 20.0
-offset_bottom = 30.0
-scale = Vector2(0.921261, 0.225715)
 
 [node name="TextureRect10" parent="." instance=ExtResource("2_d44vy")]
 texture_filter = 4
@@ -1076,19 +1068,19 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LABEL BOX" type="Label" parent="."]
 layout_mode = 0
-offset_left = 79.2071
-offset_top = 81.1709
-offset_right = 144.207
-offset_bottom = 103.171
+offset_left = 7.92072
+offset_top = 107.551
+offset_right = 72.9206
+offset_bottom = 129.552
 theme_override_font_sizes/font_size = 15
 text = "Resistor"
 
 [node name="LABEL BOX2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 79.2071
-offset_top = 154.225
-offset_right = 144.207
-offset_bottom = 176.225
+offset_left = 103.0
+offset_top = 108.0
+offset_right = 135.0
+offset_bottom = 130.0
 theme_override_font_sizes/font_size = 15
 text = "LED"
 
@@ -1115,3 +1107,157 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="LABEL BOX3" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 195.0
+offset_right = 78.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 13
+text = "Capacitor
+"
+
+[node name="TextureRect2" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 95.0486
+offset_top = 56.8196
+offset_right = 138.049
+offset_bottom = 245.82
+scale = Vector2(0.921261, 0.225715)
+texture = ExtResource("10_j60ak")
+
+[node name="TextureRect2" parent="TextureRect2" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = -94.5746
+offset_top = 256.227
+offset_right = -34.5746
+offset_bottom = 1371.23
+scale = Vector2(0.921261, 0.225715)
+texture = ExtResource("10_j60ak")
+
+[node name="TextureRect3" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 8.0
+offset_top = 284.0
+offset_right = 76.0
+offset_bottom = 542.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("10_6223x")
+
+[node name="TextureRect4" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 7.92071
+offset_top = 56.8196
+offset_right = 75.9207
+offset_bottom = 314.82
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("3_nrnpn")
+
+[node name="TextureRect5" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 7.92071
+offset_top = 137.991
+offset_right = 75.9207
+offset_bottom = 395.991
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("12_tf71c")
+
+[node name="LABEL BOX4" type="Label" parent="."]
+offset_left = 15.8414
+offset_top = 340.918
+offset_right = 62.8414
+offset_bottom = 358.918
+theme_override_font_sizes/font_size = 13
+text = "Battery
+"
+
+[node name="TextureRect6" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 7.92071
+offset_top = 227.278
+offset_right = 75.9207
+offset_bottom = 485.279
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("13_wsjam")
+
+[node name="LABEL BOX5" type="Label" parent="."]
+offset_left = 102.969
+offset_top = 267.864
+offset_right = 132.969
+offset_bottom = 285.864
+theme_override_font_sizes/font_size = 13
+text = "Wire
+"
+
+[node name="TextureRect8" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 87.1279
+offset_top = 137.991
+offset_right = 155.128
+offset_bottom = 395.991
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("14_42ody")
+
+[node name="TextureRect9" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 87.1279
+offset_top = 202.927
+offset_right = 155.128
+offset_bottom = 460.927
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("15_u52de")
+
+[node name="LABEL BOX6" type="Label" parent="."]
+offset_left = 19.8018
+offset_top = 560.079
+offset_right = 56.8018
+offset_bottom = 578.079
+theme_override_font_sizes/font_size = 13
+text = "Diode
+"
+
+[node name="TextureRect56" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 5.94054
+offset_top = 512.391
+offset_right = 71.9405
+offset_bottom = 660.391
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("16_3br8e")
+
+[node name="TextureRect7" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 8.9108
+offset_top = 353.093
+offset_right = 76.9108
+offset_bottom = 611.093
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("17_quaiw")
+
+[node name="TextureRect57" parent="." instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+offset_left = 8.9108
+offset_top = 416.001
+offset_right = 76.9108
+offset_bottom = 674.001
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("18_xto0e")
+
+[node name="LABEL BOX7" type="Label" parent="."]
+offset_left = 13.8612
+offset_top = 481.952
+offset_right = 55.8612
+offset_bottom = 499.952
+theme_override_font_sizes/font_size = 13
+text = "Switch"
