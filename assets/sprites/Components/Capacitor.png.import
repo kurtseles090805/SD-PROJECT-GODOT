@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolntw8ayvkwl"
-path="res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"
+uid="uid://5qvpsof7umwc"
+path="res://.godot/imported/Capacitor.png-dca9f4a4914c0c0f3dc26c748b7d7cdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Components/LED/REDLED off.png"
-dest_files=["res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"]
+source_file="res://assets/sprites/Components/Capacitor.png"
+dest_files=["res://.godot/imported/Capacitor.png-dca9f4a4914c0c0f3dc26c748b7d7cdb.ctex"]
 
 [params]
 

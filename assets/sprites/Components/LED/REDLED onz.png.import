@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1yro8c6a1rlv"
-path="res://.godot/imported/REDLED onz.png-bb5376c47e361c9f6025b043cc3e43f0.ctex"
+path="res://.godot/imported/REDLED onz.png-cd7f8c1ae4d85f7b914f3a9dfeb90c93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite Animation/LED/REDLED onz.png"
-dest_files=["res://.godot/imported/REDLED onz.png-bb5376c47e361c9f6025b043cc3e43f0.ctex"]
+source_file="res://assets/sprites/Components/LED/REDLED onz.png"
+dest_files=["res://.godot/imported/REDLED onz.png-cd7f8c1ae4d85f7b914f3a9dfeb90c93.ctex"]
 
 [params]
 

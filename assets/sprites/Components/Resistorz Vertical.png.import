@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buc6gobw047no"
-path="res://.godot/imported/Resistorz Vertical.png-ca61c8a3134be0094b5be401d80ad7e8.ctex"
+path="res://.godot/imported/Resistorz Vertical.png-b01a0caed5c7ec33f9370a046421d025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Components/Resistorz Vertical.png"
-dest_files=["res://.godot/imported/Resistorz Vertical.png-ca61c8a3134be0094b5be401d80ad7e8.ctex"]
+source_file="res://assets/sprites/Components/Resistorz Vertical.png"
+dest_files=["res://.godot/imported/Resistorz Vertical.png-b01a0caed5c7ec33f9370a046421d025.ctex"]
 
 [params]
 

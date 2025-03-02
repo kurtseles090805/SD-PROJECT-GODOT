@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolntw8ayvkwl"
-path="res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"
+uid="uid://cu8not74u3tu6"
+path="res://.godot/imported/Diode.png-b632f369ff2a68590290eb8d6abfbf13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Components/LED/REDLED off.png"
-dest_files=["res://.godot/imported/REDLED off.png-110e4dbca5ad5744980a4040f21ae21d.ctex"]
+source_file="res://assets/sprites/Components/Diode.png"
+dest_files=["res://.godot/imported/Diode.png-b632f369ff2a68590290eb8d6abfbf13.ctex"]
 
 [params]
 
