@@ -40,7 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_a1dxx")
 
-[node name="Settings" type="Button" parent="."]
+[node name="MuteSound" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 776.0
 offset_top = 194.0
@@ -50,18 +50,7 @@ theme_override_font_sizes/font_size = 30
 icon = ExtResource("2_841h6")
 text_overrun_behavior = 3
 
-[node name="Pause" type="Button" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 16.0
-offset_right = 96.0
-offset_bottom = 88.0
-theme = SubResource("Theme_cntmq")
-icon = ExtResource("3_iac53")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Cancel" type="Button" parent="."]
+[node name="MuteMusic" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 776.0
 offset_top = 282.0
@@ -69,7 +58,7 @@ offset_right = 836.0
 offset_bottom = 340.0
 icon = ExtResource("2_841h6")
 
-[node name="Label" type="Label" parent="."]
+[node name="Settings" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.52
@@ -85,7 +74,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 41
 text = "Settings"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Sounc" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.52
@@ -101,7 +90,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 41
 text = "Sound"
 
-[node name="Label3" type="Label" parent="."]
+[node name="Music" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.52
@@ -117,15 +106,26 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 41
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="MusicAdjust" type="HSlider" parent="Panel"]
 layout_mode = 0
 offset_left = 440.0
 offset_top = 288.0
 offset_right = 736.0
 offset_bottom = 336.0
 
-[node name="HSlider2" type="HSlider" parent="."]
+[node name="SoundAdjust" type="HSlider" parent="Panel"]
 offset_left = 440.0
 offset_top = 200.0
 offset_right = 736.0
 offset_bottom = 248.0
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 88.0
+theme = SubResource("Theme_cntmq")
+icon = ExtResource("3_iac53")
+icon_alignment = 1
+expand_icon = true

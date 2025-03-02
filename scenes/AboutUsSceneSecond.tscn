@@ -32,8 +32,9 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1250.0
-offset_bottom = 597.0
+offset_left = -4.0
+offset_right = 1251.0
+offset_bottom = 609.0
 scale = Vector2(0.916497, 1)
 pivot_offset = Vector2(65, 46)
 theme_override_styles/panel = SubResource("StyleBoxTexture_8dm7t")
