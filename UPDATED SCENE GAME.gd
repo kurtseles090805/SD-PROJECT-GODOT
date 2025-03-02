@@ -10,6 +10,8 @@ var blink_timer: Timer  # Timer for blinking effect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	
 	# Initialize TimerBox and timer references
 	timer_box = $"TOP BOX/TimerBox"  # Replace with the correct path to your TimerBox
 	
