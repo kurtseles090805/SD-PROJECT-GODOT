@@ -10,7 +10,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _setting_Pause() -> void: 
-	get_tree().change_scene_to_file("res://scenes/SettingWindow.tscn")
+	get_tree().change_scene_to_file("res://scenes/SettingWindowPause.tscn")
 
 func _resume_Pause() -> void: 
 	get_tree().change_scene_to_file("res://scenes/UPDATED SCENE GAME.tscn")

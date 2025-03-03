@@ -16,7 +16,7 @@ func _on_start_pressed() -> void:
 
 # Settings button pressed
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/SettingWindow.tscn")
+	get_tree().change_scene_to_file("res://scenes/SettingWindowHome.tscn")
 	print("Settings Pressed")
 
 # Quit button pressed
