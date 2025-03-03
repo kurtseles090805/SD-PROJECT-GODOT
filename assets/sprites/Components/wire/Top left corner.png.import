@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sldu2hjhvpb5"
-path="res://.godot/imported/vertical wire.png-04a5a393b0c8cdecece810557f0f3419.ctex"
+uid="uid://cgrm6mt1ol7c8"
+path="res://.godot/imported/Top left corner.png-9b3a7cfb18495b2bdb299a13b7a8acd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Components/wire/vertical wire.png"
-dest_files=["res://.godot/imported/vertical wire.png-04a5a393b0c8cdecece810557f0f3419.ctex"]
+source_file="res://assets/sprites/Components/wire/Top left corner.png"
+dest_files=["res://.godot/imported/Top left corner.png-9b3a7cfb18495b2bdb299a13b7a8acd0.ctex"]
 
 [params]
 
