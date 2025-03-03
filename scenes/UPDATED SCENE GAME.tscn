@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=25 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
@@ -13,13 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bfh5dhb1702wf" path="res://assets/sprites/Components/LED/REDLED 30p lit.png" id="10_j60ak"]
 [ext_resource type="Texture2D" uid="uid://5qvpsof7umwc" path="res://assets/sprites/Components/Capacitor.png" id="12_tf71c"]
 [ext_resource type="Texture2D" uid="uid://dj54aa2y8goh2" path="res://assets/sprites/Components/Battery/Battery(1).png" id="13_wsjam"]
-[ext_resource type="Texture2D" uid="uid://t8da0twrt0te" path="res://assets/sprites/Components/wire/wire.png" id="14_42ody"]
-[ext_resource type="Texture2D" uid="uid://dbjhxsjgwwko1" path="res://assets/sprites/Components/wire/vertical wire.png" id="15_u52de"]
+[ext_resource type="Texture2D" uid="uid://c2v3qudvnyhfd" path="res://assets/sprites/Components/wire/wire.png" id="14_42ody"]
+[ext_resource type="Texture2D" uid="uid://sldu2hjhvpb5" path="res://assets/sprites/Components/wire/vertical wire.png" id="15_u52de"]
 [ext_resource type="Texture2D" uid="uid://cu8not74u3tu6" path="res://assets/sprites/Components/Diode.png" id="16_3br8e"]
 [ext_resource type="Texture2D" uid="uid://b7dsv2peipkb5" path="res://assets/sprites/Components/Switch/Close Switch.png" id="17_quaiw"]
 [ext_resource type="Texture2D" uid="uid://dar6rfein8g52" path="res://assets/sprites/Components/Switch/Open Switch.png" id="18_xto0e"]
-
-[sub_resource type="Theme" id="Theme_vhbye"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mdxh"]
 bg_color = Color(0, 0, 0, 1)
@@ -46,6 +44,10 @@ corner_radius_bottom_left = 100
 
 [sub_resource type="Theme" id="Theme_rgojy"]
 Button/styles/normal = SubResource("StyleBoxFlat_xauue")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dbdnw"]
+
+[sub_resource type="Theme" id="Theme_vhbye"]
 
 [node name="Control" type="Control"]
 layout_direction = 2
@@ -115,41 +117,6 @@ offset_right = 33.0
 offset_bottom = 34.0
 scale = Vector2(4.85965, 14.398)
 
-[node name="TextureRect10" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.015403
-anchor_top = 0.00153558
-anchor_right = -0.015403
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect31" parent="." instance=ExtResource("2_d44vy")]
-visible = false
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.369427
-anchor_top = 0.00130096
-anchor_right = 0.369427
-anchor_bottom = 0.00130096
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.48892, 1.59314)
-metadata/_edit_use_anchors_ = true
-
 [node name="GraphFrame" type="GraphFrame" parent="."]
 layout_mode = 0
 offset_left = 919.0
@@ -170,56 +137,6 @@ theme = SubResource("Theme_3nx04")
 icon = ExtResource("6_d8xet")
 expand_icon = true
 
-[node name="SHOW SIMULATION" type="Button" parent="."]
-layout_mode = 0
-offset_left = 167.325
-offset_top = 495.142
-offset_right = 365.325
-offset_bottom = 568.142
-theme = SubResource("Theme_3nx04")
-text = "   Start
-   Simulation"
-icon = ExtResource("5_7qht5")
-alignment = 0
-icon_alignment = 2
-expand_icon = true
-
-[node name="STOP SIMULATION" type="Button" parent="."]
-layout_mode = 0
-offset_left = 388.115
-offset_top = 495.142
-offset_right = 565.115
-offset_bottom = 568.142
-theme = SubResource("Theme_3nx04")
-text = "   Stop
-   Simulation"
-icon = ExtResource("8_pnaxa")
-alignment = 0
-icon_alignment = 2
-expand_icon = true
-
-[node name="CLEAR INPUT" type="Button" parent="."]
-layout_mode = 0
-offset_left = 586.133
-offset_top = 495.142
-offset_right = 729.133
-offset_bottom = 568.142
-theme = SubResource("Theme_3nx04")
-text = "Clear
-Inputs"
-icon = ExtResource("9_7nybu")
-icon_alignment = 2
-
-[node name="SHOW CIRCUIT" type="Button" parent="."]
-layout_mode = 0
-offset_left = 744.547
-offset_top = 495.142
-offset_right = 896.547
-offset_bottom = 568.142
-theme = SubResource("Theme_3nx04")
-text = "Show 
-Circuit"
-
 [node name="PAUSE GAME" type="Button" parent="."]
 layout_mode = 0
 offset_left = 8.0
@@ -229,823 +146,6 @@ offset_bottom = 57.0
 theme = SubResource("Theme_rgojy")
 icon = ExtResource("6_64prq")
 expand_icon = true
-
-[node name="TextureRect27" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0404614
-anchor_top = 0.00153558
-anchor_right = 0.0404614
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect28" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.431512
-anchor_top = 0.107989
-anchor_right = 0.431512
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect29" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.487377
-anchor_top = 0.107989
-anchor_right = 0.487377
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect30" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.543241
-anchor_top = 0.107989
-anchor_right = 0.543241
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect32" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.543241
-anchor_top = 0.214443
-anchor_right = 0.543241
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect33" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.319783
-anchor_top = 0.320897
-anchor_right = 0.319783
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect34" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.431512
-anchor_top = 0.214443
-anchor_right = 0.431512
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect35" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.487377
-anchor_top = 0.320897
-anchor_right = 0.487377
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect36" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.543241
-anchor_top = 0.320897
-anchor_right = 0.543241
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect37" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.208055
-anchor_top = 0.320897
-anchor_right = 0.208055
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect38" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.431512
-anchor_top = 0.320897
-anchor_right = 0.431512
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect39" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.375648
-anchor_top = 0.214443
-anchor_right = 0.375648
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect11" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0154031
-anchor_top = 0.107989
-anchor_right = -0.0154031
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect12" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0404614
-anchor_top = 0.320896
-anchor_right = 0.0404614
-anchor_bottom = 0.320896
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect13" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0154031
-anchor_top = 0.214443
-anchor_right = -0.0154031
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect14" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0404613
-anchor_top = 0.107989
-anchor_right = 0.0404613
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect15" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0154031
-anchor_top = 0.320897
-anchor_right = -0.0154031
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect16" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0963257
-anchor_top = 0.320896
-anchor_right = 0.0963257
-anchor_bottom = 0.320896
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect17" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0404613
-anchor_top = 0.214443
-anchor_right = 0.0404613
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect18" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0154031
-anchor_top = 0.42735
-anchor_right = -0.0154031
-anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect19" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0963258
-anchor_top = 0.00153558
-anchor_right = 0.0963258
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect20" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0963258
-anchor_top = 0.107989
-anchor_right = 0.0963258
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect21" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15219
-anchor_top = 0.214443
-anchor_right = 0.15219
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect22" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15219
-anchor_top = 0.320897
-anchor_right = 0.15219
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect23" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0963258
-anchor_top = 0.214443
-anchor_right = 0.0963258
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect24" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15219
-anchor_top = 0.00153558
-anchor_right = 0.15219
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect25" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15219
-anchor_top = 0.107989
-anchor_right = 0.15219
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect26" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.487377
-anchor_top = 0.214443
-anchor_right = 0.487377
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect41" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.263919
-anchor_top = 0.214443
-anchor_right = 0.263919
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect42" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.208055
-anchor_top = 0.214443
-anchor_right = 0.208055
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect43" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.208055
-anchor_top = 0.00153558
-anchor_right = 0.208055
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect44" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.208055
-anchor_top = 0.107989
-anchor_right = 0.208055
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect45" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.375648
-anchor_top = 0.107989
-anchor_right = 0.375648
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect46" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.319783
-anchor_top = 0.214443
-anchor_right = 0.319783
-anchor_bottom = 0.214443
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect47" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.263919
-anchor_top = 0.320897
-anchor_right = 0.263919
-anchor_bottom = 0.320897
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect48" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.263919
-anchor_top = 0.00153558
-anchor_right = 0.263919
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect49" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.263919
-anchor_top = 0.107989
-anchor_right = 0.263919
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect50" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.319783
-anchor_top = 0.00153558
-anchor_right = 0.319783
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect51" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.319783
-anchor_top = 0.107989
-anchor_right = 0.319783
-anchor_bottom = 0.107989
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect52" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.487377
-anchor_top = 0.00153558
-anchor_right = 0.487377
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect53" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.543241
-anchor_top = 0.00153558
-anchor_right = 0.543241
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect54" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.375648
-anchor_top = 0.00153558
-anchor_right = 0.375648
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect55" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.431512
-anchor_top = 0.00153558
-anchor_right = 0.431512
-anchor_bottom = 0.00153558
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
 [node name="LABEL BOX" type="Label" parent="."]
 layout_mode = 0
@@ -1065,25 +165,6 @@ offset_bottom = 130.0
 theme_override_font_sizes/font_size = 15
 text = "LED"
 
-[node name="TextureRect40" parent="." instance=ExtResource("2_d44vy")]
-texture_filter = 4
-texture_repeat = 2
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.375648
-anchor_top = 0.320896
-anchor_right = 0.375648
-anchor_bottom = 0.320896
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
-scale = Vector2(1.49913, 1.61967)
-theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -1099,61 +180,6 @@ theme_override_font_sizes/font_size = 13
 text = "Capacitor
 "
 
-[node name="TextureRect2" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 95.0486
-offset_top = 56.8196
-offset_right = 138.049
-offset_bottom = 245.82
-scale = Vector2(0.921261, 0.225715)
-texture = ExtResource("10_j60ak")
-
-[node name="TextureRect2" parent="TextureRect2" instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = -94.5746
-offset_top = 256.227
-offset_right = -34.5746
-offset_bottom = 1371.23
-scale = Vector2(0.921261, 0.225715)
-texture = ExtResource("10_j60ak")
-
-[node name="TextureRect3" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 284.0
-offset_right = 76.0
-offset_bottom = 542.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("10_6223x")
-
-[node name="TextureRect4" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 7.92071
-offset_top = 56.8196
-offset_right = 75.9207
-offset_bottom = 314.82
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("3_nrnpn")
-
-[node name="TextureRect5" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 7.92071
-offset_top = 137.991
-offset_right = 75.9207
-offset_bottom = 395.991
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("12_tf71c")
-
 [node name="LABEL BOX4" type="Label" parent="."]
 layout_mode = 0
 offset_left = 15.8414
@@ -1164,17 +190,6 @@ theme_override_font_sizes/font_size = 13
 text = "Battery
 "
 
-[node name="TextureRect6" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 7.92071
-offset_top = 227.278
-offset_right = 75.9207
-offset_bottom = 485.279
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("13_wsjam")
-
 [node name="LABEL BOX5" type="Label" parent="."]
 layout_mode = 0
 offset_left = 99.0089
@@ -1183,28 +198,6 @@ offset_right = 135.009
 offset_bottom = 282.82
 theme_override_font_sizes/font_size = 13
 text = "Wires"
-
-[node name="TextureRect8" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 87.1279
-offset_top = 137.991
-offset_right = 155.128
-offset_bottom = 395.991
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("14_42ody")
-
-[node name="TextureRect9" parent="." instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 87.1279
-offset_top = 202.927
-offset_right = 155.128
-offset_bottom = 460.927
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("15_u52de")
 
 [node name="LABEL BOX6" type="Label" parent="."]
 layout_mode = 0
@@ -1216,7 +209,1002 @@ theme_override_font_sizes/font_size = 13
 text = "Diode
 "
 
-[node name="TextureRect56" parent="." instance=ExtResource("2_d44vy")]
+[node name="LABEL BOX7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.8612
+offset_top = 481.952
+offset_right = 55.8612
+offset_bottom = 499.952
+theme_override_font_sizes/font_size = 13
+text = "Switch"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SHOW SIMULATION" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 167.325
+offset_top = 495.142
+offset_right = 365.325
+offset_bottom = 568.142
+theme = SubResource("Theme_3nx04")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dbdnw")
+text = "   Start
+   Simulation"
+icon = ExtResource("5_7qht5")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="STOP SIMULATION" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 388.115
+offset_top = 495.142
+offset_right = 565.115
+offset_bottom = 568.142
+theme = SubResource("Theme_3nx04")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dbdnw")
+text = "   Stop
+   Simulation"
+icon = ExtResource("8_pnaxa")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CLEAR INPUT" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 586.133
+offset_top = 495.142
+offset_right = 729.133
+offset_bottom = 568.142
+theme = SubResource("Theme_3nx04")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dbdnw")
+text = "Clear
+Inputs"
+icon = ExtResource("9_7nybu")
+icon_alignment = 2
+
+[node name="Control" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect10" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.015403
+anchor_top = 0.00153558
+anchor_right = -0.015403
+anchor_bottom = 0.00153558
+offset_left = 174.872
+offset_top = 64.8753
+offset_right = 217.872
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+
+[node name="TextureRect27" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0404614
+anchor_top = 0.00153558
+anchor_right = 0.0404614
+anchor_bottom = 0.00153558
+offset_left = 236.993
+offset_top = 64.8753
+offset_right = 279.993
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+
+[node name="TextureRect28" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431512
+anchor_top = 0.107989
+anchor_right = 0.431512
+anchor_bottom = 0.107989
+offset_left = 671.841
+offset_top = 125.554
+offset_right = 714.841
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect29" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487377
+anchor_top = 0.107989
+anchor_right = 0.487377
+anchor_bottom = 0.107989
+offset_left = 733.963
+offset_top = 125.554
+offset_right = 776.963
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect30" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.543241
+anchor_top = 0.107989
+anchor_right = 0.543241
+anchor_bottom = 0.107989
+offset_left = 796.084
+offset_top = 125.554
+offset_right = 839.084
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect32" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.543241
+anchor_top = 0.214443
+anchor_right = 0.543241
+anchor_bottom = 0.214443
+offset_left = 796.084
+offset_top = 186.233
+offset_right = 839.084
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect33" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.319783
+anchor_top = 0.320897
+anchor_right = 0.319783
+anchor_bottom = 0.320897
+offset_left = 547.599
+offset_top = 246.911
+offset_right = 590.599
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect34" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431512
+anchor_top = 0.214443
+anchor_right = 0.431512
+anchor_bottom = 0.214443
+offset_left = 671.841
+offset_top = 186.233
+offset_right = 714.841
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect35" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487377
+anchor_top = 0.320897
+anchor_right = 0.487377
+anchor_bottom = 0.320897
+offset_left = 733.963
+offset_top = 246.911
+offset_right = 776.963
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect36" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.543241
+anchor_top = 0.320897
+anchor_right = 0.543241
+anchor_bottom = 0.320897
+offset_left = 796.084
+offset_top = 246.911
+offset_right = 839.084
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect37" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208055
+anchor_top = 0.320897
+anchor_right = 0.208055
+anchor_bottom = 0.320897
+offset_left = 423.357
+offset_top = 246.911
+offset_right = 466.357
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect38" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431512
+anchor_top = 0.320897
+anchor_right = 0.431512
+anchor_bottom = 0.320897
+offset_left = 671.841
+offset_top = 246.911
+offset_right = 714.841
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect39" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375648
+anchor_top = 0.214443
+anchor_right = 0.375648
+anchor_bottom = 0.214443
+offset_left = 609.721
+offset_top = 186.233
+offset_right = 652.721
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect11" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0154031
+anchor_top = 0.107989
+anchor_right = -0.0154031
+anchor_bottom = 0.107989
+offset_left = 174.872
+offset_top = 125.554
+offset_right = 217.872
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect12" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0404614
+anchor_top = 0.320896
+anchor_right = 0.0404614
+anchor_bottom = 0.320896
+offset_left = 236.993
+offset_top = 246.911
+offset_right = 279.993
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect13" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0154031
+anchor_top = 0.214443
+anchor_right = -0.0154031
+anchor_bottom = 0.214443
+offset_left = 174.872
+offset_top = 186.233
+offset_right = 217.872
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect14" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0404613
+anchor_top = 0.107989
+anchor_right = 0.0404613
+anchor_bottom = 0.107989
+offset_left = 236.993
+offset_top = 125.554
+offset_right = 279.993
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect15" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0154031
+anchor_top = 0.320897
+anchor_right = -0.0154031
+anchor_bottom = 0.320897
+offset_left = 174.872
+offset_top = 246.911
+offset_right = 217.872
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect16" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0963257
+anchor_top = 0.320896
+anchor_right = 0.0963257
+anchor_bottom = 0.320896
+offset_left = 299.114
+offset_top = 246.911
+offset_right = 342.114
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect17" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0404613
+anchor_top = 0.214443
+anchor_right = 0.0404613
+anchor_bottom = 0.214443
+offset_left = 236.993
+offset_top = 186.233
+offset_right = 279.993
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect18" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0154031
+anchor_top = 0.42735
+anchor_right = -0.0154031
+anchor_bottom = 0.42735
+offset_left = 174.872
+offset_top = 307.59
+offset_right = 217.872
+offset_bottom = 347.59
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect19" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0963258
+anchor_top = 0.00153558
+anchor_right = 0.0963258
+anchor_bottom = 0.00153558
+offset_left = 299.114
+offset_top = 64.8753
+offset_right = 342.114
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect20" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0963258
+anchor_top = 0.107989
+anchor_right = 0.0963258
+anchor_bottom = 0.107989
+offset_left = 299.114
+offset_top = 125.554
+offset_right = 342.114
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect21" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15219
+anchor_top = 0.214443
+anchor_right = 0.15219
+anchor_bottom = 0.214443
+offset_left = 361.235
+offset_top = 186.233
+offset_right = 404.235
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect22" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15219
+anchor_top = 0.320897
+anchor_right = 0.15219
+anchor_bottom = 0.320897
+offset_left = 361.235
+offset_top = 246.911
+offset_right = 404.235
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect23" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0963258
+anchor_top = 0.214443
+anchor_right = 0.0963258
+anchor_bottom = 0.214443
+offset_left = 299.114
+offset_top = 186.233
+offset_right = 342.114
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect24" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15219
+anchor_top = 0.00153558
+anchor_right = 0.15219
+anchor_bottom = 0.00153558
+offset_left = 361.235
+offset_top = 64.8753
+offset_right = 404.235
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect25" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15219
+anchor_top = 0.107989
+anchor_right = 0.15219
+anchor_bottom = 0.107989
+offset_left = 361.235
+offset_top = 125.554
+offset_right = 404.235
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect26" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487377
+anchor_top = 0.214443
+anchor_right = 0.487377
+anchor_bottom = 0.214443
+offset_left = 733.963
+offset_top = 186.233
+offset_right = 776.963
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect41" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263919
+anchor_top = 0.214443
+anchor_right = 0.263919
+anchor_bottom = 0.214443
+offset_left = 485.478
+offset_top = 186.233
+offset_right = 528.478
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect42" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208055
+anchor_top = 0.214443
+anchor_right = 0.208055
+anchor_bottom = 0.214443
+offset_left = 423.357
+offset_top = 186.233
+offset_right = 466.357
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect43" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208055
+anchor_top = 0.00153558
+anchor_right = 0.208055
+anchor_bottom = 0.00153558
+offset_left = 423.357
+offset_top = 64.8753
+offset_right = 466.357
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect44" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208055
+anchor_top = 0.107989
+anchor_right = 0.208055
+anchor_bottom = 0.107989
+offset_left = 423.357
+offset_top = 125.554
+offset_right = 466.357
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect45" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375648
+anchor_top = 0.107989
+anchor_right = 0.375648
+anchor_bottom = 0.107989
+offset_left = 609.721
+offset_top = 125.554
+offset_right = 652.721
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect46" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.319783
+anchor_top = 0.214443
+anchor_right = 0.319783
+anchor_bottom = 0.214443
+offset_left = 547.599
+offset_top = 186.233
+offset_right = 590.599
+offset_bottom = 226.233
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect47" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263919
+anchor_top = 0.320897
+anchor_right = 0.263919
+anchor_bottom = 0.320897
+offset_left = 485.478
+offset_top = 246.911
+offset_right = 528.478
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect48" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263919
+anchor_top = 0.00153558
+anchor_right = 0.263919
+anchor_bottom = 0.00153558
+offset_left = 485.478
+offset_top = 64.8753
+offset_right = 528.478
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect49" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263919
+anchor_top = 0.107989
+anchor_right = 0.263919
+anchor_bottom = 0.107989
+offset_left = 485.478
+offset_top = 125.554
+offset_right = 528.478
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect50" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.319783
+anchor_top = 0.00153558
+anchor_right = 0.319783
+anchor_bottom = 0.00153558
+offset_left = 547.599
+offset_top = 64.8753
+offset_right = 590.599
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect51" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.319783
+anchor_top = 0.107989
+anchor_right = 0.319783
+anchor_bottom = 0.107989
+offset_left = 547.599
+offset_top = 125.554
+offset_right = 590.599
+offset_bottom = 165.554
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect52" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487377
+anchor_top = 0.00153558
+anchor_right = 0.487377
+anchor_bottom = 0.00153558
+offset_left = 733.963
+offset_top = 64.8753
+offset_right = 776.963
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect53" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.543241
+anchor_top = 0.00153558
+anchor_right = 0.543241
+anchor_bottom = 0.00153558
+offset_left = 796.084
+offset_top = 64.8753
+offset_right = 839.084
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect54" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375648
+anchor_top = 0.00153558
+anchor_right = 0.375648
+anchor_bottom = 0.00153558
+offset_left = 609.721
+offset_top = 64.8753
+offset_right = 652.721
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect55" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431512
+anchor_top = 0.00153558
+anchor_right = 0.431512
+anchor_bottom = 0.00153558
+offset_left = 671.841
+offset_top = 64.8753
+offset_right = 714.841
+offset_bottom = 104.875
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect40" parent="Control/Control" instance=ExtResource("2_d44vy")]
+texture_filter = 4
+texture_repeat = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375648
+anchor_top = 0.320896
+anchor_right = 0.375648
+anchor_bottom = 0.320896
+offset_left = 609.721
+offset_top = 246.911
+offset_right = 652.721
+offset_bottom = 286.911
+scale = Vector2(1.49913, 1.61967)
+theme = SubResource("Theme_vhbye")
+texture = ExtResource("5_167sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 95.0486
+offset_top = 56.8196
+offset_right = 138.049
+offset_bottom = 245.82
+scale = Vector2(0.921261, 0.225715)
+texture = ExtResource("10_j60ak")
+
+[node name="TextureRect3" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 284.0
+offset_right = 76.0
+offset_bottom = 542.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("10_6223x")
+
+[node name="TextureRect4" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 7.92071
+offset_top = 56.8196
+offset_right = 75.9207
+offset_bottom = 314.82
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("3_nrnpn")
+
+[node name="TextureRect5" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 3.96036
+offset_top = 131.903
+offset_right = 71.9604
+offset_bottom = 389.903
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("12_tf71c")
+
+[node name="TextureRect6" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 7.92071
+offset_top = 227.278
+offset_right = 75.9207
+offset_bottom = 485.279
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("13_wsjam")
+
+[node name="TextureRect8" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 87.1279
+offset_top = 137.991
+offset_right = 155.128
+offset_bottom = 395.991
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("14_42ody")
+
+[node name="TextureRect9" parent="Control/Control" instance=ExtResource("2_d44vy")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 87.1279
+offset_top = 202.927
+offset_right = 155.128
+offset_bottom = 460.927
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("15_u52de")
+
+[node name="TextureRect56" parent="Control/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
@@ -1227,7 +1215,7 @@ offset_bottom = 660.391
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("16_3br8e")
 
-[node name="TextureRect7" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect7" parent="Control/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
@@ -1238,7 +1226,7 @@ offset_bottom = 611.093
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("17_quaiw")
 
-[node name="TextureRect57" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect57" parent="Control/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
@@ -1249,16 +1237,7 @@ offset_bottom = 674.001
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("18_xto0e")
 
-[node name="LABEL BOX7" type="Label" parent="."]
-layout_mode = 0
-offset_left = 13.8612
-offset_top = 481.952
-offset_right = 55.8612
-offset_bottom = 499.952
-theme_override_font_sizes/font_size = 13
-text = "Switch"
-
-[node name="TextureRect58" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect58" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1268,16 +1247,15 @@ anchor_left = -0.015403
 anchor_top = 0.533804
 anchor_right = -0.015403
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 174.872
+offset_top = 368.268
+offset_right = 217.872
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect59" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect59" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1287,16 +1265,15 @@ anchor_left = 0.0404614
 anchor_top = 0.42735
 anchor_right = 0.0404614
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 236.993
+offset_top = 307.59
+offset_right = 279.993
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect60" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect60" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1306,16 +1283,15 @@ anchor_left = 0.0404613
 anchor_top = 0.533804
 anchor_right = 0.0404613
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 236.993
+offset_top = 368.268
+offset_right = 279.993
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect61" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect61" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1325,16 +1301,15 @@ anchor_left = 0.0963258
 anchor_top = 0.42735
 anchor_right = 0.0963258
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 299.114
+offset_top = 307.59
+offset_right = 342.114
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect62" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect62" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1344,16 +1319,15 @@ anchor_left = 0.0963258
 anchor_top = 0.533804
 anchor_right = 0.0963258
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 299.114
+offset_top = 368.268
+offset_right = 342.114
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect63" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect63" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1363,16 +1337,15 @@ anchor_left = 0.15219
 anchor_top = 0.42735
 anchor_right = 0.15219
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 361.235
+offset_top = 307.59
+offset_right = 404.235
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect64" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect64" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1382,16 +1355,15 @@ anchor_left = 0.15219
 anchor_top = 0.533804
 anchor_right = 0.15219
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 361.235
+offset_top = 368.268
+offset_right = 404.235
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect65" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect65" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1401,16 +1373,15 @@ anchor_left = 0.208055
 anchor_top = 0.42735
 anchor_right = 0.208055
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 423.357
+offset_top = 307.59
+offset_right = 466.357
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect66" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect66" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1420,16 +1391,15 @@ anchor_left = 0.208055
 anchor_top = 0.533804
 anchor_right = 0.208055
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 423.357
+offset_top = 368.268
+offset_right = 466.357
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect67" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect67" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1439,16 +1409,15 @@ anchor_left = 0.263919
 anchor_top = 0.42735
 anchor_right = 0.263919
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 485.478
+offset_top = 307.59
+offset_right = 528.478
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect68" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect68" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1458,16 +1427,15 @@ anchor_left = 0.263919
 anchor_top = 0.533804
 anchor_right = 0.263919
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 485.478
+offset_top = 368.268
+offset_right = 528.478
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect69" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect69" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1477,16 +1445,15 @@ anchor_left = 0.319783
 anchor_top = 0.42735
 anchor_right = 0.319783
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 547.599
+offset_top = 307.59
+offset_right = 590.599
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect70" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect70" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1496,16 +1463,15 @@ anchor_left = 0.319783
 anchor_top = 0.533804
 anchor_right = 0.319783
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 547.599
+offset_top = 368.268
+offset_right = 590.599
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect71" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect71" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1515,16 +1481,15 @@ anchor_left = 0.375648
 anchor_top = 0.42735
 anchor_right = 0.375648
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 609.721
+offset_top = 307.59
+offset_right = 652.721
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect72" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect72" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1534,16 +1499,15 @@ anchor_left = 0.375648
 anchor_top = 0.533804
 anchor_right = 0.375648
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 609.721
+offset_top = 368.268
+offset_right = 652.721
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect73" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect73" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1553,16 +1517,15 @@ anchor_left = 0.431512
 anchor_top = 0.42735
 anchor_right = 0.431512
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 671.841
+offset_top = 307.59
+offset_right = 714.841
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect74" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect74" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1572,16 +1535,15 @@ anchor_left = 0.431512
 anchor_top = 0.533804
 anchor_right = 0.431512
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 671.841
+offset_top = 368.268
+offset_right = 714.841
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect75" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect75" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1591,16 +1553,15 @@ anchor_left = 0.487377
 anchor_top = 0.42735
 anchor_right = 0.487377
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 733.963
+offset_top = 307.59
+offset_right = 776.963
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect76" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect76" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1610,16 +1571,15 @@ anchor_left = 0.543241
 anchor_top = 0.42735
 anchor_right = 0.543241
 anchor_bottom = 0.42735
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 796.084
+offset_top = 307.59
+offset_right = 839.084
+offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect77" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect77" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1629,16 +1589,15 @@ anchor_left = 0.487377
 anchor_top = 0.533804
 anchor_right = 0.487377
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 733.963
+offset_top = 368.268
+offset_right = 776.963
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect78" parent="." instance=ExtResource("2_d44vy")]
+[node name="TextureRect" parent="Control/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1648,11 +1607,20 @@ anchor_left = 0.543241
 anchor_top = 0.533804
 anchor_right = 0.543241
 anchor_bottom = 0.533804
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 235.0
-offset_bottom = 104.0
+offset_left = 796.084
+offset_top = 368.268
+offset_right = 839.084
+offset_bottom = 408.268
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
+
+[node name="SHOW CIRCUIT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 744.547
+offset_top = 495.142
+offset_right = 896.547
+offset_bottom = 568.142
+theme = SubResource("Theme_3nx04")
+text = "Show 
+Circuit"
