@@ -12,6 +12,7 @@ func _get_drag_data(at_position):
 	preview.add_child(preview_texture)
 	
 	set_drag_preview(preview)
+	texture = null
 	
 	return preview_texture.texture
 	

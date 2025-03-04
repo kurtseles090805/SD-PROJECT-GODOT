@@ -44,3 +44,4 @@ func _show_Circuit2() -> void:
 
 func _pause_Game() -> void:
 	get_tree().change_scene_to_file("res://PauseTab.tscn")
+	

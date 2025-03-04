@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://tkk4ph7fp2aq"]
 
-[ext_resource type="Script" path="res://home_screen.gd" id="1_magpt"]
+[ext_resource type="Script" uid="uid://cxkem2rtkau86" path="res://home_screen.gd" id="1_magpt"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7kgtb"]
 [ext_resource type="Texture2D" uid="uid://cxyi8mcptkig" path="res://scenes/476350686_1028560895775183_2809825063710963474_n (1).jpg" id="2_kuxni"]
 
@@ -74,8 +74,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
 theme_override_colors/font_hover_color = Color(0.114897, 0.114897, 0.114897, 1)
-theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_colors/font_focus_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/h_separation = 20
 theme_override_constants/icon_max_width = 20
@@ -91,8 +91,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
 theme_override_colors/font_hover_color = Color(0.114897, 0.114897, 0.114897, 1)
-theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_colors/font_focus_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/h_separation = 20
 theme_override_constants/icon_max_width = 20
@@ -108,8 +108,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
 theme_override_colors/font_hover_color = Color(0.114897, 0.114897, 0.114897, 1)
-theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_colors/font_focus_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_colors/font_pressed_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/h_separation = 20
 theme_override_constants/icon_max_width = 20
