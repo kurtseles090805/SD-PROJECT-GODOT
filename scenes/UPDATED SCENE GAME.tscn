@@ -107,9 +107,6 @@ offset_bottom = 106.377
 theme_override_font_sizes/font_size = 30
 text = "OUTPUT:"
 
-[node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(0.778434, 1.28022)
-
 [node name="TOOLBOX" type="Panel" parent="."]
 layout_mode = 0
 offset_top = -8.0
@@ -159,9 +156,9 @@ text = "Resistor"
 [node name="LABEL BOX2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 103.0
-offset_top = 108.0
+offset_top = 110.595
 offset_right = 135.0
-offset_bottom = 130.0
+offset_bottom = 132.595
 theme_override_font_sizes/font_size = 15
 text = "LED"
 
@@ -211,24 +208,21 @@ text = "Diode
 
 [node name="LABEL BOX7" type="Label" parent="."]
 layout_mode = 0
-offset_left = 13.8612
+offset_left = 19.8018
 offset_top = 481.952
-offset_right = 55.8612
+offset_right = 61.8018
 offset_bottom = 499.952
 theme_override_font_sizes/font_size = 13
 text = "Switch"
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.778434, 1.28022)
 
-[node name="SHOW SIMULATION" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 167.325
-offset_top = 495.142
-offset_right = 365.325
-offset_bottom = 568.142
+[node name="SHOW SIMULATION" type="Button" parent="Node2D"]
+offset_left = 214.951
+offset_top = 386.763
+offset_right = 412.951
+offset_bottom = 459.763
 theme = SubResource("Theme_3nx04")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_dbdnw")
@@ -239,12 +233,11 @@ alignment = 0
 icon_alignment = 2
 expand_icon = true
 
-[node name="STOP SIMULATION" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 388.115
-offset_top = 495.142
-offset_right = 565.115
-offset_bottom = 568.142
+[node name="STOP SIMULATION" type="Button" parent="Node2D"]
+offset_left = 498.584
+offset_top = 386.763
+offset_right = 675.584
+offset_bottom = 459.763
 theme = SubResource("Theme_3nx04")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_dbdnw")
@@ -255,12 +248,11 @@ alignment = 0
 icon_alignment = 2
 expand_icon = true
 
-[node name="CLEAR INPUT" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 586.133
-offset_top = 495.142
-offset_right = 729.133
-offset_bottom = 568.142
+[node name="CLEAR INPUT" type="Button" parent="Node2D"]
+offset_left = 752.964
+offset_top = 386.763
+offset_right = 895.964
+offset_bottom = 459.763
 theme = SubResource("Theme_3nx04")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_dbdnw")
@@ -269,12 +261,16 @@ Inputs"
 icon = ExtResource("9_7nybu")
 icon_alignment = 2
 
-[node name="Control" type="Control" parent="Control"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" type="Control" parent="Node2D"]
+layout_mode = 3
+anchor_bottom = 0.066
+offset_left = 31.0
+offset_top = -10.0
+offset_right = 313.0
+offset_bottom = 35.0
+scale = Vector2(1.09431, 0.824023)
 
-[node name="TextureRect10" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect10" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -292,7 +288,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect27" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect27" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -310,7 +306,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect28" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect28" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -327,9 +323,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect29" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect29" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -346,9 +341,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect30" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect30" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -365,9 +359,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect32" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect32" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -384,9 +377,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect33" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect33" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -403,9 +395,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect34" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect34" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -422,9 +413,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect35" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect35" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -441,9 +431,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect36" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect36" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -460,9 +449,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect37" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect37" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -479,9 +467,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect38" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect38" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -498,9 +485,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect39" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect39" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -517,9 +503,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect11" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect11" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -536,9 +521,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect12" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect12" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -555,9 +539,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect13" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect13" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -574,9 +557,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect14" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect14" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -593,9 +575,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect15" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect15" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -612,9 +593,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect16" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect16" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -631,9 +611,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect17" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect17" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -650,9 +629,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect18" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect18" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -669,9 +647,8 @@ offset_bottom = 347.59
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect19" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect19" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -688,9 +665,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect20" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect20" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -707,9 +683,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect21" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect21" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -726,9 +701,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect22" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect22" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -745,9 +719,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect23" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect23" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -764,9 +737,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect24" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect24" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -783,9 +755,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect25" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect25" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -802,9 +773,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect26" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect26" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -821,9 +791,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect41" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect41" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -840,9 +809,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect42" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect42" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -859,9 +827,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect43" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect43" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -878,9 +845,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect44" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect44" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -897,9 +863,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect45" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect45" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -916,9 +881,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect46" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect46" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -935,9 +899,8 @@ offset_bottom = 226.233
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect47" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect47" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -954,9 +917,8 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect48" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect48" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -973,9 +935,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect49" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect49" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -992,9 +953,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect50" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect50" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1011,9 +971,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect51" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect51" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1030,9 +989,8 @@ offset_bottom = 165.554
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect52" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect52" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1049,9 +1007,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect53" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect53" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1068,9 +1025,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect54" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect54" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1087,9 +1043,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect55" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect55" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1106,9 +1061,8 @@ offset_bottom = 104.875
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect40" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect40" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1125,119 +1079,118 @@ offset_bottom = 286.911
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect2" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 95.0486
-offset_top = 56.8196
-offset_right = 138.049
-offset_bottom = 245.82
+offset_left = 87.8997
+offset_top = 70.8056
+offset_right = 130.9
+offset_bottom = 259.806
 scale = Vector2(0.921261, 0.225715)
 texture = ExtResource("10_j60ak")
 
-[node name="TextureRect3" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect3" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 8.0
+offset_left = -16.7054
 offset_top = 284.0
-offset_right = 76.0
+offset_right = 51.2946
 offset_bottom = 542.0
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("10_6223x")
 
-[node name="TextureRect4" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect4" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 7.92071
-offset_top = 56.8196
-offset_right = 75.9207
-offset_bottom = 314.82
+offset_left = -19.03
+offset_top = 67.9202
+offset_right = 48.97
+offset_bottom = 325.921
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("3_nrnpn")
 
-[node name="TextureRect5" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect5" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 3.96036
-offset_top = 131.903
-offset_right = 71.9604
-offset_bottom = 389.903
+offset_left = -16.7054
+offset_top = 138.132
+offset_right = 51.2946
+offset_bottom = 396.132
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("12_tf71c")
 
-[node name="TextureRect6" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect6" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 7.92071
+offset_left = -19.03
 offset_top = 227.278
-offset_right = 75.9207
+offset_right = 48.97
 offset_bottom = 485.279
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("13_wsjam")
 
-[node name="TextureRect8" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect8" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 87.1279
+offset_left = 77.4391
 offset_top = 137.991
-offset_right = 155.128
+offset_right = 145.439
 offset_bottom = 395.991
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("14_42ody")
 
-[node name="TextureRect9" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect9" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 87.1279
-offset_top = 202.927
-offset_right = 155.128
-offset_bottom = 460.927
+offset_left = 76.2769
+offset_top = 203.535
+offset_right = 144.277
+offset_bottom = 461.535
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("15_u52de")
 
-[node name="TextureRect56" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect56" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 5.94054
-offset_top = 512.391
-offset_right = 71.9405
-offset_bottom = 660.391
+offset_left = -9.73177
+offset_top = 510.35
+offset_right = 56.2682
+offset_bottom = 658.35
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("16_3br8e")
 
-[node name="TextureRect7" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect7" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 8.9108
-offset_top = 353.093
-offset_right = 76.9108
-offset_bottom = 611.093
+offset_left = -10.8941
+offset_top = 352.614
+offset_right = 57.1059
+offset_bottom = 610.614
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("17_quaiw")
 
-[node name="TextureRect57" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect57" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 8.9108
-offset_top = 416.001
-offset_right = 76.9108
-offset_bottom = 674.001
+offset_left = -6.24494
+offset_top = 416.093
+offset_right = 61.7551
+offset_bottom = 674.093
 scale = Vector2(0.932262, 0.220647)
 texture = ExtResource("18_xto0e")
 
-[node name="TextureRect58" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect58" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1255,7 +1208,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect59" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect59" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1273,7 +1226,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect60" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect60" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1291,7 +1244,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect61" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect61" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1309,7 +1262,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect62" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect62" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1327,7 +1280,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect63" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect63" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1345,7 +1298,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect64" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect64" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1363,7 +1316,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect65" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect65" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1381,7 +1334,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect66" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect66" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1399,7 +1352,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect67" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect67" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1417,7 +1370,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect68" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect68" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1435,7 +1388,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect69" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect69" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1453,7 +1406,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect70" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect70" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1471,7 +1424,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect71" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect71" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1489,7 +1442,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect72" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect72" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1507,7 +1460,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect73" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect73" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1525,7 +1478,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect74" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect74" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1543,7 +1496,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect75" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect75" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1561,7 +1514,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect76" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect76" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1579,7 +1532,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect77" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect77" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1597,7 +1550,7 @@ scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
 texture = ExtResource("5_167sb")
 
-[node name="TextureRect" parent="Control/Control" instance=ExtResource("2_d44vy")]
+[node name="TextureRect" parent="Node2D/Control" instance=ExtResource("2_d44vy")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
