@@ -40,7 +40,7 @@ func _on_ClearInput_pressed() -> void:
 	# CLEAR INPUT and reset the game area
 
 func _show_Circuit2() -> void:
-	get_tree().change_scene_to_file("res://scenes/ShowCircuit2.tscn")
+	get_tree().change_scene_to_file("res://scenes/ShowCircuitDiagram.tscn")
 
 func _pause_Game() -> void:
 	get_tree().change_scene_to_file("res://PauseTab.tscn")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bp82aq0cpfhju"]
 
-[ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_ep2xd"]
-[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_rp820"]
-[ext_resource type="Texture2D" uid="uid://b27f2382ep6kq" path="res://blank-white-7sn5o1woonmklx1h.jpg" id="3_u4prp"]
-[ext_resource type="Texture2D" uid="uid://xburqi022o3g" path="res://asd.png" id="4_aou08"]
-[ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="5_mhf1s"]
+[ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_8oai2"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="2_7xdrc"]
+[ext_resource type="Texture2D" uid="uid://b27f2382ep6kq" path="res://blank-white-7sn5o1woonmklx1h.jpg" id="3_5jhcw"]
+[ext_resource type="Texture2D" uid="uid://xburqi022o3g" path="res://asd.png" id="4_1o8vg"]
+[ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="5_moijl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unp58"]
 bg_color = Color(0, 0, 0, 1)
@@ -50,7 +50,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 610.0
-texture = ExtResource("1_ep2xd")
+texture = ExtResource("1_8oai2")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
@@ -70,7 +70,7 @@ offset_right = 96.0
 offset_bottom = 88.0
 theme = SubResource("Theme_o0v1o")
 action_mode = 0
-icon = ExtResource("2_rp820")
+icon = ExtResource("2_7xdrc")
 expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -79,7 +79,7 @@ offset_left = 126.0
 offset_top = 79.0
 offset_right = 966.0
 offset_bottom = 567.0
-texture = ExtResource("3_u4prp")
+texture = ExtResource("3_5jhcw")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
@@ -88,7 +88,7 @@ offset_left = 156.0
 offset_top = 85.0
 offset_right = 930.0
 offset_bottom = 561.0
-texture = ExtResource("4_aou08")
+texture = ExtResource("4_1o8vg")
 expand_mode = 1
 
 [node name="Button2" type="Button" parent="."]
@@ -98,5 +98,5 @@ offset_top = 245.0
 offset_right = 1107.0
 offset_bottom = 352.0
 theme = SubResource("Theme_h82cj")
-icon = ExtResource("5_mhf1s")
+icon = ExtResource("5_moijl")
 expand_icon = true
