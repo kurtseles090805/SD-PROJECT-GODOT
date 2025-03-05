@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw2kof7tcbbed"]
 
-[ext_resource type="Script" uid="uid://b2ixhst238w38" path="res://PAUSE TAB.gd" id="1_7co13"]
+[ext_resource type="Script" path="res://PAUSE TAB.gd" id="1_7co13"]
 [ext_resource type="Texture2D" uid="uid://bw1uwhixt06k1" path="res://PauseBackground.png" id="1_cywnk"]
 [ext_resource type="Texture2D" uid="uid://dq06jt1785coc" path="res://—Pngtree—purple long strip e-commerce border_5919820.png" id="2_xagw1"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_vvawv"]
