@@ -1,30 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=16 format=3 uid="uid://d0ggc5eile3fx"]
 
 [ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
-[ext_resource type="Texture2D" uid="uid://bkwin6xm7bkq1" path="res://assets/sprites/Components/Resistorz horizontal.png" id="3_nrnpn"]
 [ext_resource type="Texture2D" uid="uid://b84waqejfd6s3" path="res://9ebba7cbb17df5947ee54f0f76e4b8cf.png" id="5_7qht5"]
 [ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="5_167sb"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="6_64prq"]
 [ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="6_d8xet"]
-[ext_resource type="Script" path="res://scenes/compon.gd" id="7_hh0k6"]
 [ext_resource type="Texture2D" uid="uid://choa8e5ufef0q" path="res://—Pngtree—white player stop button icon_4545797.png" id="8_pnaxa"]
 [ext_resource type="Texture2D" uid="uid://bdrm8a5fstug8" path="res://icons8-trash-50.png" id="9_7nybu"]
-[ext_resource type="Texture2D" uid="uid://0nigwtgdp7j5" path="res://assets/sprites/Components/Battery/Battery.png" id="10_6223x"]
-[ext_resource type="Texture2D" uid="uid://5qvpsof7umwc" path="res://assets/sprites/Components/Capacitor.png" id="12_tf71c"]
-[ext_resource type="Texture2D" uid="uid://dj54aa2y8goh2" path="res://assets/sprites/Components/Battery/Battery(1).png" id="13_wsjam"]
-[ext_resource type="Texture2D" uid="uid://c2v3qudvnyhfd" path="res://assets/sprites/Components/wire/wire.png" id="14_42ody"]
-[ext_resource type="Texture2D" uid="uid://bqycoaa4d7jvq" path="res://assets/sprites/Components/wire/Upper right corner.png" id="15_fw7p5"]
-[ext_resource type="Texture2D" uid="uid://sldu2hjhvpb5" path="res://assets/sprites/Components/wire/vertical wire.png" id="15_u52de"]
-[ext_resource type="Texture2D" uid="uid://cu8not74u3tu6" path="res://assets/sprites/Components/Diode.png" id="16_3br8e"]
-[ext_resource type="Texture2D" uid="uid://b7dsv2peipkb5" path="res://assets/sprites/Components/Switch/Close Switch.png" id="17_quaiw"]
-[ext_resource type="Texture2D" uid="uid://dar6rfein8g52" path="res://assets/sprites/Components/Switch/Open Switch.png" id="18_xto0e"]
-[ext_resource type="Texture2D" uid="uid://col0cxb7qplip" path="res://assets/sprites/Components/wire/Lower right corner.png" id="19_3myw4"]
-[ext_resource type="Texture2D" uid="uid://cgrm6mt1ol7c8" path="res://assets/sprites/Components/wire/Top left corner.png" id="20_gxdqi"]
-[ext_resource type="Texture2D" uid="uid://di78jnwc426xc" path="res://assets/sprites/Components/wire/Lower left corner.png" id="21_4gwum"]
-[ext_resource type="Texture2D" uid="uid://cwnd6fxcys1xh" path="res://assets/sprites/Components/LED/REDLED 65p lit.png" id="22_3myw4"]
-[ext_resource type="Texture2D" uid="uid://buc6gobw047no" path="res://assets/sprites/Components/Resistorz Vertical.png" id="23_gxdqi"]
-[ext_resource type="Script" path="res://scenes/grid.gd" id="24_l2nle"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mdxh"]
 bg_color = Color(0, 0, 0, 1)
@@ -53,6 +36,19 @@ corner_radius_bottom_left = 100
 Button/styles/normal = SubResource("StyleBoxFlat_xauue")
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_dbdnw"]
+
+[sub_resource type="GDScript" id="GDScript_rl6ay"]
+script/source = "extends TextureRect
+
+func _get_drag_data(at_position): 
+	pass
+	
+func _can_drop_data(_pos, data): 
+	return data is Texture2D
+
+func _drop_data(_pos, data): 
+	texture = data 
+"
 
 [sub_resource type="Theme" id="Theme_vhbye"]
 
@@ -274,236 +270,10 @@ theme = SubResource("Theme_3nx04")
 text = "Show 
 Circuit"
 
-[node name="COMPON" type="TextureRect" parent="ComponentContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("7_hh0k6")
-
-[node name="BATTTERY H-+" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 397.0
-offset_right = 76.0
-offset_bottom = 655.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("10_6223x")
-script = null
-
-[node name="CAPACITOR" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 168.0
-offset_top = 63.0
-offset_right = 221.0
-offset_bottom = 321.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("12_tf71c")
-script = null
-
-[node name="BATTERY H+-" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 344.0
-offset_right = 78.0
-offset_bottom = 601.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("13_wsjam")
-script = null
-
-[node name="WIRE HORIZONTAL" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 77.4391
-offset_top = 137.991
-offset_right = 145.439
-offset_bottom = 395.991
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("14_42ody")
-script = null
-
-[node name="WIRE ANGLE" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 88.0
-offset_top = 264.0
-offset_right = 147.0
-offset_bottom = 522.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("15_fw7p5")
-script = null
-
-[node name="DIODE" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 493.0
-offset_right = 74.0
-offset_bottom = 641.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("16_3br8e")
-script = null
-
-[node name="SWITCH CLOSED" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 157.637
-offset_top = 144.864
-offset_right = 225.637
-offset_bottom = 402.864
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("17_quaiw")
-script = null
-
-[node name="SWITCH OPEN" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 209.388
-offset_top = 168.51
-offset_right = 277.388
-offset_bottom = 426.51
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("18_xto0e")
-script = null
-
-[node name="WIRE ANGLE4" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 88.0
-offset_top = 397.0
-offset_right = 143.0
-offset_bottom = 655.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("19_3myw4")
-script = null
-
-[node name="WIRE ANGLE2" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 88.0
-offset_top = 333.0
-offset_right = 147.0
-offset_bottom = 591.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("20_gxdqi")
-script = null
-
-[node name="WIRE ANGLE3" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 90.0
-offset_top = 466.0
-offset_right = 149.0
-offset_bottom = 724.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("21_4gwum")
-script = null
-
-[node name="RESISTOR H" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 73.0
-offset_bottom = 327.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("3_nrnpn")
-script = null
-
-[node name="BATTERY V+-" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 68.0
-offset_top = 205.0
-offset_right = 133.0
-offset_bottom = 486.0
-rotation = 1.5708
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("13_wsjam")
-script = null
-
-[node name="BATTERY V-+" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 7.92071
-offset_top = 340.918
-offset_right = 70.9207
-offset_bottom = 601.918
-rotation = -1.5708
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("13_wsjam")
-script = null
-
-[node name="LED" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 88.0
-offset_top = 67.0
-offset_right = 140.0
-offset_bottom = 301.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("22_3myw4")
-script = null
-
-[node name="RESISTOR V" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_top = 108.0
-offset_right = 65.0
-offset_bottom = 430.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("23_gxdqi")
-script = null
-
-[node name="WIRE VERTICAL" parent="ComponentContainer/COMPON" instance=ExtResource("2_d44vy")]
-top_level = true
-clip_contents = true
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 83.0
-offset_top = 193.0
-offset_right = 142.0
-offset_bottom = 451.0
-scale = Vector2(0.932262, 0.220647)
-texture = ExtResource("15_u52de")
-script = null
-
 [node name="GRID" type="TextureRect" parent="ComponentContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("24_l2nle")
+script = SubResource("GDScript_rl6ay")
 
 [node name="TextureRect10" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
 texture_filter = 4
