@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyptoybc1dl3l"]
+[gd_scene load_steps=5 format=3 uid="uid://cyptoybc1dl3l"]
 
 [ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="1_yorld"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_q7cih"]
+[ext_resource type="Theme" uid="uid://bhtro557ueb35" path="res://BlackAndWhite2.tres" id="3_xt0iv"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="4_4xqjn"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,3 +38,15 @@ offset_right = 960.0
 offset_bottom = 564.0
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 256.0
+offset_right = 152.0
+offset_bottom = 368.0
+theme = ExtResource("3_xt0iv")
+icon = ExtResource("4_4xqjn")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true

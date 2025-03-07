@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcf6fsf77uip7"]
 
-[ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="1_epca7"]
+[ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://bhtro557ueb35" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
@@ -17,16 +17,18 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
 offset_right = 1152.0
 offset_bottom = 610.0
-texture = ExtResource("1_epca7")
+texture = ExtResource("1_40mt5")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 352.0
+offset_left = 336.0
 offset_top = 32.0
-offset_right = 839.0
+offset_right = 823.0
 offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 25

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4dq8pusthcki"]
+[gd_scene load_steps=7 format=3 uid="uid://b4dq8pusthcki"]
 
 [ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="1_2r4xg"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5f82v"]
+[ext_resource type="Theme" uid="uid://bhtro557ueb35" path="res://BlackAndWhite2.tres" id="3_v0wln"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="4_o5ynq"]
+[ext_resource type="Theme" uid="uid://cyaco0vnl55cl" path="res://BlackAndWhite.tres" id="5_0djm2"]
+[ext_resource type="Texture2D" uid="uid://cc1xjacmmvsqg" path="res://next-icon.png" id="6_8f7bc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,3 +40,26 @@ offset_right = 960.0
 offset_bottom = 564.0
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 112.0
+theme = ExtResource("3_v0wln")
+icon = ExtResource("4_o5ynq")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1008.0
+offset_top = 256.0
+offset_right = 1104.0
+offset_bottom = 360.0
+theme = ExtResource("5_0djm2")
+icon = ExtResource("6_8f7bc")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
