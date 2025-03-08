@@ -1,13 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0ggc5eile3fx"]
+[gd_scene load_steps=30 format=3 uid="uid://bv8lek4bhsgtw"]
 
-[ext_resource type="Script" uid="uid://f50e2gxsmag2" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
-[ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
-[ext_resource type="Texture2D" uid="uid://b84waqejfd6s3" path="res://9ebba7cbb17df5947ee54f0f76e4b8cf.png" id="5_7qht5"]
-[ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="5_167sb"]
-[ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="6_64prq"]
-[ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="6_d8xet"]
-[ext_resource type="Texture2D" uid="uid://choa8e5ufef0q" path="res://—Pngtree—white player stop button icon_4545797.png" id="8_pnaxa"]
-[ext_resource type="Texture2D" uid="uid://bdrm8a5fstug8" path="res://icons8-trash-50.png" id="9_7nybu"]
+[ext_resource type="Script" uid="uid://f50e2gxsmag2" path="res://UPDATED SCENE GAME.gd" id="1_abwfs"]
+[ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="2_5j1bt"]
+[ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="3_8e70b"]
+[ext_resource type="Texture2D" uid="uid://b84waqejfd6s3" path="res://9ebba7cbb17df5947ee54f0f76e4b8cf.png" id="4_ne603"]
+[ext_resource type="Texture2D" uid="uid://choa8e5ufef0q" path="res://—Pngtree—white player stop button icon_4545797.png" id="5_dkvsf"]
+[ext_resource type="Texture2D" uid="uid://bdrm8a5fstug8" path="res://icons8-trash-50.png" id="6_dwo0v"]
+[ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="7_rs1jr"]
+[ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="8_vv0v7"]
+[ext_resource type="Texture2D" uid="uid://0nigwtgdp7j5" path="res://assets/sprites/Components/Battery/Battery.png" id="9_w4k1j"]
+[ext_resource type="Texture2D" uid="uid://5qvpsof7umwc" path="res://assets/sprites/Components/Capacitor.png" id="10_leixx"]
+[ext_resource type="Texture2D" uid="uid://dj54aa2y8goh2" path="res://assets/sprites/Components/Battery/Battery(1).png" id="11_ijits"]
+[ext_resource type="Texture2D" uid="uid://c2v3qudvnyhfd" path="res://assets/sprites/Components/wire/wire.png" id="12_bi3v3"]
+[ext_resource type="Texture2D" uid="uid://bqycoaa4d7jvq" path="res://assets/sprites/Components/wire/Upper right corner.png" id="13_u5saj"]
+[ext_resource type="Texture2D" uid="uid://cu8not74u3tu6" path="res://assets/sprites/Components/Diode.png" id="14_j6my1"]
+[ext_resource type="Texture2D" uid="uid://b7dsv2peipkb5" path="res://assets/sprites/Components/Switch/Close Switch.png" id="15_pbxip"]
+[ext_resource type="Texture2D" uid="uid://dar6rfein8g52" path="res://assets/sprites/Components/Switch/Open Switch.png" id="16_meo4r"]
+[ext_resource type="Texture2D" uid="uid://col0cxb7qplip" path="res://assets/sprites/Components/wire/Lower right corner.png" id="17_bob5d"]
+[ext_resource type="Texture2D" uid="uid://cgrm6mt1ol7c8" path="res://assets/sprites/Components/wire/Top left corner.png" id="18_oq565"]
+[ext_resource type="Texture2D" uid="uid://di78jnwc426xc" path="res://assets/sprites/Components/wire/Lower left corner.png" id="19_7850n"]
+[ext_resource type="Texture2D" uid="uid://sldu2hjhvpb5" path="res://assets/sprites/Components/wire/vertical wire.png" id="20_p64in"]
+[ext_resource type="Texture2D" uid="uid://bkwin6xm7bkq1" path="res://assets/sprites/Components/Resistorz horizontal.png" id="21_y4rc0"]
+[ext_resource type="Texture2D" uid="uid://cwnd6fxcys1xh" path="res://assets/sprites/Components/LED/REDLED 65p lit.png" id="22_2b5ro"]
+[ext_resource type="Texture2D" uid="uid://buc6gobw047no" path="res://assets/sprites/Components/Resistorz Vertical.png" id="23_q6ltj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mdxh"]
 bg_color = Color(0, 0, 0, 1)
@@ -37,19 +52,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_xauue")
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_dbdnw"]
 
-[sub_resource type="GDScript" id="GDScript_rl6ay"]
-script/source = "extends TextureRect
-
-func _get_drag_data(at_position): 
-	pass
-	
-func _can_drop_data(_pos, data): 
-	return data is Texture2D
-
-func _drop_data(_pos, data): 
-	texture = data 
-"
-
 [sub_resource type="Theme" id="Theme_vhbye"]
 
 [node name="Control" type="Control"]
@@ -63,7 +65,7 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.01001, 0.985575)
-script = ExtResource("1_8yfa2")
+script = ExtResource("1_abwfs")
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
 layout_mode = 1
@@ -128,7 +130,7 @@ offset_top = 8.0
 offset_right = 1141.0
 offset_bottom = 63.0
 theme = SubResource("Theme_3nx04")
-icon = ExtResource("6_d8xet")
+icon = ExtResource("2_5j1bt")
 expand_icon = true
 
 [node name="PAUSE GAME" type="Button" parent="."]
@@ -139,7 +141,7 @@ offset_top = 8.0
 offset_right = 63.0
 offset_bottom = 63.0
 theme = SubResource("Theme_rgojy")
-icon = ExtResource("6_64prq")
+icon = ExtResource("3_8e70b")
 expand_icon = true
 
 [node name="LABEL BOX" type="Label" parent="."]
@@ -213,10 +215,10 @@ offset_bottom = 302.098
 theme_override_font_sizes/font_size = 13
 text = "Switch"
 
-[node name="ComponentContainer" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 scale = Vector2(0.778434, 1.28022)
 
-[node name="SHOW SIMULATION" type="Button" parent="ComponentContainer"]
+[node name="SHOW SIMULATION" type="Button" parent="Node2D"]
 top_level = true
 offset_left = 280.0
 offset_top = 488.0
@@ -227,11 +229,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_dbdnw")
 text = "   Start
    Simulation"
-icon = ExtResource("5_7qht5")
+icon = ExtResource("4_ne603")
 icon_alignment = 2
 expand_icon = true
 
-[node name="STOP SIMULATION" type="Button" parent="ComponentContainer"]
+[node name="STOP SIMULATION" type="Button" parent="Node2D"]
 top_level = true
 offset_left = 480.0
 offset_top = 488.0
@@ -242,11 +244,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_dbdnw")
 text = "   Stop
    Simulation"
-icon = ExtResource("8_pnaxa")
+icon = ExtResource("5_dkvsf")
 icon_alignment = 2
 expand_icon = true
 
-[node name="CLEAR INPUT" type="Button" parent="ComponentContainer"]
+[node name="CLEAR INPUT" type="Button" parent="Node2D"]
 top_level = true
 offset_left = 672.0
 offset_top = 488.0
@@ -257,25 +259,21 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_dbdnw")
 text = "Clear
 Inputs"
-icon = ExtResource("9_7nybu")
+icon = ExtResource("6_dwo0v")
 icon_alignment = 2
 expand_icon = true
 
-[node name="SHOW CIRCUIT" type="Button" parent="ComponentContainer"]
-offset_left = 1131.0
-offset_top = 380.0
-offset_right = 1336.0
-offset_bottom = 436.0
-theme = SubResource("Theme_3nx04")
-text = "Show 
-Circuit"
+[node name="Control" type="Control" parent="Node2D"]
+layout_mode = 3
+anchor_bottom = 0.066
+offset_left = 30.5256
+offset_top = -6.34039
+offset_right = 312.526
+offset_bottom = 38.6596
+scale = Vector2(1.09431, 0.824023)
+metadata/_edit_use_anchors_ = true
 
-[node name="GRID" type="TextureRect" parent="ComponentContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = SubResource("GDScript_rl6ay")
-
-[node name="TextureRect10" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect10" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -285,16 +283,15 @@ anchor_left = -0.015403
 anchor_top = 0.00153558
 anchor_right = -0.015403
 anchor_bottom = 0.00153558
-offset_left = 488.551
-offset_top = 101.081
-offset_right = 531.551
-offset_bottom = 141.081
+offset_left = 422.332
+offset_top = 130.368
+offset_right = 465.332
+offset_bottom = 170.368
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect27" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect27" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -304,16 +301,15 @@ anchor_left = 0.0404614
 anchor_top = 0.00153558
 anchor_right = 0.0404614
 anchor_bottom = 0.00153558
-offset_left = 486.316
-offset_top = 47.1884
-offset_right = 529.317
-offset_bottom = 87.1883
+offset_left = 406.578
+offset_top = 64.9657
+offset_right = 449.579
+offset_bottom = 104.966
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect28" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect28" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -323,16 +319,15 @@ anchor_left = 0.431512
 anchor_top = 0.107989
 anchor_right = 0.431512
 anchor_bottom = 0.107989
-offset_left = 898.033
-offset_top = 96.8236
-offset_right = 941.033
-offset_bottom = 136.824
+offset_left = 686.83
+offset_top = 125.578
+offset_right = 729.83
+offset_bottom = 165.578
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect29" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect29" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -342,16 +337,15 @@ anchor_left = 0.487377
 anchor_top = 0.107989
 anchor_right = 0.487377
 anchor_bottom = 0.107989
-offset_left = 967.025
-offset_top = 96.8236
-offset_right = 1010.02
-offset_bottom = 136.824
+offset_left = 736.164
+offset_top = 125.578
+offset_right = 779.164
+offset_bottom = 165.578
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect30" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect30" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -361,16 +355,15 @@ anchor_left = 0.543241
 anchor_top = 0.107989
 anchor_right = 0.543241
 anchor_bottom = 0.107989
-offset_left = 1036.02
-offset_top = 96.8236
-offset_right = 1079.02
-offset_bottom = 136.824
+offset_left = 785.498
+offset_top = 125.578
+offset_right = 828.498
+offset_bottom = 165.578
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect32" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect32" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -380,16 +373,15 @@ anchor_left = 0.543241
 anchor_top = 0.214443
 anchor_right = 0.543241
 anchor_bottom = 0.214443
-offset_left = 1036.02
-offset_top = 199.559
-offset_right = 1079.02
-offset_bottom = 239.559
+offset_left = 785.498
+offset_top = 250.631
+offset_right = 828.498
+offset_bottom = 290.631
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect33" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect33" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -399,16 +391,15 @@ anchor_left = 0.319783
 anchor_top = 0.320897
 anchor_right = 0.319783
 anchor_bottom = 0.320897
-offset_left = 831.275
-offset_top = 34.4139
-offset_right = 874.275
-offset_bottom = 74.4139
+offset_left = 653.249
+offset_top = 50.5944
+offset_right = 696.249
+offset_bottom = 90.5944
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect34" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect34" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -418,16 +409,15 @@ anchor_left = 0.431512
 anchor_top = 0.214443
 anchor_right = 0.431512
 anchor_bottom = 0.214443
-offset_left = 969.258
-offset_top = 145.666
-offset_right = 1012.26
-offset_bottom = 185.666
+offset_left = 751.917
+offset_top = 185.228
+offset_right = 794.917
+offset_bottom = 225.228
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect35" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect35" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -437,16 +427,15 @@ anchor_left = 0.487377
 anchor_top = 0.320897
 anchor_right = 0.487377
 anchor_bottom = 0.320897
-offset_left = 1038.25
-offset_top = 303.881
-offset_right = 1081.25
-offset_bottom = 343.881
+offset_left = 801.251
+offset_top = 377.608
+offset_right = 844.251
+offset_bottom = 417.608
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect36" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect36" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -456,16 +445,15 @@ anchor_left = 0.543241
 anchor_top = 0.320897
 anchor_right = 0.543241
 anchor_bottom = 0.320897
-offset_left = 1036.02
-offset_top = 249.194
-offset_right = 1079.02
-offset_bottom = 289.194
+offset_left = 785.498
+offset_top = 311.243
+offset_right = 828.498
+offset_bottom = 351.243
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect37" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect37" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -475,16 +463,15 @@ anchor_left = 0.208055
 anchor_top = 0.320897
 anchor_right = 0.208055
 anchor_bottom = 0.320897
-offset_left = 550.839
-offset_top = 195.302
-offset_right = 593.839
-offset_bottom = 235.302
+offset_left = 424.405
+offset_top = 245.841
+offset_right = 467.405
+offset_bottom = 285.841
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect38" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect38" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -494,16 +481,15 @@ anchor_left = 0.431512
 anchor_top = 0.320897
 anchor_right = 0.431512
 anchor_bottom = 0.320897
-offset_left = 969.258
-offset_top = 303.881
-offset_right = 1012.26
-offset_bottom = 343.881
+offset_left = 751.917
+offset_top = 377.608
+offset_right = 794.917
+offset_bottom = 417.608
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect39" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect39" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -513,16 +499,15 @@ anchor_left = 0.375648
 anchor_top = 0.214443
 anchor_right = 0.375648
 anchor_bottom = 0.214443
-offset_left = 1042.72
-offset_top = 145.666
-offset_right = 1085.72
-offset_bottom = 185.666
+offset_left = 832.759
+offset_top = 185.228
+offset_right = 875.759
+offset_bottom = 225.228
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect11" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect11" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -532,16 +517,15 @@ anchor_left = -0.0154031
 anchor_top = 0.107989
 anchor_right = -0.0154031
 anchor_bottom = 0.107989
-offset_left = 488.551
-offset_top = 149.924
-offset_right = 531.551
-offset_bottom = 189.924
+offset_left = 422.332
+offset_top = 190.019
+offset_right = 465.332
+offset_bottom = 230.019
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect12" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect12" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -551,16 +535,15 @@ anchor_left = 0.0404614
 anchor_top = 0.320896
 anchor_right = 0.0404614
 anchor_bottom = 0.320896
-offset_left = 418.905
-offset_top = 195.302
-offset_right = 461.905
-offset_bottom = 235.302
+offset_left = 344.977
+offset_top = 245.841
+offset_right = 387.977
+offset_bottom = 285.841
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect13" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect13" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -570,16 +553,15 @@ anchor_left = -0.0154031
 anchor_top = 0.214443
 anchor_right = -0.0154031
 anchor_bottom = 0.214443
-offset_left = 349.913
-offset_top = 91.773
-offset_right = 392.913
-offset_bottom = 131.773
+offset_left = 295.643
+offset_top = 119.826
+offset_right = 338.643
+offset_bottom = 159.826
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect14" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect14" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -589,16 +571,15 @@ anchor_left = 0.0404613
 anchor_top = 0.107989
 anchor_right = 0.0404613
 anchor_bottom = 0.107989
-offset_left = 557.542
-offset_top = 96.8236
-offset_right = 600.542
-offset_bottom = 136.824
+offset_left = 471.666
+offset_top = 125.578
+offset_right = 514.666
+offset_bottom = 165.578
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect15" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect15" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -608,16 +589,15 @@ anchor_left = -0.0154031
 anchor_top = 0.320897
 anchor_right = -0.0154031
 anchor_bottom = 0.320897
-offset_left = 420.716
-offset_top = 87.123
-offset_right = 461.716
-offset_bottom = 127.123
+offset_left = 360.344
+offset_top = 114.56
+offset_right = 401.344
+offset_bottom = 154.56
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect16" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect16" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -627,16 +607,15 @@ anchor_left = 0.0963257
 anchor_top = 0.320896
 anchor_right = 0.0963257
 anchor_bottom = 0.320896
-offset_left = 484.082
-offset_top = 195.302
-offset_right = 527.082
-offset_bottom = 235.302
+offset_left = 390.825
+offset_top = 245.841
+offset_right = 433.825
+offset_bottom = 285.841
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect17" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect17" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -646,16 +625,15 @@ anchor_left = 0.0404613
 anchor_top = 0.214443
 anchor_right = 0.0404613
 anchor_bottom = 0.214443
-offset_left = 418.482
-offset_top = 145.766
-offset_right = 459.482
-offset_bottom = 185.766
+offset_left = 344.59
+offset_top = 185.35
+offset_right = 385.59
+offset_bottom = 225.35
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect18" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect18" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -665,16 +643,15 @@ anchor_left = -0.0154031
 anchor_top = 0.42735
 anchor_right = -0.0154031
 anchor_bottom = 0.42735
-offset_left = 349.913
-offset_top = 137.149
-offset_right = 392.913
-offset_bottom = 177.149
+offset_left = 295.643
+offset_top = 175.647
+offset_right = 338.643
+offset_bottom = 215.647
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect19" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect19" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -684,16 +661,15 @@ anchor_left = 0.0963258
 anchor_top = 0.00153558
 anchor_right = 0.0963258
 anchor_bottom = 0.00153558
-offset_left = 555.308
-offset_top = 47.1884
-offset_right = 598.308
-offset_bottom = 87.1883
+offset_left = 455.913
+offset_top = 64.9657
+offset_right = 498.913
+offset_bottom = 104.966
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect20" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect20" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -703,16 +679,15 @@ anchor_left = 0.0963258
 anchor_top = 0.107989
 anchor_right = 0.0963258
 anchor_bottom = 0.107989
-offset_left = 626.534
-offset_top = 96.8236
-offset_right = 669.534
-offset_bottom = 136.824
+offset_left = 521.0
+offset_top = 125.578
+offset_right = 564.0
+offset_bottom = 165.578
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect21" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect21" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -722,16 +697,15 @@ anchor_left = 0.15219
 anchor_top = 0.214443
 anchor_right = 0.15219
 anchor_bottom = 0.214443
-offset_left = 553.074
-offset_top = 145.666
-offset_right = 596.074
-offset_bottom = 185.666
+offset_left = 440.159
+offset_top = 185.228
+offset_right = 483.159
+offset_bottom = 225.228
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect22" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect22" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -741,16 +715,15 @@ anchor_left = 0.15219
 anchor_top = 0.320897
 anchor_right = 0.15219
 anchor_bottom = 0.320897
-offset_left = 695.526
-offset_top = 34.4139
-offset_right = 738.526
-offset_bottom = 74.4139
+offset_left = 570.335
+offset_top = 50.5944
+offset_right = 613.335
+offset_bottom = 90.5944
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect23" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect23" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -760,16 +733,15 @@ anchor_left = 0.0963258
 anchor_top = 0.214443
 anchor_right = 0.0963258
 anchor_bottom = 0.214443
-offset_left = 626.534
-offset_top = 145.666
-offset_right = 669.534
-offset_bottom = 185.666
+offset_left = 521.0
+offset_top = 185.228
+offset_right = 564.0
+offset_bottom = 225.228
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect24" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect24" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -779,16 +751,15 @@ anchor_left = 0.15219
 anchor_top = 0.00153558
 anchor_right = 0.15219
 anchor_bottom = 0.00153558
-offset_left = 624.3
-offset_top = 47.1884
-offset_right = 667.3
-offset_bottom = 87.1883
+offset_left = 505.247
+offset_top = 64.9657
+offset_right = 548.247
+offset_bottom = 104.966
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect25" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect25" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -798,16 +769,15 @@ anchor_left = 0.15219
 anchor_top = 0.107989
 anchor_right = 0.15219
 anchor_bottom = 0.107989
-offset_left = 624.3
-offset_top = 203.817
-offset_right = 667.3
-offset_bottom = 243.817
+offset_left = 505.247
+offset_top = 255.421
+offset_right = 548.247
+offset_bottom = 295.421
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect26" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect26" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -817,16 +787,15 @@ anchor_left = 0.487377
 anchor_top = 0.214443
 anchor_right = 0.487377
 anchor_bottom = 0.214443
-offset_left = 967.025
-offset_top = 253.453
-offset_right = 1010.02
-offset_bottom = 293.453
+offset_left = 736.164
+offset_top = 316.034
+offset_right = 779.164
+offset_bottom = 356.034
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect41" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect41" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -836,16 +805,15 @@ anchor_left = 0.263919
 anchor_top = 0.214443
 anchor_right = 0.263919
 anchor_bottom = 0.214443
-offset_left = 691.057
-offset_top = 199.559
-offset_right = 734.057
-offset_bottom = 239.559
+offset_left = 538.827
+offset_top = 250.631
+offset_right = 581.827
+offset_bottom = 290.631
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect42" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect42" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -855,16 +823,15 @@ anchor_left = 0.208055
 anchor_top = 0.214443
 anchor_right = 0.208055
 anchor_bottom = 0.214443
-offset_left = 693.292
-offset_top = 145.666
-offset_right = 736.292
-offset_bottom = 185.666
+offset_left = 554.581
+offset_top = 185.228
+offset_right = 597.581
+offset_bottom = 225.228
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect43" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect43" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -874,16 +841,15 @@ anchor_left = 0.208055
 anchor_top = 0.00153558
 anchor_right = 0.208055
 anchor_bottom = 0.00153558
-offset_left = 764.518
-offset_top = 47.1884
-offset_right = 807.518
-offset_bottom = 87.1883
+offset_left = 619.669
+offset_top = 64.9657
+offset_right = 662.669
+offset_bottom = 104.966
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect44" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect44" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -893,16 +859,15 @@ anchor_left = 0.208055
 anchor_top = 0.107989
 anchor_right = 0.208055
 anchor_bottom = 0.107989
-offset_left = 693.292
-offset_top = 96.8236
-offset_right = 736.292
-offset_bottom = 136.824
+offset_left = 554.581
+offset_top = 125.578
+offset_right = 597.581
+offset_bottom = 165.578
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect45" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect45" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -912,16 +877,15 @@ anchor_left = 0.375648
 anchor_top = 0.107989
 anchor_right = 0.375648
 anchor_bottom = 0.107989
-offset_left = 971.493
-offset_top = 203.817
-offset_right = 1014.49
-offset_bottom = 243.817
+offset_left = 767.671
+offset_top = 255.421
+offset_right = 810.671
+offset_bottom = 295.421
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect46" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect46" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -931,16 +895,15 @@ anchor_left = 0.319783
 anchor_top = 0.214443
 anchor_right = 0.319783
 anchor_bottom = 0.214443
-offset_left = 831.275
-offset_top = 92.5658
-offset_right = 874.275
-offset_bottom = 132.566
+offset_left = 653.249
+offset_top = 120.788
+offset_right = 696.249
+offset_bottom = 160.788
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect47" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect47" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -950,16 +913,15 @@ anchor_left = 0.263919
 anchor_top = 0.320897
 anchor_right = 0.263919
 anchor_bottom = 0.320897
-offset_left = 762.283
-offset_top = 195.302
-offset_right = 805.283
-offset_bottom = 235.302
+offset_left = 603.915
+offset_top = 245.841
+offset_right = 646.915
+offset_bottom = 285.841
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect48" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect48" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -969,16 +931,15 @@ anchor_left = 0.263919
 anchor_top = 0.00153558
 anchor_right = 0.263919
 anchor_bottom = 0.00153558
-offset_left = 762.283
-offset_top = 101.081
-offset_right = 805.283
-offset_bottom = 141.081
+offset_left = 603.915
+offset_top = 130.368
+offset_right = 646.915
+offset_bottom = 170.368
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect49" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect49" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -988,16 +949,15 @@ anchor_left = 0.263919
 anchor_top = 0.107989
 anchor_right = 0.263919
 anchor_bottom = 0.107989
-offset_left = 762.283
-offset_top = 149.924
-offset_right = 805.283
-offset_bottom = 189.924
+offset_left = 603.915
+offset_top = 190.019
+offset_right = 646.915
+offset_bottom = 230.019
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect50" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect50" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1007,16 +967,15 @@ anchor_left = 0.319783
 anchor_top = 0.00153558
 anchor_right = 0.319783
 anchor_bottom = 0.00153558
-offset_left = 831.275
-offset_top = 154.182
-offset_right = 874.275
-offset_bottom = 194.182
+offset_left = 653.249
+offset_top = 194.809
+offset_right = 696.249
+offset_bottom = 234.809
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect51" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect51" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1026,16 +985,15 @@ anchor_left = 0.319783
 anchor_top = 0.107989
 anchor_right = 0.319783
 anchor_bottom = 0.107989
-offset_left = 902.501
-offset_top = 203.817
-offset_right = 945.501
-offset_bottom = 243.817
+offset_left = 718.337
+offset_top = 255.421
+offset_right = 761.337
+offset_bottom = 295.421
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect52" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect52" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1045,16 +1003,15 @@ anchor_left = 0.487377
 anchor_top = 0.00153558
 anchor_right = 0.487377
 anchor_bottom = 0.00153558
-offset_left = 967.025
-offset_top = 47.9809
-offset_right = 1010.02
-offset_bottom = 87.9809
+offset_left = 736.164
+offset_top = 65.9275
+offset_right = 779.164
+offset_bottom = 105.927
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect53" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect53" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1064,16 +1021,15 @@ anchor_left = 0.543241
 anchor_top = 0.00153558
 anchor_right = 0.543241
 anchor_bottom = 0.00153558
-offset_left = 1036.02
-offset_top = 47.9809
-offset_right = 1079.02
-offset_bottom = 87.9809
+offset_left = 785.498
+offset_top = 65.9275
+offset_right = 828.498
+offset_bottom = 105.927
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect54" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect54" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1083,16 +1039,15 @@ anchor_left = 0.375648
 anchor_top = 0.00153558
 anchor_right = 0.375648
 anchor_bottom = 0.00153558
-offset_left = 900.796
-offset_top = 47.1597
-offset_right = 943.796
-offset_bottom = 87.1597
+offset_left = 703.067
+offset_top = 64.9309
+offset_right = 746.067
+offset_bottom = 104.931
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect55" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect55" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1102,16 +1057,15 @@ anchor_left = 0.431512
 anchor_top = 0.00153558
 anchor_right = 0.431512
 anchor_bottom = 0.00153558
-offset_left = 898.033
-offset_top = 154.182
-offset_right = 941.033
-offset_bottom = 194.182
+offset_left = 686.83
+offset_top = 194.809
+offset_right = 729.83
+offset_bottom = 234.809
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect40" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect40" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1121,16 +1075,110 @@ anchor_left = 0.375648
 anchor_top = 0.320896
 anchor_right = 0.375648
 anchor_bottom = 0.320896
-offset_left = 829.04
-offset_top = 195.302
-offset_right = 872.04
-offset_bottom = 235.302
+offset_left = 637.495
+offset_top = 245.841
+offset_right = 680.495
+offset_bottom = 285.841
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect58" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect3" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 397.0
+offset_right = 76.0
+offset_bottom = 655.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("9_w4k1j")
+
+[node name="TextureRect5" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 168.0
+offset_top = 63.0
+offset_right = 221.0
+offset_bottom = 321.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("10_leixx")
+
+[node name="TextureRect6" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 344.0
+offset_right = 78.0
+offset_bottom = 601.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("11_ijits")
+
+[node name="TextureRect8" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 77.4391
+offset_top = 137.991
+offset_right = 145.439
+offset_bottom = 395.991
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("12_bi3v3")
+
+[node name="TextureRect9" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 264.0
+offset_right = 147.0
+offset_bottom = 522.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("13_u5saj")
+
+[node name="TextureRect56" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 493.0
+offset_right = 74.0
+offset_bottom = 641.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("14_j6my1")
+
+[node name="TextureRect7" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 157.637
+offset_top = 144.864
+offset_right = 225.637
+offset_bottom = 402.864
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("15_pbxip")
+
+[node name="TextureRect57" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 163.448
+offset_top = 212.191
+offset_right = 231.448
+offset_bottom = 470.191
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("16_meo4r")
+
+[node name="TextureRect58" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1140,16 +1188,15 @@ anchor_left = -0.015403
 anchor_top = 0.533804
 anchor_right = -0.015403
 anchor_bottom = 0.533804
-offset_left = 349.914
-offset_top = 25.8976
-offset_right = 392.914
-offset_bottom = 65.8976
+offset_left = 295.643
+offset_top = 41.0136
+offset_right = 338.643
+offset_bottom = 81.0136
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect59" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect59" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1159,16 +1206,15 @@ anchor_left = 0.0404614
 anchor_top = 0.42735
 anchor_right = 0.0404614
 anchor_bottom = 0.42735
-offset_left = 418.482
-offset_top = 30.1271
-offset_right = 459.482
-offset_bottom = 70.1271
+offset_left = 344.59
+offset_top = 45.7692
+offset_right = 385.59
+offset_bottom = 85.7692
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect60" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect60" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1178,16 +1224,15 @@ anchor_left = 0.0404613
 anchor_top = 0.533804
 anchor_right = 0.0404613
 anchor_bottom = 0.533804
-offset_left = 347.68
-offset_top = 186.785
-offset_right = 390.68
-offset_bottom = 226.785
+offset_left = 279.89
+offset_top = 236.26
+offset_right = 322.89
+offset_bottom = 276.26
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect61" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect61" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1197,16 +1242,15 @@ anchor_left = 0.0963258
 anchor_top = 0.42735
 anchor_right = 0.0963258
 anchor_bottom = 0.42735
-offset_left = 345.445
-offset_top = 244.936
-offset_right = 388.445
-offset_bottom = 284.936
+offset_left = 264.136
+offset_top = 306.453
+offset_right = 307.136
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect62" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect62" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1216,16 +1260,15 @@ anchor_left = 0.0963258
 anchor_top = 0.533804
 anchor_right = 0.0963258
 anchor_bottom = 0.533804
-offset_left = 345.445
-offset_top = 295.364
-offset_right = 388.445
-offset_bottom = 335.364
+offset_left = 264.136
+offset_top = 368.027
+offset_right = 307.136
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect63" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect63" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1235,16 +1278,15 @@ anchor_left = 0.15219
 anchor_top = 0.42735
 anchor_right = 0.15219
 anchor_bottom = 0.42735
-offset_left = 414.437
-offset_top = 244.936
-offset_right = 457.437
-offset_bottom = 284.936
+offset_left = 313.47
+offset_top = 306.453
+offset_right = 356.47
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect64" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect64" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1254,16 +1296,15 @@ anchor_left = 0.15219
 anchor_top = 0.533804
 anchor_right = 0.15219
 anchor_bottom = 0.533804
-offset_left = 414.437
-offset_top = 295.364
-offset_right = 457.437
-offset_bottom = 335.364
+offset_left = 313.47
+offset_top = 368.027
+offset_right = 356.47
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect65" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect65" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1273,16 +1314,15 @@ anchor_left = 0.208055
 anchor_top = 0.42735
 anchor_right = 0.208055
 anchor_bottom = 0.42735
-offset_left = 479.613
-offset_top = 244.936
-offset_right = 522.612
-offset_bottom = 284.936
+offset_left = 359.317
+offset_top = 306.453
+offset_right = 402.317
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect66" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect66" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1292,16 +1332,15 @@ anchor_left = 0.208055
 anchor_top = 0.533804
 anchor_right = 0.208055
 anchor_bottom = 0.533804
-offset_left = 481.813
-offset_top = 295.325
-offset_right = 523.813
-offset_bottom = 335.325
+offset_left = 361.328
+offset_top = 367.979
+offset_right = 403.328
+offset_bottom = 407.979
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect67" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect67" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1311,16 +1350,15 @@ anchor_left = 0.263919
 anchor_top = 0.42735
 anchor_right = 0.263919
 anchor_bottom = 0.42735
-offset_left = 548.604
-offset_top = 244.936
-offset_right = 591.604
-offset_bottom = 284.936
+offset_left = 408.651
+offset_top = 306.453
+offset_right = 451.651
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect68" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect68" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1330,16 +1368,15 @@ anchor_left = 0.263919
 anchor_top = 0.533804
 anchor_right = 0.263919
 anchor_bottom = 0.533804
-offset_left = 548.604
-offset_top = 295.364
-offset_right = 591.604
-offset_bottom = 335.364
+offset_left = 408.651
+offset_top = 368.027
+offset_right = 451.651
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect69" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect69" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1349,16 +1386,15 @@ anchor_left = 0.319783
 anchor_top = 0.42735
 anchor_right = 0.319783
 anchor_bottom = 0.42735
-offset_left = 617.597
-offset_top = 244.936
-offset_right = 660.597
-offset_bottom = 284.936
+offset_left = 457.986
+offset_top = 306.453
+offset_right = 500.986
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect70" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect70" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1368,16 +1404,15 @@ anchor_left = 0.319783
 anchor_top = 0.533804
 anchor_right = 0.319783
 anchor_bottom = 0.533804
-offset_left = 617.597
-offset_top = 295.364
-offset_right = 660.597
-offset_bottom = 335.364
+offset_left = 457.986
+offset_top = 368.027
+offset_right = 500.986
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect71" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect71" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1387,16 +1422,15 @@ anchor_left = 0.375648
 anchor_top = 0.42735
 anchor_right = 0.375648
 anchor_bottom = 0.42735
-offset_left = 686.588
-offset_top = 244.936
-offset_right = 729.588
-offset_bottom = 284.936
+offset_left = 507.32
+offset_top = 306.453
+offset_right = 550.32
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect72" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect72" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1406,16 +1440,15 @@ anchor_left = 0.375648
 anchor_top = 0.533804
 anchor_right = 0.375648
 anchor_bottom = 0.533804
-offset_left = 686.588
-offset_top = 295.364
-offset_right = 729.588
-offset_bottom = 335.364
+offset_left = 507.32
+offset_top = 368.027
+offset_right = 550.32
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect73" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect73" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1425,16 +1458,15 @@ anchor_left = 0.431512
 anchor_top = 0.42735
 anchor_right = 0.431512
 anchor_bottom = 0.42735
-offset_left = 755.58
-offset_top = 244.936
-offset_right = 798.58
-offset_bottom = 284.936
+offset_left = 556.654
+offset_top = 306.453
+offset_right = 599.654
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect74" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect74" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1444,16 +1476,15 @@ anchor_left = 0.431512
 anchor_top = 0.533804
 anchor_right = 0.431512
 anchor_bottom = 0.533804
-offset_left = 755.58
-offset_top = 295.364
-offset_right = 798.58
-offset_bottom = 335.364
+offset_left = 556.654
+offset_top = 368.027
+offset_right = 599.654
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect75" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect75" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1463,16 +1494,15 @@ anchor_left = 0.487377
 anchor_top = 0.42735
 anchor_right = 0.487377
 anchor_bottom = 0.42735
-offset_left = 824.572
-offset_top = 244.936
-offset_right = 867.572
-offset_bottom = 284.936
+offset_left = 605.988
+offset_top = 306.453
+offset_right = 648.988
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect76" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect76" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1482,16 +1512,39 @@ anchor_left = 0.543241
 anchor_top = 0.42735
 anchor_right = 0.543241
 anchor_bottom = 0.42735
-offset_left = 893.563
-offset_top = 244.936
-offset_right = 936.563
-offset_bottom = 284.936
+offset_left = 655.322
+offset_top = 306.453
+offset_right = 698.322
+offset_bottom = 346.453
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect77" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect31" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 397.0
+offset_right = 143.0
+offset_bottom = 655.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("17_bob5d")
+
+[node name="TextureRect78" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 333.0
+offset_right = 147.0
+offset_bottom = 591.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("18_oq565")
+
+[node name="TextureRect77" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1501,16 +1554,27 @@ anchor_left = 0.487377
 anchor_top = 0.533804
 anchor_right = 0.487377
 anchor_bottom = 0.533804
-offset_left = 824.572
-offset_top = 295.364
-offset_right = 867.572
-offset_bottom = 335.364
+offset_left = 605.988
+offset_top = 368.027
+offset_right = 648.988
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
 
-[node name="TextureRect" parent="ComponentContainer/GRID" instance=ExtResource("2_d44vy")]
+[node name="TextureRect80" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 466.0
+offset_right = 149.0
+offset_bottom = 724.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("19_7850n")
+
+[node name="TextureRect" parent="Node2D/Control" instance=ExtResource("7_rs1jr")]
 texture_filter = 4
 texture_repeat = 2
 clip_contents = true
@@ -1520,14 +1584,23 @@ anchor_left = 0.543241
 anchor_top = 0.533804
 anchor_right = 0.543241
 anchor_bottom = 0.533804
-offset_left = 893.563
-offset_top = 295.364
-offset_right = 936.563
-offset_bottom = 335.364
+offset_left = 655.322
+offset_top = 368.027
+offset_right = 698.322
+offset_bottom = 408.027
 scale = Vector2(1.49913, 1.61967)
 theme = SubResource("Theme_vhbye")
-texture = ExtResource("5_167sb")
-script = null
+texture = ExtResource("8_vv0v7")
+
+[node name="SHOW CIRCUIT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 880.189
+offset_top = 487.025
+offset_right = 1032.19
+offset_bottom = 560.025
+theme = SubResource("Theme_3nx04")
+text = "Show 
+Circuit"
 
 [node name="GraphFrame2" type="GraphFrame" parent="."]
 show_behind_parent = true
@@ -1551,6 +1624,18 @@ scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 
+[node name="TextureRect79" parent="." instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 83.0
+offset_top = 193.0
+offset_right = 142.0
+offset_bottom = 451.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("20_p64in")
+
 [node name="GraphFrame4" type="GraphFrame" parent="."]
 show_behind_parent = true
 layout_mode = 0
@@ -1565,10 +1650,10 @@ tint_color = Color(1, 1, 1, 0.75)
 [node name="GraphFrame5" type="GraphFrame" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 880.189
-offset_top = 55.805
-offset_right = 1140.19
-offset_bottom = 621.805
+offset_left = 880.0
+offset_top = 56.0
+offset_right = 1140.0
+offset_bottom = 621.0
 scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
@@ -1576,10 +1661,10 @@ tint_color = Color(1, 1, 1, 0.75)
 [node name="GraphFrame6" type="GraphFrame" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 269.304
-offset_top = 473.835
-offset_right = 891.304
-offset_bottom = 614.835
+offset_left = 269.0
+offset_top = 474.0
+offset_right = 891.0
+offset_bottom = 612.0
 scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
@@ -1595,6 +1680,67 @@ scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 
+[node name="TextureRect81" parent="." instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 73.0
+offset_bottom = 327.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("21_y4rc0")
+
+[node name="TextureRect6" parent="." instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 68.0
+offset_top = 205.0
+offset_right = 133.0
+offset_bottom = 486.0
+rotation = 1.5708
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("11_ijits")
+
+[node name="TextureRect7" parent="." instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 7.92071
+offset_top = 340.918
+offset_right = 70.9207
+offset_bottom = 601.918
+rotation = -1.5708
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("11_ijits")
+
+[node name="TextureRect56" parent="." instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 67.0
+offset_right = 140.0
+offset_bottom = 301.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("22_2b5ro")
+
+[node name="TextureRect82" parent="." instance=ExtResource("7_rs1jr")]
+top_level = true
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_top = 108.0
+offset_right = 65.0
+offset_bottom = 430.0
+scale = Vector2(0.932262, 0.220647)
+texture = ExtResource("23_q6ltj")
+
 [node name="GraphFrame8" type="GraphFrame" parent="."]
 show_behind_parent = true
 layout_mode = 0
@@ -1604,5 +1750,3 @@ offset_bottom = 60.7658
 scale = Vector2(1.00642, 0.982539)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
-
-[connection signal="pressed" from="ComponentContainer/CLEAR INPUT" to="." method="_on_clear_input_pressed"]

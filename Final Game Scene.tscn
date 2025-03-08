@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcf6fsf77uip7"]
+
+[ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
+[ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
+[ext_resource type="Theme" uid="uid://bhtro557ueb35" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
+[ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
+[ext_resource type="Theme" uid="uid://cyaco0vnl55cl" path="res://BlackAndWhite.tres" id="5_2kimu"]
+[ext_resource type="Texture2D" uid="uid://cc1xjacmmvsqg" path="res://next-icon.png" id="6_0pudd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 610.0
+texture = ExtResource("1_40mt5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 32.0
+offset_right = 823.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("2_4ntfl")
+theme_override_font_sizes/font_size = 25
+text = "Create given circuit!!"
+
+[node name="GraphFrame" type="GraphFrame" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 80.0
+offset_right = 908.0
+offset_bottom = 504.0
+tint_color_enabled = true
+tint_color = Color(1, 1, 1, 0.75)
+
+[node name="GraphFrame2" type="GraphFrame" parent="."]
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 524.0
+tint_color_enabled = true
+tint_color = Color(1, 1, 1, 0.75)
+
+[node name="GraphFrame3" type="GraphFrame" parent="."]
+offset_left = 928.0
+offset_top = 120.0
+offset_right = 1136.0
+offset_bottom = 544.0
+tint_color_enabled = true
+tint_color = Color(1, 1, 1, 0.75)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 920.0
+offset_top = 88.0
+offset_right = 1083.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("2_4ntfl")
+theme_override_font_sizes/font_size = 20
+text = "Output:"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("3_4ntfl")
+icon = ExtResource("4_40mt5")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 524.0
+offset_right = 416.0
+offset_bottom = 588.0
+theme = ExtResource("3_4ntfl")
+theme_override_fonts/font = ExtResource("2_4ntfl")
+text = "Start
+Simulation"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 1072.0
+offset_top = 8.0
+offset_right = 1136.0
+offset_bottom = 80.0
+theme = ExtResource("5_2kimu")
+icon = ExtResource("6_0pudd")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 432.0
+offset_top = 524.0
+offset_right = 584.0
+offset_bottom = 588.0
+theme = ExtResource("3_4ntfl")
+theme_override_fonts/font = ExtResource("2_4ntfl")
+text = "Stop
+Simulation"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 600.0
+offset_top = 524.0
+offset_right = 752.0
+offset_bottom = 588.0
+theme = ExtResource("3_4ntfl")
+theme_override_fonts/font = ExtResource("2_4ntfl")
+text = "Clear
+Inputs"
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 520.0
+offset_right = 920.0
+offset_bottom = 584.0
+theme = ExtResource("3_4ntfl")
+theme_override_fonts/font = ExtResource("2_4ntfl")
+text = "Show
+Circuit"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 88.0
+offset_right = 132.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4ntfl")
+theme_override_font_sizes/font_size = 10
+text = "Components:"
