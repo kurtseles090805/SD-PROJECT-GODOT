@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://8s62k6rvwxrm"]
+
+[ext_resource type="Script" path="res://circuit_clues.gd" id="1_m1erm"]
+[ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_p5jnv"]
+[ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="2_1ql5i"]
+[ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_s5bj2"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="4_husw7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cenbe"]
+texture = ExtResource("1_p5jnv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unp58"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Theme" id="Theme_bd1i8"]
+Button/styles/normal = SubResource("StyleBoxFlat_unp58")
+
+[node name="Show Circuit Diagram" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1erm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cenbe")
+
+[node name="Circuit 1" type="Button" parent="."]
+offset_left = 239.0
+offset_top = 66.0
+offset_right = 439.0
+offset_bottom = 296.0
+theme = ExtResource("2_1ql5i")
+theme_override_fonts/font = ExtResource("3_s5bj2")
+text = "Show
+Circuit 1"
+
+[node name="Circuit 2" type="Button" parent="."]
+offset_left = 709.0
+offset_top = 55.0
+offset_right = 909.0
+offset_bottom = 285.0
+theme = ExtResource("2_1ql5i")
+theme_override_fonts/font = ExtResource("3_s5bj2")
+text = "Show
+Circuit 2"
+
+[node name="Circuit 3" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 340.0
+offset_right = 264.0
+offset_bottom = 570.0
+theme = ExtResource("2_1ql5i")
+theme_override_fonts/font = ExtResource("3_s5bj2")
+text = "Show
+Circuit 3"
+
+[node name="Circuit 4" type="Button" parent="."]
+offset_left = 497.0
+offset_top = 331.0
+offset_right = 697.0
+offset_bottom = 561.0
+theme = ExtResource("2_1ql5i")
+theme_override_fonts/font = ExtResource("3_s5bj2")
+text = "Show
+Circuit 4"
+
+[node name="Circuit 5" type="Button" parent="."]
+offset_left = 877.0
+offset_top = 324.0
+offset_right = 1077.0
+offset_bottom = 554.0
+theme = ExtResource("2_1ql5i")
+theme_override_fonts/font = ExtResource("3_s5bj2")
+text = "Show
+Circuit 5"
+
+[node name="GO BACK" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 14.0
+offset_right = 132.0
+offset_bottom = 133.0
+theme = SubResource("Theme_bd1i8")
+action_mode = 0
+icon = ExtResource("4_husw7")
+expand_icon = true

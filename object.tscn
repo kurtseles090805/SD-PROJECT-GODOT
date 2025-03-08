@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dw4kfkcyh8uho"]
 
-[ext_resource type="Script" uid="uid://b2vngqw1qinp0" path="res://object.gd" id="1_eob2a"]
-[ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="2_eou5e"]
+[ext_resource type="Script" path="res://object.gd" id="1_eob2a"]
+[ext_resource type="Texture2D" uid="uid://bkwin6xm7bkq1" path="res://assets/sprites/Components/Resistorz horizontal.png" id="2_qnhfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k22c0"]
-size = Vector2(53.0283, 78.093)
+size = Vector2(53.0283, 14.8243)
 
 [node name="object" type="Node2D"]
 position = Vector2(300, 200)
@@ -12,44 +12,13 @@ scale = Vector2(0.311329, 0.340198)
 script = ExtResource("1_eob2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_eou5e")
+texture = ExtResource("2_qnhfk")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(526.774, 0)
-scale = Vector2(9.63636, 6.54348)
-shape = SubResource("RectangleShape2D_k22c0")
-one_way_collision_margin = 128.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6.42407, -19.1065)
 scale = Vector2(9.63636, 6.54348)
 shape = SubResource("RectangleShape2D_k22c0")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1066.4, 0)
-scale = Vector2(9.63636, 6.54348)
-shape = SubResource("RectangleShape2D_k22c0")
-one_way_collision_margin = 128.0
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1606.02, 0)
-scale = Vector2(9.63636, 6.54348)
-shape = SubResource("RectangleShape2D_k22c0")
-one_way_collision_margin = 128.0
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2145.64, 0)
-scale = Vector2(9.63636, 6.54348)
-shape = SubResource("RectangleShape2D_k22c0")
-one_way_collision_margin = 128.0
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1066.4, 0)
-texture = ExtResource("2_eou5e")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(0, 564.377)
-texture = ExtResource("2_eou5e")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

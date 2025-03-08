@@ -13,7 +13,7 @@ func _setting_Pause() -> void:
 	get_tree().change_scene_to_file("res://scenes/SettingWindowPause.tscn")
 
 func _resume_Pause() -> void: 
-	get_tree().change_scene_to_file("res://scenes/UPDATED SCENE GAME.tscn")
+	get_tree().change_scene_to_file("res://Final Game Scene.tscn")
 	
 func _Home_Pause() -> void: 
 	get_tree().change_scene_to_file("res://scenes/Home_Screen.tscn")

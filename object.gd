@@ -2,11 +2,10 @@ extends Node2D
 
 var selected = false
 var mouse_offset = Vector2(0, 0)
-var original_position = Vector2(0, 0)  # Store the original position of the object
-var droppable_area = Rect2(Vector2(200, 200), Vector2(100, 100))  # Example droppable area (x, y, width, height)
+var original_position = Vector2(0, 0)
 
 func _ready():
-	original_position = position  # Store the initial position when the object is created
+	original_position = position
 
 func _process(delta):
 	if selected:
@@ -22,6 +21,11 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			selected = true
 		else:
 			selected = false
-			if not droppable_area.has_point(position):
-				# Return to the original position if the object was not dropped in the droppable area
+			# Check if overlapping any droppable areas
+			var in_droppable = false
+			for area in $Area2D.get_overlapping_areas():
+				if area.is_in_group("droppable"):
+					in_droppable = true
+					break
+			if not in_droppable:
 				position = original_position

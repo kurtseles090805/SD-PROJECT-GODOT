@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://b37nw5yoq3ua8"]
+[gd_scene load_steps=16 format=3 uid="uid://c8t2te6qa7qnb"]
 
-[ext_resource type="Script" path="res://UPDATED SCENE GAME.gd" id="1_8yfa2"]
 [ext_resource type="PackedScene" uid="uid://bkrj6e6dse2oh" path="res://scenes/drag comp.tscn" id="2_d44vy"]
 [ext_resource type="Texture2D" uid="uid://b84waqejfd6s3" path="res://9ebba7cbb17df5947ee54f0f76e4b8cf.png" id="5_7qht5"]
 [ext_resource type="Texture2D" uid="uid://dina661i3cvi0" path="res://square.png" id="5_167sb"]
@@ -8,6 +7,56 @@
 [ext_resource type="Texture2D" uid="uid://btg284344y1lx" path="res://transparent-full-icon-next-icon-round-icon-5db4078e798891.3188082015720795024978.png" id="6_d8xet"]
 [ext_resource type="Texture2D" uid="uid://choa8e5ufef0q" path="res://—Pngtree—white player stop button icon_4545797.png" id="8_pnaxa"]
 [ext_resource type="Texture2D" uid="uid://bdrm8a5fstug8" path="res://icons8-trash-50.png" id="9_7nybu"]
+
+[sub_resource type="GDScript" id="GDScript_vw555"]
+script/source = "extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$\"PAUSE GAME\".pressed.connect(_pause_Game)
+	$\"ComponentContainer/SHOW CIRCUIT\".pressed.connect(_show_Circuit2)
+	
+# Start button pressed: Change to the main game scene
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://UPDATED SCENE GAME.tscn\")
+	print(\"Start Game pressed\")
+
+# Settings button pressed: Change to the settings scene
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/SettingWindow.tscn\")
+	print(\"Settings Pressed\")
+
+# Quit button pressed: Quit the game
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()
+
+# About Us button pressed: Change to the About Us scene
+func _on_about_us_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/AboutUsScene.tscn\")
+	print(\"About Us Pressed\")
+
+# User Guide button pressed: Change to the User Guide scene
+func _on_User_guide_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/UserGuideScene.tscn\")
+	print(\"User Manual Pressed\")
+
+# Start simulation button pressed: Start the simulation
+func _on_StartSimulating_pressed() -> void:
+	print(\"Simulating Started!\")
+	# SIMULATION STARTS...
+
+# Clear Input button pressed: Clear inputs and reset game area
+func _on_ClearInput_pressed() -> void:
+	print(\"INPUT CLEARED\")
+	# CLEAR INPUT and reset the game area
+
+func _show_Circuit2() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/ShowCircuitDiagram.tscn\")
+
+func _pause_Game() -> void:
+	get_tree().change_scene_to_file(\"res://PauseTab.tscn\")
+	
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mdxh"]
 bg_color = Color(0, 0, 0, 1)
@@ -63,7 +112,7 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.01001, 0.985575)
-script = ExtResource("1_8yfa2")
+script = SubResource("GDScript_vw555")
 
 [node name="PANEL SCREEN" type="Panel" parent="."]
 layout_mode = 1

@@ -7,4 +7,4 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _back_Scene() -> void: 
-	get_tree().change_scene_to_file("res://scenes/UPDATED SCENE GAME.tscn")
+	get_tree().change_scene_to_file("res://scenes/ShowCircuitClue.tscn")

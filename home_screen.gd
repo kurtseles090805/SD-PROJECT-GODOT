@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 # Start button pressed
 func _on_start_pressed() -> void:
 	print("Start Game pressed")
-	get_tree().change_scene_to_file("res://scenes/UPDATED SCENE GAME.tscn")
+	get_tree().change_scene_to_file("res://Final Game Scene.tscn")
 	
 
 # Settings button pressed
