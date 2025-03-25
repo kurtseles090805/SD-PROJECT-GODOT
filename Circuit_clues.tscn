@@ -41,6 +41,7 @@ offset_bottom = 610.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cenbe")
 
 [node name="Circuit 1" type="Button" parent="."]
+layout_mode = 0
 offset_left = 239.0
 offset_top = 66.0
 offset_right = 439.0
@@ -51,6 +52,7 @@ text = "Show
 Circuit 1"
 
 [node name="Circuit 2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 709.0
 offset_top = 55.0
 offset_right = 909.0
@@ -61,6 +63,7 @@ text = "Show
 Circuit 2"
 
 [node name="Circuit 3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 340.0
 offset_right = 264.0
@@ -71,6 +74,7 @@ text = "Show
 Circuit 3"
 
 [node name="Circuit 4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 331.0
 offset_right = 697.0
@@ -81,6 +85,7 @@ text = "Show
 Circuit 4"
 
 [node name="Circuit 5" type="Button" parent="."]
+layout_mode = 0
 offset_left = 877.0
 offset_top = 324.0
 offset_right = 1077.0
@@ -91,6 +96,7 @@ text = "Show
 Circuit 5"
 
 [node name="GO BACK" type="Button" parent="."]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 14.0
 offset_right = 132.0

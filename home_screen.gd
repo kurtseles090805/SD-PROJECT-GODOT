@@ -30,7 +30,7 @@ func _on_about_us_pressed() -> void:
 
 # User Guide button pressed
 func _on_User_guide_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/UserGuideScene.tscn")
+	get_tree().change_scene_to_file("res://UserGuide.tscn")
 	print("User Manual Pressed")
 
 # Start simulation button pressed

@@ -7,4 +7,4 @@ func _ready() -> void:
 	pass
 	
 func _exit_Pause() -> void: 
-	get_tree().change_scene_to_file("res://Final Game Scene.tscn")
+	get_tree().change_scene_to_file("res://PauseTab.tscn")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6qerb5ivrlae"]
+
+[ext_resource type="Script" path="res://drop_zone.gd" id="1_40bt2"]
+
+[node name="drop_zone" type="Marker2D" groups=["zone"]]
+scale = Vector2(1, 1.01604)
+script = ExtResource("1_40bt2")

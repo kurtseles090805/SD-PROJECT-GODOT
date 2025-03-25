@@ -46,7 +46,7 @@ pause={
 }
 click={
 "deadzone": 0.5,
-"events": []
+"events": [null, null]
 }
 
 [rendering]
