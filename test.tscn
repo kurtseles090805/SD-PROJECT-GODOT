@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://drag comp.tscn" id="2_8pevg"]
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(1.24163, 1.21102)
 
 [node name="drop_zone" parent="." instance=ExtResource("1_oeydb")]
 position = Vector2(76, 292)
-scale = Vector2(0.975762, 1.05815)
+scale = Vector2(0.951215, 0.611529)
 
 [node name="drop_zone2" parent="." instance=ExtResource("1_oeydb")]
 position = Vector2(703, 136)
@@ -15,4 +16,4 @@ scale = Vector2(1.0698, -1.14763)
 
 [node name="Node2D" parent="." instance=ExtResource("2_8pevg")]
 position = Vector2(65, 0)
-scale = Vector2(1.09366, 2.26668)
+scale = Vector2(0.306348, 0.612964)
