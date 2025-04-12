@@ -26,7 +26,7 @@ offset_bottom = 610.0
 texture = ExtResource("1_40mt5")
 expand_mode = 1
 
-[node name="GraphFrame" type="GraphFrame" parent="."]
+[node name="DROP ZONE" type="GraphFrame" parent="."]
 layout_mode = 0
 offset_left = 272.0
 offset_top = 80.0
@@ -154,6 +154,6 @@ text = "WIRES"
 
 [node name="WIRE" parent="." instance=ExtResource("6_yfs34")]
 position = Vector2(40, 184)
-scale = Vector2(0.291848, 0.175897)
+scale = Vector2(0.265402, 0.156353)
 
 [connection signal="pressed" from="START SIMULATION" to="WIRE" method="_on_start_simulation_pressed"]

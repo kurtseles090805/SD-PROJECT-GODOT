@@ -18,8 +18,8 @@ scale = Vector2(1.15406, -0.588681)
 texture = ExtResource("2_18iqm")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
-position = Vector2(-70.1886, -18.3712)
-scale = Vector2(-0.00525858, -1.09983)
+position = Vector2(-70.1884, -18.3713)
+scale = Vector2(-0.00647204, -1.70552)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(1291.69, 2.18277e-11)

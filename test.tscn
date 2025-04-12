@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5sjnbcfgr2gf"]
+[gd_scene load_steps=3 format=3 uid="uid://c5sjnbcfgr2gf"]
 
 [ext_resource type="PackedScene" uid="uid://b6qerb5ivrlae" path="res://drop_zone.tscn" id="1_oeydb"]
 [ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://drag comp.tscn" id="2_8pevg"]
-[ext_resource type="PackedScene" uid="uid://cc8eiqdcbbyn7" path="res://Wire.tscn" id="3_l7hs4"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(1.24163, 1.21102)
@@ -28,7 +27,3 @@ scale = Vector2(0.619959, 0.642741)
 
 [node name="Component" parent="." instance=ExtResource("2_8pevg")]
 position = Vector2(246.45, 101.567)
-
-[node name="WIRE" parent="." instance=ExtResource("3_l7hs4")]
-position = Vector2(554.916, 142.029)
-scale = Vector2(0.191735, 0.125017)
