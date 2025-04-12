@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhb4y650jm6pm"]
+[gd_scene load_steps=8 format=3 uid="uid://dhb4y650jm6pm"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
 [ext_resource type="Script" path="res://final_game_scene.gd" id="1_snrcq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
+[ext_resource type="Script" path="res://start_simulation.gd" id="6_y6n2a"]
 [ext_resource type="PackedScene" uid="uid://cc8eiqdcbbyn7" path="res://Wire.tscn" id="6_yfs34"]
 
 [node name="MAIN_GAME" type="Control"]
@@ -64,8 +65,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Button2" type="Button" parent="."]
-visible = false
+[node name="START SIMULATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 524.0
@@ -75,8 +75,9 @@ theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Start
 Simulation"
+script = ExtResource("6_y6n2a")
 
-[node name="Button4" type="Button" parent="."]
+[node name="STOP SIMULATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 524.0
@@ -87,7 +88,7 @@ theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Stop
 Simulation"
 
-[node name="Button5" type="Button" parent="."]
+[node name="CLEAR INPUT" type="Button" parent="."]
 layout_mode = 0
 offset_left = 600.0
 offset_top = 524.0
@@ -152,5 +153,7 @@ theme_override_font_sizes/font_size = 10
 text = "WIRES"
 
 [node name="WIRE" parent="." instance=ExtResource("6_yfs34")]
-position = Vector2(40, 176)
+position = Vector2(40, 184)
 scale = Vector2(0.291848, 0.175897)
+
+[connection signal="pressed" from="START SIMULATION" to="WIRE" method="_on_start_simulation_pressed"]

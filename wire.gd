@@ -18,6 +18,10 @@ var max_invalid_drops = 3  # Set a limit for how many invalid drops are allowed
 var glow_effect: Color = Color(1, 1, 0, 0.5)  # Glowing yellow for aesthetic
 var glow_strength: float = 0.0  # For controlling glow intensity
 
+# New variables for simulation
+var simulation_start = false  # Flag for simulation start
+var current_position = 0.0  # To animate the flow of the current along the path
+
 # Called when the node enters the scene tree for the first time
 func _ready(): 
 	rest_nodes = get_tree().get_nodes_in_group("zone")
@@ -57,6 +61,12 @@ func _physics_process(delta: float) -> void:
 
 	# Optional: If near a drop zone, apply outline or highlight
 	highlight_drop_zone()
+
+	# If simulation is active, update the current position to animate the glow
+	if simulation_start:
+		current_position += delta * 0.1  # Increase or decrease the speed of current flow
+		if current_position > 1.0:  # Reset once the path is complete
+			current_position = 0.0
 
 # Handles mouse button release, checking if the object is near any drop zone to snap to it
 func _input(event): 
@@ -161,29 +171,33 @@ func provide_invalid_drop_feedback() -> void:
 
 # Add glowing effect to the component while dragging
 func _draw() -> void:
-	# Add glowing effect during dragging
-	if selected:
-		draw_circle(global_position, 20, glow_effect)  # Draw a glowing circle effect around the component
-		
-var simulation_start = false 
-
-func _on_simuation_start(): 
-	simulation_start = true
-	print("STARTING SIMULATION") 
-	
-func _draw(): 
-	if simulation_start: 
-		#
+	# Draw the glowing path when the simulation starts
+	if simulation_start:
+		# Example path: Can be dynamically calculated or predefined
 		var circuit_path = [Vector2(100, 100), Vector2(300, 100), Vector2(300, 300), Vector2(500, 300)]
+		var glow_color = Color(0, 1, 0, 0.5)  # Green glow color
+		var segment_count = circuit_path.size() - 1
+		var glow_position = current_position * segment_count  # Calculate position along the path
+		
+		# Draw the path segment by segment, glowing along the path
+		for i in range(segment_count):
+			if i < glow_position:
+				draw_line(circuit_path[i], circuit_path[i + 1], glow_color, 5)  # Draw a glowing line
+
+	# Add a glowing circle around the component when selected
+	if selected:
+		draw_circle(global_position, 20, glow_effect)
+
+# Start simulation when the start button is pressed
+func _on_start_simulation_pressed() -> void:
+	# Start the simulation by setting simulation_start to true
+	simulation_start = true
 	
-		var glow_color = color("GREEN")
-		for i in range(circuit_path.size() - 1):
-			draw_line(circuit_path[i], circuit_path[i + 1], glow_color, 5)
-			
-		if selected:
-			draw_circle(global_position, 20, glow_effect) 
-			
-	else: 
-		if selected: 
-			draw_circle(global_position, 20, glow_effect)
+	# Optionally, you could add some effect or feedback when the simulation starts
+	# For example, change the color of the component to indicate simulation mode
+	modulate = Color(1, 0, 0, 1)  # Change to red to indicate the simulation has started
 	
+	# Reset current position in case the simulation was reset
+	current_position = 0.0  # Ensure the current flow starts from the beginning
+
+	print("Simulation started.")
