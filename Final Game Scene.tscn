@@ -111,11 +111,11 @@ Circuit"
 layout_mode = 0
 offset_left = 336.0
 offset_top = 32.0
-offset_right = 824.0
-offset_bottom = 58.0
+offset_right = 800.0
+offset_bottom = 64.0
 theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 25
-text = "Create given circuit!!"
+text = "Create given circuit"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
