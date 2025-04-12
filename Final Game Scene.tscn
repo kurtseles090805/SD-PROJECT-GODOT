@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhb4y650jm6pm"]
+[gd_scene load_steps=10 format=3 uid="uid://dhb4y650jm6pm"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
 [ext_resource type="Script" path="res://final_game_scene.gd" id="1_snrcq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
+[ext_resource type="Script" path="res://FINAL DROPZONE.gd" id="3_fia81"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
 [ext_resource type="Script" path="res://start_simulation.gd" id="6_y6n2a"]
-[ext_resource type="PackedScene" uid="uid://cc8eiqdcbbyn7" path="res://Wire.tscn" id="6_yfs34"]
+[ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://drag comp.tscn" id="8_80des"]
+[ext_resource type="PackedScene" uid="uid://b6qerb5ivrlae" path="res://drop_zone.tscn" id="9_kkqry"]
 
 [node name="MAIN_GAME" type="Control"]
 layout_mode = 3
@@ -32,10 +34,16 @@ offset_left = 272.0
 offset_top = 80.0
 offset_right = 904.0
 offset_bottom = 512.0
+scale = Vector2(1.02682, 0.988843)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
+script = ExtResource("3_fia81")
 
-[node name="GraphFrame2" type="GraphFrame" parent="."]
+[node name="drop_zone" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(70.1193, 64.7221)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="COMPONENTS" type="GraphFrame" parent="."]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 80.0
@@ -152,8 +160,5 @@ theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 10
 text = "WIRES"
 
-[node name="WIRE" parent="." instance=ExtResource("6_yfs34")]
-position = Vector2(40, 184)
-scale = Vector2(0.265402, 0.156353)
-
-[connection signal="pressed" from="START SIMULATION" to="WIRE" method="_on_start_simulation_pressed"]
+[node name="Component" parent="." instance=ExtResource("8_80des")]
+position = Vector2(73, 176)
