@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://cc8eiqdcbbyn7"]
+[gd_scene load_steps=4 format=3 uid="uid://cc8eiqdcbbyn7"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://wire.gd" id="1_bbxrh"]
+[ext_resource type="Texture2D" uid="uid://cdgbgco88u8h5" path="res://assets/sprites/Components/wire/vertical wire better.png" id="2_18iqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grbwr"]
+size = Vector2(3688.64, 24.7721)
+
+[node name="WIRE" type="Node2D"]
+position = Vector2(136, 112)
+scale = Vector2(0.382708, 0.369864)
+script = ExtResource("1_bbxrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-81.0016, 10.8148)
+scale = Vector2(-1.15406, 0.588681)
+texture = ExtResource("2_18iqm")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(-70.1886, -18.3712)
+scale = Vector2(-0.00525858, -1.09983)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(1291.69, 2.18277e-11)
+rotation = 3.14159
+scale = Vector2(2.5327, -18.22)
+shape = SubResource("RectangleShape2D_grbwr")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

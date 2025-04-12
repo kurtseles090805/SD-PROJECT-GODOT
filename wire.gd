@@ -164,3 +164,26 @@ func _draw() -> void:
 	# Add glowing effect during dragging
 	if selected:
 		draw_circle(global_position, 20, glow_effect)  # Draw a glowing circle effect around the component
+		
+var simulation_start = false 
+
+func _on_simuation_start(): 
+	simulation_start = true
+	print("STARTING SIMULATION") 
+	
+func _draw(): 
+	if simulation_start: 
+		#
+		var circuit_path = [Vector2(100, 100), Vector2(300, 100), Vector2(300, 300), Vector2(500, 300)]
+	
+		var glow_color = color("GREEN")
+		for i in range(circuit_path.size() - 1):
+			draw_line(circuit_path[i], circuit_path[i + 1], glow_color, 5)
+			
+		if selected:
+			draw_circle(global_position, 20, glow_effect) 
+			
+	else: 
+		if selected: 
+			draw_circle(global_position, 20, glow_effect)
+	

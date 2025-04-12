@@ -15,7 +15,7 @@ position = Vector2(0, 7.99073e-06)
 scale = Vector2(0.109558, 0.0859048)
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" groups=["zone"]]
-position = Vector2(0, -2.4743e-05)
+position = Vector2(0, -0.000135521)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" groups=["zone"]]
 position = Vector2(-3.05176e-05, 3.05176e-05)
