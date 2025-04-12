@@ -33,10 +33,14 @@ func _ready():
 func _input(event): 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			_drag_offset = global_position - get_global_mouse_position()
-			selected = true
-			dropped_into_zone = false  # Reset the dropped state when we start dragging
-			print("Dragging started.")
+			# Check if the mouse click is inside the bounds of the node (based on its position and size)
+			if is_mouse_inside(event.position):
+				_drag_offset = global_position - get_global_mouse_position()
+				selected = true
+				dropped_into_zone = false  # Reset the dropped state when we start dragging
+				print("Dragging started.")
+			else:
+				print("Mouse click not on the object.")
 		elif not event.pressed:
 			selected = false
 			# If the component was not already dropped into a zone, we check for snapping
@@ -59,6 +63,18 @@ func _input(event):
 			# If the object is near no drop zone, keep it where it was dropped
 			else:
 				rest_point = global_position  # Keep the object where it was last dropped
+
+# Helper function to check if the mouse is inside the bounds of the component
+func is_mouse_inside(mouse_position: Vector2) -> bool:
+	var size = get_size()  # Get the size of the node (you can adjust this based on your node's shape)
+	var rect = Rect2(global_position - size / 2, size)  # Define the bounding box around the node
+	return rect.has_point(mouse_position)  # Check if the mouse is inside the bounding box
+
+# Helper function to get the size of the component
+func get_size() -> Vector2:
+	# You can adjust this part based on how your node's size is defined.
+	# If you have a texture, you can use texture size. For now, we will assume a default size.
+	return Vector2(64, 64)  # Adjust the size accordingly to your node's dimensions
 
 # Called during the physics process to smoothly move the object (for dragging)
 func _process(delta: float): 
