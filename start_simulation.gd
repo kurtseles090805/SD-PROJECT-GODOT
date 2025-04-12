@@ -5,8 +5,6 @@ var simulation_control: Node = null  # This should be the node controlling the s
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
-	# Ensure that the button's "pressed" signal is connected to the function properly
-
 	# Optionally, find the simulation control node if it's not manually set
 	# Replace "SimulationControl" with the actual name of the node that controls the simulation
 	simulation_control = get_node_or_null("SimulationControl") 
@@ -26,7 +24,7 @@ func _on_start_simulation_pressed() -> void:
 
 		# Optionally change button text to indicate simulation has started
 		self.text = "Simulation Running..."  # Example change
-
+		self.input_pickable = false
 		# Optionally disable the button to prevent further presses
 		self.disabled = true
 
