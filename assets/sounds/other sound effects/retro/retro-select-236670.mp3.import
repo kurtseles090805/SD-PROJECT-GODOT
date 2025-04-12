@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dd1rsdqd81gls"
+path="res://.godot/imported/retro-select-236670.mp3-9bbf34572203d571350e6f94ed90966c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/other sound effects/retro/retro-select-236670.mp3"
+dest_files=["res://.godot/imported/retro-select-236670.mp3-9bbf34572203d571350e6f94ed90966c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

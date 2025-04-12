@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi4v3aw475hjw"
+path="res://.godot/imported/pen-click-99025.mp3-376f8ad69bcbc1fbd9550f1a364f0b4f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/other sound effects/pen-click-99025.mp3"
+dest_files=["res://.godot/imported/pen-click-99025.mp3-376f8ad69bcbc1fbd9550f1a364f0b4f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
