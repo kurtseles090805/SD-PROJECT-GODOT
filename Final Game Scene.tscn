@@ -4,11 +4,82 @@
 [ext_resource type="Script" path="res://final_game_scene.gd" id="1_snrcq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
-[ext_resource type="Script" path="res://FINAL DROPZONE.gd" id="3_fia81"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
 [ext_resource type="Script" path="res://start_simulation.gd" id="6_y6n2a"]
 [ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://drag comp.tscn" id="8_80des"]
 [ext_resource type="PackedScene" uid="uid://b6qerb5ivrlae" path="res://drop_zone.tscn" id="9_kkqry"]
+
+[sub_resource type="GDScript" id="GDScript_nq346"]
+script/source = "extends GraphFrame  # Extend GraphFrame
+
+var rest_point: Vector2
+var rest_nodes = []  # Stores the drop zones
+var dropped_into_zone = false  # Track if the component is dropped into a zone
+
+# Electronic component variables
+var error_color: Color = Color(1, 0, 0, 1)  # Red color for error feedback
+
+# Glowing effect during simulation
+var glow_effect: Color = Color(1, 1, 0, 0.5)  # Glowing yellow for aesthetic
+var glow_strength: float = 0.0  # For controlling glow intensity
+
+# New variables for simulation
+var simulation_start = false  # Flag for simulation start
+var current_position = 0.0  # To animate the flow of the current along the path
+
+# Called when the node enters the scene tree for the first time
+func _ready(): 
+	rest_nodes = get_tree().get_nodes_in_group(\"zone\")  # Get all nodes in the \"zone\" group
+	rest_point = global_position  # Set original position
+
+	# Log the rest position (simulating component identification)
+	print(\"Component placed at: \", rest_point)
+
+# Check if component is inside any drop zone when simulation starts
+func _physics_process(delta: float) -> void:
+	# If simulation is active, check if component is in any drop zone
+	if simulation_start:
+		var glowing = false
+		for child in rest_nodes:
+			if global_position.distance_to(child.global_position) < 150:  # Inside the drop zone
+				glowing = true
+				break
+
+		# If component is inside a drop zone, light it up
+		if glowing:
+			glow_strength = lerp(glow_strength, 1.0, 0.1)  # Smooth glow
+		else:
+			glow_strength = lerp(glow_strength, 0.0, 0.1)  # Fade glow when not inside drop zone
+
+# Start simulation when the start button is pressed
+func _on_start_simulation_pressed() -> void:
+	# Start the simulation by setting simulation_start to true
+	simulation_start = true
+	
+	# Optionally, you could add some effect or feedback when the simulation starts
+	# For example, change the color of the component to indicate simulation mode
+	modulate = Color(1, 0, 0, 1)  # Change to red to indicate the simulation has started
+	
+	# Reset current position in case the simulation was reset
+	current_position = 0.0  # Ensure the current flow starts from the beginning
+
+	print(\"Simulation started.\")
+
+# Add glowing effect when inside drop zone
+func _draw() -> void:
+	# Only draw the glowing effect if the component is inside a valid drop zone
+	if simulation_start:
+		var glowing = false
+		for child in rest_nodes:
+			if global_position.distance_to(child.global_position) < 150:  # Inside drop zone
+				glowing = true
+				break
+		
+		# If glowing condition is met, draw the glow
+		if glowing:
+			var glow_color = Color(1, 1, 0, glow_strength)  # Yellow glow when inside drop zone
+			draw_circle(global_position, 25, glow_color)  # Draw a glowing circle around the component 	 	 	 	
+"
 
 [node name="MAIN_GAME" type="Control"]
 layout_mode = 3
@@ -37,7 +108,7 @@ offset_bottom = 512.0
 scale = Vector2(1.02682, 0.988843)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
-script = ExtResource("3_fia81")
+script = SubResource("GDScript_nq346")
 
 [node name="drop_zone" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
 position = Vector2(70.1193, 64.7221)
@@ -162,3 +233,8 @@ text = "WIRES"
 
 [node name="Component" parent="." instance=ExtResource("8_80des")]
 position = Vector2(73, 176)
+
+[node name="Component2" parent="." instance=ExtResource("8_80des")]
+position = Vector2(72, 242)
+
+[connection signal="pressed" from="START SIMULATION" to="DROP ZONE" method="_on_start_simulation_pressed"]
