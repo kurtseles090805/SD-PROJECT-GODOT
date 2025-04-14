@@ -25,4 +25,13 @@ position = Vector2(-7.37617e-06, -4.77389)
 scale = Vector2(0.462881, -0.320736)
 shape = SubResource("CircleShape2D_parjg")
 
+[node name="9V" type="Label" parent="."]
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 16.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+text = "9V"
+
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
