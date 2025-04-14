@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://djiirvbx4ciiq"]
+
+[ext_resource type="Script" uid="uid://dtpf20xq7pf4m" path="res://drag.gd" id="1_qapon"]
+[ext_resource type="Texture2D" uid="uid://5qvpsof7umwc" path="res://assets/sprites/Components/Capacitor.png" id="2_7oriv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_parjg"]
+radius = 43.0325
+
+[node name="Component" type="Node2D"]
+position = Vector2(143, 60)
+scale = Vector2(0.952376, 1.90473)
+script = ExtResource("1_qapon")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.150961, -1.15379)
+rotation = 3.14159
+scale = Vector2(0.202269, -0.0990062)
+texture = ExtResource("2_7oriv")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(22.0355, -8.134)
+scale = Vector2(7.02278, 1.72572)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-7.62939e-06, -4.57764e-05)
+scale = Vector2(0.462881, -0.320736)
+shape = SubResource("CircleShape2D_parjg")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

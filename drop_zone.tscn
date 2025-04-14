@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6qerb5ivrlae"]
 
-[ext_resource type="Script" path="res://drop_zone.gd" id="1_40bt2"]
+[ext_resource type="Script" uid="uid://dtgxfxxn1d13e" path="res://drop_zone.gd" id="1_40bt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34xeb"]
-size = Vector2(19.1314, 24.0136)
+size = Vector2(48.4478, 74.1441)
 
 [node name="drop_zone" type="Marker2D" groups=["zone"]]
 position = Vector2(203, 125)
@@ -18,6 +18,6 @@ scale = Vector2(0.109558, 0.0859048)
 position = Vector2(0, -0.000135521)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" groups=["zone"]]
-position = Vector2(-3.05176e-05, 3.05176e-05)
+position = Vector2(-7.62939e-06, 3.8147e-05)
 scale = Vector2(26.65, 21.662)
 shape = SubResource("RectangleShape2D_34xeb")

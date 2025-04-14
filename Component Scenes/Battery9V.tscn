@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyvrla4flhwv6"]
+
+[ext_resource type="Script" uid="uid://dtpf20xq7pf4m" path="res://drag.gd" id="1_jsfgo"]
+[ext_resource type="Texture2D" uid="uid://0nigwtgdp7j5" path="res://assets/sprites/Components/Battery/Battery.png" id="2_a4rxr"]
+[ext_resource type="FontFile" uid="uid://djm61sxfmin5c" path="res://assets/Pixelme.ttf" id="3_snrxo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_parjg"]
+radius = 115.065
+
+[node name="Component" type="Node2D"]
+position = Vector2(143, 60)
+scale = Vector2(0.952376, 1.90473)
+script = ExtResource("1_jsfgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -1.43051e-06)
+scale = Vector2(0.106476, -0.0508998)
+texture = ExtResource("2_a4rxr")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(22.0355, -8.134)
+scale = Vector2(7.02278, 1.72572)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-3.13772, 4.71337)
+scale = Vector2(0.462881, -0.320736)
+shape = SubResource("CircleShape2D_parjg")
+
+[node name="9V" type="Label" parent="."]
+offset_left = -7.35004
+offset_top = -2.10004
+offset_right = 1.64996
+offset_bottom = 4.89996
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_snrxo")
+theme_override_font_sizes/font_size = 6
+text = "9V"
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

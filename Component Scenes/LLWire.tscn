@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://38bof31ilogo"]
+
+[ext_resource type="Script" uid="uid://dtpf20xq7pf4m" path="res://drag.gd" id="1_r1iua"]
+[ext_resource type="Texture2D" uid="uid://di78jnwc426xc" path="res://assets/sprites/Components/wire/Lower left corner.png" id="2_mir7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_parjg"]
+radius = 115.065
+
+[node name="Component" type="Node2D"]
+position = Vector2(136, 72)
+scale = Vector2(0.952376, 1.90473)
+script = ExtResource("1_r1iua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8.58307e-06, 0)
+rotation = -1.5708
+scale = Vector2(0.039329, -0.0949885)
+texture = ExtResource("2_mir7c")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(3.05176e-05, 7.62939e-06)
+scale = Vector2(7.02278, 1.72572)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-3.8147e-06, -3.05176e-05)
+scale = Vector2(0.462881, -0.320736)
+shape = SubResource("CircleShape2D_parjg")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

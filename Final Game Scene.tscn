@@ -1,13 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhb4y650jm6pm"]
+[gd_scene load_steps=24 format=3 uid="uid://dhb4y650jm6pm"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
-[ext_resource type="Script" path="res://final_game_scene.gd" id="1_snrcq"]
+[ext_resource type="Script" uid="uid://bybjid2dbo5tw" path="res://final_game_scene.gd" id="1_snrcq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
-[ext_resource type="Script" path="res://start_simulation.gd" id="6_y6n2a"]
-[ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://drag comp.tscn" id="8_80des"]
+[ext_resource type="PackedScene" uid="uid://c1vtcm2u7kc8l" path="res://Component Scenes/Battery9VReverse.tscn" id="6_klqkj"]
+[ext_resource type="Script" uid="uid://bqk0jl23oyevv" path="res://start_simulation.gd" id="6_y6n2a"]
+[ext_resource type="PackedScene" uid="uid://djiirvbx4ciiq" path="res://Component Scenes/Capacitor.tscn" id="7_xh1og"]
+[ext_resource type="PackedScene" uid="uid://w1eaufg4tstt" path="res://Component Scenes/Diode.tscn" id="8_1cftu"]
+[ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://Component Scenes/ResistorV.tscn" id="8_80des"]
+[ext_resource type="PackedScene" uid="uid://bpbqhlri5qlme" path="res://Component Scenes/ClosedSwitch.tscn" id="9_emb2f"]
 [ext_resource type="PackedScene" uid="uid://b6qerb5ivrlae" path="res://drop_zone.tscn" id="9_kkqry"]
+[ext_resource type="PackedScene" uid="uid://bcplb2xceilws" path="res://Component Scenes/ResistorH.tscn" id="9_wgtak"]
+[ext_resource type="PackedScene" uid="uid://dffqsocoqo3j3" path="res://Component Scenes/OpenSwitch.tscn" id="10_vvv16"]
+[ext_resource type="PackedScene" uid="uid://dejjfqs4r4hlg" path="res://Component Scenes/LED.tscn" id="11_vvv16"]
+[ext_resource type="PackedScene" uid="uid://cyvrla4flhwv6" path="res://Component Scenes/Battery9V.tscn" id="12_0pqqw"]
+[ext_resource type="PackedScene" uid="uid://gp6nwuq6xdr5" path="res://Component Scenes/URWire.tscn" id="15_7sp7y"]
+[ext_resource type="PackedScene" uid="uid://dr5xbh1jv7a77" path="res://Component Scenes/VWire.tscn" id="16_i3gui"]
+[ext_resource type="PackedScene" uid="uid://38bof31ilogo" path="res://Component Scenes/LLWire.tscn" id="17_5qsv8"]
+[ext_resource type="PackedScene" uid="uid://bafesjbj5xvk0" path="res://Component Scenes/HWire.tscn" id="17_f083b"]
+[ext_resource type="PackedScene" uid="uid://dw48s04457j16" path="res://Component Scenes/ULWire.tscn" id="18_i3gui"]
+[ext_resource type="PackedScene" uid="uid://cmrmvimwwvkr" path="res://Component Scenes/LRWire.tscn" id="18_sbp4i"]
 
 [sub_resource type="GDScript" id="GDScript_nq346"]
 script/source = "extends GraphFrame  # Extend GraphFrame
@@ -101,27 +115,150 @@ expand_mode = 1
 
 [node name="DROP ZONE" type="GraphFrame" parent="."]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 80.0
-offset_right = 904.0
-offset_bottom = 512.0
+offset_left = 280.0
+offset_top = 48.0
+offset_right = 880.0
+offset_bottom = 542.0
 scale = Vector2(1.02682, 0.988843)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 script = SubResource("GDScript_nq346")
 
 [node name="drop_zone" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(70.1193, 64.7221)
+position = Vector2(66.2239, 64.7221)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone3" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(66.2239, 428.784)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone4" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(66.2239, 307.43)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone5" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(66.2239, 186.076)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone2" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone6" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone7" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone8" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 186.093)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone9" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone10" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone11" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone12" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 186.093)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone13" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone14" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone15" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone16" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 186.093)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone17" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone18" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone19" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone20" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 186.093)
 scale = Vector2(0.771195, -0.810756)
 
 [node name="COMPONENTS" type="GraphFrame" parent="."]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 80.0
-offset_right = 256.0
+offset_right = 224.0
 offset_bottom = 524.0
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
+
+[node name="ResistorV" parent="COMPONENTS" instance=ExtResource("8_80des")]
+position = Vector2(40, 42)
+
+[node name="ResistorH" parent="COMPONENTS" instance=ExtResource("9_wgtak")]
+position = Vector2(48, 80)
+
+[node name="Battery9VReverse" parent="COMPONENTS" instance=ExtResource("6_klqkj")]
+position = Vector2(112, 42)
+
+[node name="Capacitor" parent="COMPONENTS" instance=ExtResource("7_xh1og")]
+position = Vector2(168, 56)
+
+[node name="Diode" parent="COMPONENTS" instance=ExtResource("8_1cftu")]
+position = Vector2(168, 95)
+
+[node name="Closed Switch" parent="COMPONENTS" instance=ExtResource("9_emb2f")]
+position = Vector2(104, 152)
+
+[node name="Open Switch" parent="COMPONENTS" instance=ExtResource("10_vvv16")]
+position = Vector2(32, 144)
+scale = Vector2(0.90702, 3.628)
+
+[node name="LED" parent="COMPONENTS" instance=ExtResource("11_vvv16")]
+position = Vector2(175, 152)
+
+[node name="Battery9V" parent="COMPONENTS" instance=ExtResource("12_0pqqw")]
+position = Vector2(104, 97)
+
+[node name="LRWIRE" parent="COMPONENTS" instance=ExtResource("18_sbp4i")]
+position = Vector2(86, 352)
+scale = Vector2(0.90702, 3.628)
+
+[node name="LLWIRE" parent="COMPONENTS" instance=ExtResource("17_5qsv8")]
+position = Vector2(37, 352)
+
+[node name="URWIRE" parent="COMPONENTS" instance=ExtResource("15_7sp7y")]
+position = Vector2(97, 416)
+
+[node name="VWIRE" parent="COMPONENTS" instance=ExtResource("16_i3gui")]
+position = Vector2(160, 416)
+
+[node name="HWIRE" parent="COMPONENTS" instance=ExtResource("17_f083b")]
+position = Vector2(168, 360)
+
+[node name="ULWIRE" parent="COMPONENTS" instance=ExtResource("18_i3gui")]
+position = Vector2(37, 416)
 
 [node name="GraphFrame3" type="GraphFrame" parent="."]
 layout_mode = 0
@@ -134,10 +271,10 @@ tint_color = Color(1, 1, 1, 0.75)
 
 [node name="PAUSE" type="Button" parent="."]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 8.0
 offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 72.0
+offset_right = 56.0
+offset_bottom = 64.0
 theme = ExtResource("3_4ntfl")
 icon = ExtResource("4_40mt5")
 icon_alignment = 1
@@ -147,9 +284,9 @@ expand_icon = true
 [node name="START SIMULATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 264.0
-offset_top = 524.0
+offset_top = 544.0
 offset_right = 416.0
-offset_bottom = 588.0
+offset_bottom = 596.0
 theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Start
@@ -159,9 +296,9 @@ script = ExtResource("6_y6n2a")
 [node name="STOP SIMULATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 432.0
-offset_top = 524.0
+offset_top = 544.0
 offset_right = 584.0
-offset_bottom = 588.0
+offset_bottom = 596.0
 theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Stop
@@ -170,9 +307,9 @@ Simulation"
 [node name="CLEAR INPUT" type="Button" parent="."]
 layout_mode = 0
 offset_left = 600.0
-offset_top = 524.0
+offset_top = 544.0
 offset_right = 752.0
-offset_bottom = 588.0
+offset_bottom = 596.0
 theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Clear
@@ -181,9 +318,9 @@ Inputs"
 [node name="Show circuit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 768.0
-offset_top = 520.0
+offset_top = 544.0
 offset_right = 920.0
-offset_bottom = 584.0
+offset_bottom = 596.0
 theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Show
@@ -192,9 +329,9 @@ Circuit"
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 336.0
-offset_top = 32.0
+offset_top = 8.0
 offset_right = 800.0
-offset_bottom = 64.0
+offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 25
 text = "Create given circuit"
@@ -223,18 +360,12 @@ text = "Components:"
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 424.0
+offset_top = 392.0
 offset_right = 73.0
-offset_bottom = 435.0
+offset_bottom = 403.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 10
 text = "WIRES"
-
-[node name="Component" parent="." instance=ExtResource("8_80des")]
-position = Vector2(73, 176)
-
-[node name="Component2" parent="." instance=ExtResource("8_80des")]
-position = Vector2(72, 242)
 
 [connection signal="pressed" from="START SIMULATION" to="DROP ZONE" method="_on_start_simulation_pressed"]

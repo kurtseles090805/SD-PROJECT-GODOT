@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5sjnbcfgr2gf"]
 
 [ext_resource type="PackedScene" uid="uid://b6qerb5ivrlae" path="res://drop_zone.tscn" id="1_oeydb"]
-[ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://drag comp.tscn" id="2_8pevg"]
+[ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://Component Scenes/ResistorV.tscn" id="2_8pevg"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(1.24163, 1.21102)
