@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw2q04epsxfbv"]
+
+[ext_resource type="Script" uid="uid://uontwqq1hnyg" path="res://1/scripts/BaseComponent.gd" id="1_fwt2u"]
+[ext_resource type="Texture2D" uid="uid://bkwin6xm7bkq1" path="res://assets/sprites/Components/Resistorz horizontal.png" id="2_xgb6i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kuis"]
+
+[node name="Resistor Component" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwt2u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 65.0
+offset_right = 281.0
+offset_bottom = 202.0
+texture = ExtResource("2_xgb6i")
+expand_mode = 1
+
+[node name="Terminal1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terminal1"]
+position = Vector2(179, 126)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_7kuis")
+
+[node name="ColorRect" type="ColorRect" parent="Terminal1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.999
+offset_top = 398.0
+offset_right = 46.999
+offset_bottom = 398.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Terminal2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terminal2"]
+position = Vector2(242, 127)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_7kuis")
+
+[node name="ColorRect" type="ColorRect" parent="Terminal2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 109.999
+offset_top = 399.0
+offset_right = 109.999
+offset_bottom = 399.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
