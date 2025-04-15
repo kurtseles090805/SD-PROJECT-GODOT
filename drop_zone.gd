@@ -78,16 +78,17 @@ func _disconnect_component():
 		# Disconnect connections with other components here if your game has any logic for it
 		print("Component removed from breadboard, resetting connections.")
 		# Additional logic to handle removal from the circuit goes here
-		# e.g., remove connections or reset the state of the component.
 
 # Handling connections between components on the breadboard
 func _connect_components(component_a, component_b):
-	# Example of a function to "connect" two components
 	print("Connecting components:", component_a, "->", component_b)
-	# You can add your logic for connecting components (e.g., creating wires)
-	# This could be visual or gameplay-related based on the component types.
-	# For example, store their connection in an array or data structure:
-	# connections.append({"from": component_a, "to": component_b})
+
+# Called externally when the simulation starts
+func check_status():
+	if is_filled:
+		modulate = Color(0, 1, 0)  # Green if filled
+	else:
+		modulate = Color(1, 0, 0)  # Red if empty
 
 # Extra error handling to ensure the drop zone is functional
 func _ready():
@@ -96,10 +97,9 @@ func _ready():
 		print("Warning: This drop zone is not in the 'zone' group.")
 		add_to_group("zone")
 	
-	# Log to ensure the node is initialized correctly
 	print("Drop zone is ready.")
 
-# Additional functionality to handle connections between the components
+# Additional drop logic
 func _on_Drop(area):
 	if not area.is_in_group("draggable"):
 		print("Error: Dropped area is not draggable!")

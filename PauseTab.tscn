@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw2kof7tcbbed"]
 
-[ext_resource type="Script" path="res://PAUSE TAB.gd" id="1_7co13"]
+[ext_resource type="Script" uid="uid://b2ixhst238w38" path="res://PAUSE TAB.gd" id="1_7co13"]
 [ext_resource type="Texture2D" uid="uid://bw1uwhixt06k1" path="res://PauseBackground.png" id="1_cywnk"]
 [ext_resource type="Texture2D" uid="uid://dq06jt1785coc" path="res://—Pngtree—purple long strip e-commerce border_5919820.png" id="2_xagw1"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_vvawv"]
 [ext_resource type="Theme" uid="uid://bo7vlgbvvl5li" path="res://PauseButtons.tres" id="4_87m7b"]
-[ext_resource type="Texture2D" uid="uid://s078l724b73o" path="res://icons8-settings-50.png" id="5_8n0uy"]
+[ext_resource type="Texture2D" uid="uid://cin0kl046pjqk" path="res://settings-3110 (1).png" id="6_prwx4"]
 [ext_resource type="Texture2D" uid="uid://ctgnqyhf1fut0" path="res://media.png" id="6_t1i5h"]
 [ext_resource type="Texture2D" uid="uid://dkyyc2whnt0q3" path="res://icons8-home-50.png" id="7_g0ynf"]
 
@@ -46,12 +46,12 @@ text = "Gotta take a Break?"
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 0
-offset_left = 416.0
+offset_left = 400.0
 offset_top = 264.0
-offset_right = 480.0
+offset_right = 456.0
 offset_bottom = 328.0
 theme = ExtResource("4_87m7b")
-icon = ExtResource("5_8n0uy")
+icon = ExtResource("6_prwx4")
 icon_alignment = 1
 
 [node name="Resume" type="Button" parent="."]

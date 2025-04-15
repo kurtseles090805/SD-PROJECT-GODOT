@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://crcswjankycad"]
+[gd_scene load_steps=9 format=3 uid="uid://ctxdmafsmiy6u"]
 
-[ext_resource type="Script" path="res://scenes/setting_window_pause.gd" id="1_1h8j2"]
-[ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="2_bm4sg"]
-[ext_resource type="Texture2D" uid="uid://ds7j00mcd364h" path="res://icons8-mute-50.png" id="3_8foup"]
-[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="4_ninca"]
+[ext_resource type="Script" uid="uid://bfknwuq7mhd3y" path="res://scenes/SettingWindowPause.gd" id="1_cw685"]
+[ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="2_4hyaw"]
+[ext_resource type="FontFile" uid="uid://djm61sxfmin5c" path="res://assets/Pixelme.ttf" id="3_y2gby"]
+[ext_resource type="Texture2D" uid="uid://ds7j00mcd364h" path="res://icons8-mute-50.png" id="4_2wlsy"]
+[ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="5_wf4f8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1dxx"]
-texture = ExtResource("2_bm4sg")
+texture = ExtResource("2_4hyaw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10j8h"]
 bg_color = Color(0.00566115, 0.00566115, 0.00566114, 1)
@@ -31,34 +32,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1h8j2")
+script = ExtResource("1_cw685")
 
 [node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.936865)
 theme_override_styles/panel = SubResource("StyleBoxTexture_a1dxx")
-
-[node name="MuteSound" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 194.0
-offset_right = 834.0
-offset_bottom = 252.0
-theme_override_font_sizes/font_size = 30
-icon = ExtResource("3_8foup")
-text_overrun_behavior = 3
-
-[node name="MuteMusic" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 282.0
-offset_right = 836.0
-offset_bottom = 340.0
-icon = ExtResource("3_8foup")
 
 [node name="Settings" type="Label" parent="Panel"]
 layout_mode = 1
@@ -67,60 +53,63 @@ anchor_left = 0.52
 anchor_top = 0.5
 anchor_right = 0.52
 anchor_bottom = 0.5
-offset_left = -487.04
-offset_top = -281.0
-offset_right = -328.04
-offset_bottom = -217.0
+offset_left = -479.04
+offset_top = -298.883
+offset_right = -320.04
+offset_bottom = -234.883
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 41
 text = "Settings"
 
-[node name="Sounc" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
+[node name="ButtonSound" type="GraphFrame" parent="Panel"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 153.704
+offset_right = 776.0
+offset_bottom = 435.704
+tint_color_enabled = true
+tint_color = Color(0.788235, 0.117647, 0.788235, 0.74902)
+
+[node name="GraphFrame2" type="GraphFrame" parent="Panel/ButtonSound"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 51.0
+offset_right = 406.0
+offset_bottom = 270.0
+tint_color_enabled = true
+tint_color = Color(0.404511, 0.404511, 0.404511, 0.74902)
+
+[node name="ButtonSound2" type="Label" parent="Panel"]
+top_level = true
+layout_mode = 2
 anchor_left = 0.52
 anchor_top = 0.5
 anchor_right = 0.52
 anchor_bottom = 0.5
-offset_left = -319.04
-offset_top = -111.0
-offset_right = -194.04
-offset_bottom = -54.0
+offset_left = -221.04
+offset_top = -151.0
+offset_right = 167.96
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y2gby")
 theme_override_font_sizes/font_size = 41
-text = "Sound"
+text = "Background Music"
 
-[node name="Music" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.52
-anchor_top = 0.5
-anchor_right = 0.52
-anchor_bottom = 0.5
-offset_left = -319.04
-offset_top = -23.0
-offset_right = -194.04
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 41
-text = "Music"
-
-[node name="MusicAdjust" type="HSlider" parent="Panel"]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 288.0
-offset_right = 736.0
-offset_bottom = 336.0
-
-[node name="SoundAdjust" type="HSlider" parent="Panel"]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 200.0
-offset_right = 736.0
-offset_bottom = 248.0
+[node name="MuteSound" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 536.0
+offset_top = 333.025
+offset_right = 594.0
+offset_bottom = 391.025
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+button_mask = 0
+icon = ExtResource("4_2wlsy")
+text_overrun_behavior = 3
 
 [node name="EXIT BUTTON" type="Button" parent="."]
 layout_mode = 0
@@ -129,6 +118,17 @@ offset_top = 16.0
 offset_right = 96.0
 offset_bottom = 88.0
 theme = SubResource("Theme_cntmq")
-icon = ExtResource("4_ninca")
+icon = ExtResource("5_wf4f8")
 icon_alignment = 1
 expand_icon = true
+
+[node name="MusicAdjust" type="HSlider" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 384.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 280.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true

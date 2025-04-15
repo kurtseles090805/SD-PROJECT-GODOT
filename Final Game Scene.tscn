@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
 [ext_resource type="PackedScene" uid="uid://c1vtcm2u7kc8l" path="res://Component Scenes/Battery9VReverse.tscn" id="6_klqkj"]
-[ext_resource type="Script" uid="uid://bqk0jl23oyevv" path="res://start_simulation.gd" id="6_y6n2a"]
 [ext_resource type="PackedScene" uid="uid://djiirvbx4ciiq" path="res://Component Scenes/Capacitor.tscn" id="7_xh1og"]
 [ext_resource type="PackedScene" uid="uid://w1eaufg4tstt" path="res://Component Scenes/Diode.tscn" id="8_1cftu"]
 [ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://Component Scenes/ResistorV.tscn" id="8_80des"]
@@ -94,6 +93,8 @@ func _draw() -> void:
 			var glow_color = Color(1, 1, 0, glow_strength)  # Yellow glow when inside drop zone
 			draw_circle(global_position, 25, glow_color)  # Draw a glowing circle around the component 	 	 	 	
 "
+
+[sub_resource type="GDScript" id="GDScript_7sp7y"]
 
 [node name="MAIN_GAME" type="Control"]
 layout_mode = 3
@@ -291,7 +292,7 @@ theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Start
 Simulation"
-script = ExtResource("6_y6n2a")
+script = SubResource("GDScript_7sp7y")
 
 [node name="STOP SIMULATION" type="Button" parent="."]
 layout_mode = 0
