@@ -94,6 +94,7 @@ tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 script = SubResource("GDScript_nq346")
 
+<<<<<<< Updated upstream
 [node name="drop_zone" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
 position = Vector2(49.5173, 13.569)
 scale = Vector2(0.791878, -0.80171)
@@ -173,6 +174,11 @@ scale = Vector2(0.791878, -0.80171)
 [node name="drop_zone20" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
 position = Vector2(533.436, 133.586)
 scale = Vector2(0.791878, -0.80171)
+=======
+[node name="drop_zone" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(70.1194, 56.6318)
+scale = Vector2(0.771195, -0.810756)
+>>>>>>> Stashed changes
 
 [node name="COMPONENTS" type="GraphFrame" parent="."]
 layout_mode = 0

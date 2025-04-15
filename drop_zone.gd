@@ -1,122 +1,73 @@
 extends Marker2D
 
 # Color definitions for aesthetic effects
-var empty_color = Color.BLACK  # Visible when empty
-var filled_color = Color.TRANSPARENT  # Transparent when filled
-var highlight_color = Color(0.5, 0.5, 0.5, 0.3)  # Semi-transparent gray for highlighting when hovering
-var is_filled = false  # Track if a component is placed
-var hover_effect = false  # Track if the drop zone is being hovered by a draggable component
-var current_component = null  # The component placed in the zone
+var empty_color = Color.BLACK
+var filled_color = Color.TRANSPARENT
+var highlight_color = Color(0.5, 0.5, 0.5, 0.3)
+var is_filled = false
+var hover_effect = false
+var current_component = null
 
-# Called when the node is drawn
+# Draw the drop zone
 func _draw():
-	if is_filled:
-		draw_rect(Rect2(-75, -75, 150, 150), filled_color)  # Transparent if filled
-	else:
-		draw_rect(Rect2(-75, -75, 150, 150), empty_color)  # Black if empty
-	
-	# Add hover effect for better user experience
-	if hover_effect and !is_filled:
-		draw_rect(Rect2(-75, -75, 150, 150), highlight_color)  # Highlighted when hovered
+	draw_rect(Rect2(-75, -75, 150, 150), filled_color if is_filled else empty_color)
+	if hover_effect and not is_filled:
+		draw_rect(Rect2(-75, -75, 150, 150), highlight_color)
 
 # Called when the drop zone is selected
 func select():
-	# Deselect other zones
 	for zone in get_tree().get_nodes_in_group("zone"):
 		if zone != self and zone.has_method("deselect"):
-			zone.deselect()  # Call deselect only if the method exists
-	
-	modulate = Color.TRANSPARENT  # Semi-transparent white when selected to indicate focus
+			zone.deselect()
+	modulate = Color.TRANSPARENT
 
-# Called when the drop zone is deselected
 func deselect():
-	modulate = Color.BLACK  # Fully opaque when deselected (default)
+	modulate = Color.BLACK
 
-# Called when a draggable component enters the drop zone
+# Draggable entered the drop zone
 func _on_DragEnter(area):
-	if area.is_in_group("draggable") and !is_filled:
-		# Temporarily mark the zone as filled while dragging over
+	if area.is_in_group("draggable") and not is_filled:
 		hover_effect = true
-		queue_redraw()  # Request a redraw to reflect the change
+		queue_redraw()
 
-# Called when a draggable component exits the drop zone
+# Draggable exited the drop zone
 func _on_DragExit(area):
 	if area.is_in_group("draggable"):
-		# Reset if the draggable component leaves without being dropped
 		hover_effect = false
-		queue_redraw()  # Request a redraw to reflect the change
+		queue_redraw()
 
-# Called when a draggable component is dropped into the drop zone
-func _on_DropHandler(area):
-	if area.is_in_group("draggable") and !is_filled:
-		# Mark the zone as filled when a component is dropped
-		is_filled = true
-		current_component = area  # Track the dropped component
-		hover_effect = false  # Stop hover effect after drop
-		queue_redraw()  # Request a redraw to reflect the change
-
-		# Connect to the draggable's signal to detect when it's picked up again
-		if area.has_signal("drag_started"):
-			area.connect("drag_started", Callable(self, "_on_ComponentPickedUp"))
-		else:
-			print("Warning: The draggable object does not have the 'drag_started' signal connected.")
-
-# When the draggable component is picked up, reset the drop zone color and remove connections
-func _on_ComponentPickedUp():
-	if current_component:
-		# Reset the zone when the component is picked up again
-		is_filled = false
-		current_component = null  # Reset the reference to the placed component
-		queue_redraw()  # Request a redraw to reflect the change
-
-		# Handle removal from the circuit, or reset connections if applicable
-		_disconnect_component()
-
-# Function to handle the component being removed from the drop zone
-func _disconnect_component():
-	if current_component:
-		# Disconnect connections with other components here if your game has any logic for it
-		print("Component removed from breadboard, resetting connections.")
-		# Additional logic to handle removal from the circuit goes here
-		# e.g., remove connections or reset the state of the component.
-
-# Handling connections between components on the breadboard
-func _connect_components(component_a, component_b):
-	# Example of a function to "connect" two components
-	print("Connecting components:", component_a, "->", component_b)
-	# You can add your logic for connecting components (e.g., creating wires)
-	# This could be visual or gameplay-related based on the component types.
-	# For example, store their connection in an array or data structure:
-	# connections.append({"from": component_a, "to": component_b})
-
-# Extra error handling to ensure the drop zone is functional
-func _ready():
-	# Ensure the node is part of the "zone" group
-	if not is_in_group("zone"):
-		print("Warning: This drop zone is not in the 'zone' group.")
-		add_to_group("zone")
-	
-	# Log to ensure the node is initialized correctly
-	print("Drop zone is ready.")
-
-# Additional functionality to handle connections between the components
+# Drop event handler
 func _on_Drop(area):
-	if not area.is_in_group("draggable"):
-		print("Error: Dropped area is not draggable!")
+	if !area.is_in_group("draggable"):
+		print("Error: Not draggable!")
 		return
 
-	# Prevent dropping if the zone is already filled
 	if is_filled:
-		print("Error: This drop zone is already filled. Only one component can be placed here.")
+		print("Drop rejected: Already filled.")
 		return
 
-	# Proceed with the rest of the drop logic if valid
 	is_filled = true
+	current_component = area
 	hover_effect = false
-	current_component = area  # Track the dropped component
 	queue_redraw()
 
-	if area.has_signal("drag_started"):
-		area.connect("drag_started", Callable(self, "_on_ComponentPickedUp"))
+	# Connect signal for when the component is picked up again
+	if area.has_signal("drag_started") and not area.is_connected("drag_started", Callable(self, "_on_DraggablePickedUp")):
+		area.connect("drag_started", Callable(self, "_on_DraggablePickedUp"))
 	else:
-		print("Warning: Draggable component is missing the 'drag_started' signal.")
+		print("Warning: Draggable missing 'drag_started' signal.")
+
+	print("Component dropped and accepted.")
+
+# When component is picked up again
+func _on_DraggablePickedUp():
+	print("Component picked up, drop zone cleared.")
+	is_filled = false
+	current_component = null
+	queue_redraw()
+
+# Setup
+func _ready():
+	if not is_in_group("zone"):
+		add_to_group("zone")
+	print("Drop zone ready.")
