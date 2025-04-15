@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwmgam8sp8spk"]
+[gd_scene load_steps=9 format=3 uid="uid://61t8ywqgrash"]
 
-[ext_resource type="Script" path="res://scenes/setting_window_home.gd" id="1_yc6a7"]
+[ext_resource type="Script" uid="uid://brt7rwvq3tt6" path="res://scenes/SettingWindowHome.gd" id="1_bvc3i"]
 [ext_resource type="Texture2D" uid="uid://devrnkmulmlai" path="res://scenes/476330703_9533232660062378_5498103946778685554_n.jpg" id="2_tu337"]
+[ext_resource type="FontFile" uid="uid://djm61sxfmin5c" path="res://assets/Pixelme.ttf" id="3_8ds37"]
 [ext_resource type="Texture2D" uid="uid://ds7j00mcd364h" path="res://icons8-mute-50.png" id="3_oj1ke"]
 [ext_resource type="Texture2D" uid="uid://bt2h2mkavjl5r" path="res://icons8-back-button-50.png" id="4_smpoh"]
 
@@ -31,34 +32,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yc6a7")
+script = ExtResource("1_bvc3i")
 
 [node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.936865)
 theme_override_styles/panel = SubResource("StyleBoxTexture_a1dxx")
-
-[node name="MuteSound" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 194.0
-offset_right = 834.0
-offset_bottom = 252.0
-theme_override_font_sizes/font_size = 30
-icon = ExtResource("3_oj1ke")
-text_overrun_behavior = 3
-
-[node name="MuteMusic" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 282.0
-offset_right = 836.0
-offset_bottom = 340.0
-icon = ExtResource("3_oj1ke")
 
 [node name="Settings" type="Label" parent="Panel"]
 layout_mode = 1
@@ -67,60 +53,63 @@ anchor_left = 0.52
 anchor_top = 0.5
 anchor_right = 0.52
 anchor_bottom = 0.5
-offset_left = -487.04
-offset_top = -281.0
-offset_right = -328.04
-offset_bottom = -217.0
+offset_left = -479.04
+offset_top = -298.883
+offset_right = -320.04
+offset_bottom = -234.883
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 41
 text = "Settings"
 
-[node name="Sounc" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
+[node name="ButtonSound" type="GraphFrame" parent="Panel"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 153.704
+offset_right = 776.0
+offset_bottom = 435.704
+tint_color_enabled = true
+tint_color = Color(0.788235, 0.117647, 0.788235, 0.74902)
+
+[node name="GraphFrame2" type="GraphFrame" parent="Panel/ButtonSound"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 51.0
+offset_right = 406.0
+offset_bottom = 270.0
+tint_color_enabled = true
+tint_color = Color(0.404511, 0.404511, 0.404511, 0.74902)
+
+[node name="ButtonSound2" type="Label" parent="Panel"]
+top_level = true
+layout_mode = 2
 anchor_left = 0.52
 anchor_top = 0.5
 anchor_right = 0.52
 anchor_bottom = 0.5
-offset_left = -319.04
-offset_top = -111.0
-offset_right = -194.04
-offset_bottom = -54.0
+offset_left = -221.04
+offset_top = -151.0
+offset_right = 167.96
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8ds37")
 theme_override_font_sizes/font_size = 41
-text = "Sound"
+text = "Background Music"
 
-[node name="Music" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.52
-anchor_top = 0.5
-anchor_right = 0.52
-anchor_bottom = 0.5
-offset_left = -319.04
-offset_top = -23.0
-offset_right = -194.04
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 41
-text = "Music"
-
-[node name="MusicAdjust" type="HSlider" parent="Panel"]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 288.0
-offset_right = 736.0
-offset_bottom = 336.0
-
-[node name="SoundAdjust" type="HSlider" parent="Panel"]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 200.0
-offset_right = 736.0
-offset_bottom = 248.0
+[node name="MuteSound" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 536.0
+offset_top = 333.025
+offset_right = 594.0
+offset_bottom = 391.025
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+button_mask = 0
+icon = ExtResource("3_oj1ke")
+text_overrun_behavior = 3
 
 [node name="EXIT BUTTON" type="Button" parent="."]
 layout_mode = 0
@@ -132,3 +121,14 @@ theme = SubResource("Theme_cntmq")
 icon = ExtResource("4_smpoh")
 icon_alignment = 1
 expand_icon = true
+
+[node name="MusicAdjust" type="HSlider" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 384.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 280.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true

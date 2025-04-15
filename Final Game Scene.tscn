@@ -1,14 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://dhb4y650jm6pm"]
+[gd_scene load_steps=24 format=3 uid="uid://dhb4y650jm6pm"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
-[ext_resource type="Script" path="res://final_game_scene.gd" id="1_snrcq"]
+[ext_resource type="Script" uid="uid://bybjid2dbo5tw" path="res://final_game_scene.gd" id="1_snrcq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
-[ext_resource type="Script" path="res://drop_zone_control.gd" id="3_gud1r"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
-[ext_resource type="Script" path="res://components_control.gd" id="4_mv4eq"]
 [ext_resource type="PackedScene" uid="uid://c1vtcm2u7kc8l" path="res://Component Scenes/Battery9VReverse.tscn" id="6_klqkj"]
-[ext_resource type="Script" path="res://start_simulation.gd" id="6_y6n2a"]
 [ext_resource type="PackedScene" uid="uid://djiirvbx4ciiq" path="res://Component Scenes/Capacitor.tscn" id="7_xh1og"]
 [ext_resource type="PackedScene" uid="uid://w1eaufg4tstt" path="res://Component Scenes/Diode.tscn" id="8_1cftu"]
 [ext_resource type="PackedScene" uid="uid://ukrlaonvcd4m" path="res://Component Scenes/ResistorV.tscn" id="8_80des"]
@@ -26,35 +23,78 @@
 [ext_resource type="PackedScene" uid="uid://cmrmvimwwvkr" path="res://Component Scenes/LRWire.tscn" id="18_sbp4i"]
 
 [sub_resource type="GDScript" id="GDScript_nq346"]
-script/source = "extends Control
+script/source = "extends GraphFrame  # Extend GraphFrame
 
-# Store the current component placed in this drop zone
-var current_component: Node = null
+var rest_point: Vector2
+var rest_nodes = []  # Stores the drop zones
+var dropped_into_zone = false  # Track if the component is dropped into a zone
 
-# Called when a component is dropped on the drop zone
-func set_component(component: Node) -> void:
-	# If a component has already been placed, ignore further drops
-	if current_component:
-		return
-	
-	# Store the component that was dropped here
-	current_component = component
-	# Call the component's light_up() method
-	current_component.light_up()
-	
-	# Optionally: Disable further drops or take other actions after a component is dropped
-	set_process_input(false)  # This can be optional depending on your game rules
+# Electronic component variables
+var error_color: Color = Color(1, 0, 0, 1)  # Red color for error feedback
 
-# Called when the drop zone is cleared (optional)
-func clear_zone() -> void:
-	if current_component:
-		# Reset the component's state (reset the visual effects)
-		current_component.reset_component()
-		current_component = null
+# Glowing effect during simulation
+var glow_effect: Color = Color(1, 1, 0, 0.5)  # Glowing yellow for aesthetic
+var glow_strength: float = 0.0  # For controlling glow intensity
+
+# New variables for simulation
+var simulation_start = false  # Flag for simulation start
+var current_position = 0.0  # To animate the flow of the current along the path
+
+# Called when the node enters the scene tree for the first time
+func _ready(): 
+	rest_nodes = get_tree().get_nodes_in_group(\"zone\")  # Get all nodes in the \"zone\" group
+	rest_point = global_position  # Set original position
+
+	# Log the rest position (simulating component identification)
+	print(\"Component placed at: \", rest_point)
+
+# Check if component is inside any drop zone when simulation starts
+func _physics_process(delta: float) -> void:
+	# If simulation is active, check if component is in any drop zone
+	if simulation_start:
+		var glowing = false
+		for child in rest_nodes:
+			if global_position.distance_to(child.global_position) < 150:  # Inside the drop zone
+				glowing = true
+				break
+
+		# If component is inside a drop zone, light it up
+		if glowing:
+			glow_strength = lerp(glow_strength, 1.0, 0.1)  # Smooth glow
+		else:
+			glow_strength = lerp(glow_strength, 0.0, 0.1)  # Fade glow when not inside drop zone
+
+# Start simulation when the start button is pressed
+func _on_start_simulation_pressed() -> void:
+	# Start the simulation by setting simulation_start to true
+	simulation_start = true
 	
-	# Re-enable input processing for future drops
-	set_process_input(true)
+	# Optionally, you could add some effect or feedback when the simulation starts
+	# For example, change the color of the component to indicate simulation mode
+	modulate = Color(1, 0, 0, 1)  # Change to red to indicate the simulation has started
+	
+	# Reset current position in case the simulation was reset
+	current_position = 0.0  # Ensure the current flow starts from the beginning
+
+	print(\"Simulation started.\")
+
+# Add glowing effect when inside drop zone
+func _draw() -> void:
+	# Only draw the glowing effect if the component is inside a valid drop zone
+	if simulation_start:
+		var glowing = false
+		for child in rest_nodes:
+			if global_position.distance_to(child.global_position) < 150:  # Inside drop zone
+				glowing = true
+				break
+		
+		# If glowing condition is met, draw the glow
+		if glowing:
+			var glow_color = Color(1, 1, 0, glow_strength)  # Yellow glow when inside drop zone
+			draw_circle(global_position, 25, glow_color)  # Draw a glowing circle around the component 	 	 	 	
 "
+
+[sub_resource type="GDScript" id="GDScript_7sp7y"]
 
 [node name="MAIN_GAME" type="Control"]
 layout_mode = 3
@@ -65,7 +105,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_snrcq")
 
-[node name="BACKGROUND" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -8.0
 offset_top = -8.0
@@ -74,111 +114,96 @@ offset_bottom = 610.0
 texture = ExtResource("1_40mt5")
 expand_mode = 1
 
-[node name="DROP ZONE CONTROL" type="Control" parent="."]
-layout_mode = 2
-anchors_preset = 0
-offset_left = 298.483
-offset_top = 98.431
-offset_right = 862.483
-offset_bottom = 529.431
-script = ExtResource("3_gud1r")
-
-[node name="DROP ZONE" type="GraphFrame" parent="DROP ZONE CONTROL"]
+[node name="DROP ZONE" type="GraphFrame" parent="."]
 layout_mode = 0
-offset_left = -18.4828
-offset_top = -50.431
-offset_right = 581.517
-offset_bottom = 443.569
+offset_left = 280.0
+offset_top = 48.0
+offset_right = 880.0
+offset_bottom = 542.0
 scale = Vector2(1.02682, 0.988843)
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 script = SubResource("GDScript_nq346")
 
-<<<<<<< Updated upstream
-[node name="drop_zone" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(49.5173, 13.569)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone3" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(49.5173, 373.569)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone4" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(49.5173, 253.569)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone5" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(49.5173, 133.569)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone2" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(173.436, 13.5861)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone6" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(173.436, 373.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone7" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(173.436, 253.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone8" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(173.436, 133.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone9" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(293.436, 13.5861)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone10" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(293.436, 373.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone11" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(293.436, 253.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone12" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(293.436, 133.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone13" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(413.436, 13.5861)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone14" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(413.436, 373.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone15" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(413.436, 253.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone16" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(413.436, 133.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone17" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(533.436, 13.5861)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone18" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(533.436, 373.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone19" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(533.436, 253.586)
-scale = Vector2(0.791878, -0.80171)
-
-[node name="drop_zone20" parent="DROP ZONE CONTROL" groups=["DROPZONES"] instance=ExtResource("9_kkqry")]
-position = Vector2(533.436, 133.586)
-scale = Vector2(0.791878, -0.80171)
-=======
 [node name="drop_zone" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(70.1194, 56.6318)
+position = Vector2(66.2239, 64.7221)
 scale = Vector2(0.771195, -0.810756)
->>>>>>> Stashed changes
+
+[node name="drop_zone3" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(66.2239, 428.784)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone4" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(66.2239, 307.43)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone5" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(66.2239, 186.076)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone2" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone6" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone7" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone8" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(186.906, 186.093)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone9" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone10" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone11" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone12" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(303.772, 186.093)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone13" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone14" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone15" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone16" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(420.637, 186.093)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone17" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 64.7394)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone18" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 428.801)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone19" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 307.447)
+scale = Vector2(0.771195, -0.810756)
+
+[node name="drop_zone20" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
+position = Vector2(537.503, 186.093)
+scale = Vector2(0.771195, -0.810756)
 
 [node name="COMPONENTS" type="GraphFrame" parent="."]
 layout_mode = 0
@@ -189,61 +214,52 @@ offset_bottom = 524.0
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 
-[node name="COMPONENTS CONTROL" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 102.0
-offset_top = 432.0
-offset_right = 142.0
-offset_bottom = 472.0
-script = ExtResource("4_mv4eq")
+[node name="ResistorV" parent="COMPONENTS" instance=ExtResource("8_80des")]
+position = Vector2(40, 42)
 
-[node name="ResistorV" parent="COMPONENTS CONTROL" instance=ExtResource("8_80des")]
-position = Vector2(-46, -310)
+[node name="ResistorH" parent="COMPONENTS" instance=ExtResource("9_wgtak")]
+position = Vector2(48, 80)
 
-[node name="ResistorH" parent="COMPONENTS CONTROL" instance=ExtResource("9_wgtak")]
-position = Vector2(-38, -272)
+[node name="Battery9VReverse" parent="COMPONENTS" instance=ExtResource("6_klqkj")]
+position = Vector2(112, 42)
 
-[node name="Battery9VReverse" parent="COMPONENTS CONTROL" instance=ExtResource("6_klqkj")]
-position = Vector2(26, -310)
+[node name="Capacitor" parent="COMPONENTS" instance=ExtResource("7_xh1og")]
+position = Vector2(168, 56)
 
-[node name="Capacitor" parent="COMPONENTS CONTROL" instance=ExtResource("7_xh1og")]
-position = Vector2(82, -296)
+[node name="Diode" parent="COMPONENTS" instance=ExtResource("8_1cftu")]
+position = Vector2(168, 95)
 
-[node name="Diode" parent="COMPONENTS CONTROL" instance=ExtResource("8_1cftu")]
-position = Vector2(82, -257)
+[node name="Closed Switch" parent="COMPONENTS" instance=ExtResource("9_emb2f")]
+position = Vector2(104, 152)
 
-[node name="Closed Switch" parent="COMPONENTS CONTROL" instance=ExtResource("9_emb2f")]
-position = Vector2(18, -200)
-
-[node name="Open Switch" parent="COMPONENTS CONTROL" instance=ExtResource("10_vvv16")]
-position = Vector2(-54, -208)
+[node name="Open Switch" parent="COMPONENTS" instance=ExtResource("10_vvv16")]
+position = Vector2(32, 144)
 scale = Vector2(0.90702, 3.628)
 
-[node name="LED" parent="COMPONENTS CONTROL" instance=ExtResource("11_vvv16")]
-position = Vector2(89, -200)
+[node name="LED" parent="COMPONENTS" instance=ExtResource("11_vvv16")]
+position = Vector2(175, 152)
 
-[node name="Battery9V" parent="COMPONENTS CONTROL" instance=ExtResource("12_0pqqw")]
-position = Vector2(18, -255)
+[node name="Battery9V" parent="COMPONENTS" instance=ExtResource("12_0pqqw")]
+position = Vector2(104, 97)
 
-[node name="LRWIRE" parent="COMPONENTS CONTROL" instance=ExtResource("18_sbp4i")]
-position = Vector2(0, 0)
+[node name="LRWIRE" parent="COMPONENTS" instance=ExtResource("18_sbp4i")]
+position = Vector2(86, 352)
 scale = Vector2(0.90702, 3.628)
 
-[node name="LLWIRE" parent="COMPONENTS CONTROL" instance=ExtResource("17_5qsv8")]
-position = Vector2(-49, 0)
+[node name="LLWIRE" parent="COMPONENTS" instance=ExtResource("17_5qsv8")]
+position = Vector2(37, 352)
 
-[node name="URWIRE" parent="COMPONENTS CONTROL" instance=ExtResource("15_7sp7y")]
-position = Vector2(11, 64)
+[node name="URWIRE" parent="COMPONENTS" instance=ExtResource("15_7sp7y")]
+position = Vector2(97, 416)
 
-[node name="VWIRE" parent="COMPONENTS CONTROL" instance=ExtResource("16_i3gui")]
-position = Vector2(74, 64)
+[node name="VWIRE" parent="COMPONENTS" instance=ExtResource("16_i3gui")]
+position = Vector2(160, 416)
 
-[node name="HWIRE" parent="COMPONENTS CONTROL" instance=ExtResource("17_f083b")]
-position = Vector2(82, 8)
+[node name="HWIRE" parent="COMPONENTS" instance=ExtResource("17_f083b")]
+position = Vector2(168, 360)
 
-[node name="ULWIRE" parent="COMPONENTS CONTROL" instance=ExtResource("18_i3gui")]
-position = Vector2(-49, 64)
+[node name="ULWIRE" parent="COMPONENTS" instance=ExtResource("18_i3gui")]
+position = Vector2(37, 416)
 
 [node name="GraphFrame3" type="GraphFrame" parent="."]
 layout_mode = 0
@@ -276,7 +292,7 @@ theme = ExtResource("3_4ntfl")
 theme_override_fonts/font = ExtResource("2_4ntfl")
 text = "Start
 Simulation"
-script = ExtResource("6_y6n2a")
+script = SubResource("GDScript_7sp7y")
 
 [node name="STOP SIMULATION" type="Button" parent="."]
 layout_mode = 0
@@ -313,9 +329,9 @@ Circuit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 352.0
+offset_left = 336.0
 offset_top = 8.0
-offset_right = 816.0
+offset_right = 800.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 25
@@ -353,5 +369,4 @@ theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 10
 text = "WIRES"
 
-[connection signal="pressed" from="START SIMULATION" to="DROP ZONE CONTROL/DROP ZONE" method="_on_start_simulation_pressed"]
-[connection signal="pressed" from="START SIMULATION" to="COMPONENTS CONTROL" method="_on_start_simulation_pressed"]
+[connection signal="pressed" from="START SIMULATION" to="DROP ZONE" method="_on_start_simulation_pressed"]
