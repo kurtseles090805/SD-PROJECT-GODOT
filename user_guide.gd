@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"return home".pressed.connect(_return_Home)
+	print("RETURNING HOME SCREEN")
 	pass # Replace with function body.
 
 
