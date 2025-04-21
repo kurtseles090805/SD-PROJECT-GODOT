@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc8eiqdcbbyn7"]
 
-[ext_resource type="Script" uid="uid://82ooplsnee2u" path="res://wire.gd" id="1_bbxrh"]
+[ext_resource type="Script" path="res://wire.gd" id="1_bbxrh"]
 [ext_resource type="Texture2D" uid="uid://cdgbgco88u8h5" path="res://assets/sprites/Components/wire/vertical wire better.png" id="2_18iqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grbwr"]
