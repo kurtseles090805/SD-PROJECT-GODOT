@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cclwpjkgod1xn"]
+
+[ext_resource type="Script" uid="uid://p4rofwemotrb" path="res://Scripts/component_button.gd" id="1_cvs5m"]
+
+[node name="Component_Button" type="TextureRect"]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -512.0
+offset_bottom = -952.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+script = ExtResource("1_cvs5m")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2

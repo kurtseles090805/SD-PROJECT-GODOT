@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctic877gy6gd8"]
+
+[ext_resource type="Script" uid="uid://bo3bikyjmdvrv" path="res://Scripts/circuit_grid.gd" id="1_45ib1"]
+[ext_resource type="Texture2D" uid="uid://ckae5ctkdbsbf" path="res://Assets/Sprites/AboutUsPressed.png" id="2_5k7r4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k7r4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9, 0, 1)
+
+[node name="Circuit_Grid" type="TextureRect"]
+custom_minimum_size = Vector2(96, 96)
+anchors_preset = -1
+anchor_right = 0.15
+anchor_bottom = 0.089
+offset_bottom = -0.120003
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+script = ExtResource("1_45ib1")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 2
+position = Vector2(48, 48)
+emitting = false
+texture = ExtResource("2_5k7r4")
+lifetime = 2.5
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector2(0, -15000)
+spread = 15.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+damping_max = 50.0
+color = Color(1, 1, 1, 0.501961)
+
+[node name="Border" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5k7r4")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

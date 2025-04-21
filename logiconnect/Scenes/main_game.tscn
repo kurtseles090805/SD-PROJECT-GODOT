@@ -1,0 +1,572 @@
+[gd_scene load_steps=13 format=3 uid="uid://iiewpwl1weyj"]
+
+[ext_resource type="Script" uid="uid://bfmtsxvrjx185" path="res://Scripts/main_game.gd" id="1_18r40"]
+[ext_resource type="PackedScene" uid="uid://ctic877gy6gd8" path="res://Scenes/circuit_grid.tscn" id="1_bb2iq"]
+[ext_resource type="PackedScene" uid="uid://cclwpjkgod1xn" path="res://Scenes/component_button.tscn" id="1_mgc0q"]
+[ext_resource type="Texture2D" uid="uid://bd2g4a86ykpau" path="res://Assets/Sprites/HBattery.png" id="2_bb2iq"]
+[ext_resource type="Texture2D" uid="uid://fhb78t5fo3l7" path="res://Assets/Sprites/HResistor.png" id="3_18r40"]
+[ext_resource type="Texture2D" uid="uid://jwgmkiufghs" path="res://Assets/Sprites/HLED.png" id="5_73nn6"]
+[ext_resource type="Texture2D" uid="uid://bcvlkc22jemy2" path="res://Assets/Sprites/HSwitchOff.png" id="6_18r40"]
+[ext_resource type="Texture2D" uid="uid://yerlfirt0gtn" path="res://Assets/Sprites/HSwitchOn.png" id="8_6y7pd"]
+
+[sub_resource type="Animation" id="Animation_6y7pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_18r40"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73nn6"]
+_data = {
+&"RESET": SubResource("Animation_6y7pd"),
+&"fade_in": SubResource("Animation_18r40")
+}
+
+[sub_resource type="Theme" id="Theme_6y7pd"]
+
+[node name="MainGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_18r40")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_73nn6")
+}
+
+[node name="Components" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.694
+anchor_right = 0.5
+anchor_bottom = 0.694
+offset_left = -300.0
+offset_top = -89.52
+offset_right = 300.0
+offset_bottom = 90.48
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.1242, 0.16065, 0.27, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Components"]
+layout_mode = 2
+offset_right = 600.0
+offset_bottom = 180.0
+theme_override_constants/separation = 18
+
+[node name="PaddingStart" type="ColorRect" parent="Components/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Components/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="PaddingStart" type="ColorRect" parent="Components/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BatteryButton" parent="Components/VBoxContainer/HBoxContainer" instance=ExtResource("1_mgc0q")]
+layout_mode = 2
+texture = ExtResource("2_bb2iq")
+
+[node name="ResistorButton" parent="Components/VBoxContainer/HBoxContainer" instance=ExtResource("1_mgc0q")]
+layout_mode = 2
+texture = ExtResource("3_18r40")
+
+[node name="SwitchButton" parent="Components/VBoxContainer/HBoxContainer" instance=ExtResource("1_mgc0q")]
+layout_mode = 2
+texture = ExtResource("6_18r40")
+
+[node name="LEDButton" parent="Components/VBoxContainer/HBoxContainer" instance=ExtResource("1_mgc0q")]
+layout_mode = 2
+texture = ExtResource("5_73nn6")
+
+[node name="WireBlock" type="ColorRect" parent="Components"]
+visible = false
+layout_mode = 2
+offset_right = 600.0
+offset_bottom = 180.0
+color = Color(0.1242, 0.16065, 0.27, 0.501961)
+
+[node name="Actions" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.874
+anchor_right = 0.5
+anchor_bottom = 0.874
+offset_left = -300.0
+offset_top = -63.92
+offset_right = 300.0
+offset_bottom = 64.08
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.1242, 0.16065, 0.27, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Actions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartStop" type="Button" parent="Actions/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+text = "Start
+Simulation"
+
+[node name="StartBlock" type="ColorRect" parent="Actions/HBoxContainer/StartStop"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1242, 0.16065, 0.27, 0.501961)
+
+[node name="Wires" type="Button" parent="Actions/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+text = "Lay
+Wires"
+
+[node name="WireBlock" type="ColorRect" parent="Actions/HBoxContainer/Wires"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1242, 0.16065, 0.27, 0.501961)
+
+[node name="Info" type="Button" parent="Actions/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+text = "Component
+Information"
+
+[node name="Clear" type="Button" parent="Actions/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+text = "Clear
+Components"
+
+[node name="ClearBlock" type="ColorRect" parent="Actions/HBoxContainer/Clear"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1242, 0.16065, 0.27, 0.501961)
+
+[node name="Options" type="Button" parent="Actions/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+text = "Options
+"
+
+[node name="Circuit" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.315
+anchor_right = 0.5
+anchor_bottom = 0.315
+offset_left = -280.0
+offset_top = -280.2
+offset_right = 280.0
+offset_bottom = 279.8
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.1242, 0.16065, 0.27, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Circuit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -259.0
+offset_right = 259.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 48
+theme_override_constants/v_separation = 48
+columns = 4
+
+[node name="Circuit_Grid1" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid2" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid3" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid4" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid5" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid6" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid7" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid8" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid9" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid10" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid11" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid12" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid13" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid14" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid15" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="Circuit_Grid16" parent="Circuit/GridContainer" instance=ExtResource("1_bb2iq")]
+layout_mode = 2
+
+[node name="StartBlock" type="ColorRect" parent="Circuit"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.133333, 0.105882)
+
+[node name="Wire" type="Line2D" parent="."]
+texture_filter = 2
+points = PackedVector2Array(0, 0)
+width = 20.0
+default_color = Color(0, 0.733333, 1, 0.501961)
+joint_mode = 2
+
+[node name="InstructionsPanel" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -500.0
+offset_right = 300.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6y7pd")
+color = Color(0.1242, 0.16065, 0.27, 1)
+
+[node name="BatteryImg" type="TextureRect" parent="InstructionsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.472
+anchor_right = 0.503
+anchor_bottom = 0.472
+offset_left = -31.8
+offset_top = -32.0
+offset_right = 32.2
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bb2iq")
+
+[node name="ResistorImg" type="TextureRect" parent="InstructionsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.602
+anchor_right = 0.503
+anchor_bottom = 0.602
+offset_left = -31.8
+offset_top = -32.0001
+offset_right = 32.2
+offset_bottom = 31.9999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_18r40")
+
+[node name="SwitchOffImg" type="TextureRect" parent="InstructionsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42
+anchor_top = 0.712
+anchor_right = 0.42
+anchor_bottom = 0.712
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_18r40")
+
+[node name="SwitchOnImg" type="TextureRect" parent="InstructionsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.553
+anchor_top = 0.712
+anchor_right = 0.553
+anchor_bottom = 0.712
+offset_left = -31.8
+offset_top = -32.0
+offset_right = 32.2
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_6y7pd")
+
+[node name="LEDImg" type="TextureRect" parent="InstructionsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.452
+anchor_right = 0.503
+anchor_bottom = 0.452
+offset_left = -31.8
+offset_top = 358.0
+offset_right = 32.2
+offset_bottom = 422.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_73nn6")
+
+[node name="InstructionsText" type="Label" parent="InstructionsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -480.0
+offset_right = 240.0
+offset_bottom = 480.0
+text = "______________________________________________________________
+Instructions:
+
+* Place components on the grid by
+dragging items from the component list.
+*Double-tap a component to remove it from the grid.
+* Tap \"Lay Wires\" to connect the components
+on the grid by tapping on grid squares
+to make a circuit.
+(Make sure wires do not intersect or it will cause a short)
+* Tap \"Start Simulation\" to see if your circuit will function.
+* Tap \"Stop Simulation\" to make edits to your circuit.
+* Tap \"Clear Components\" to remove everything on the grid.
+* Tap \"Options\" to adjust settings or exit the game.
+
+______________________________________________________________
+
+
+
+Battery - Supplies 9 V of power to the circuit. Wire must start
+and end with the same battery.
+
+
+
+Resistor - Lowers voltage of current passing through by 3 V.
+
+
+
+Switch - Connects or cuts off current.
+Click once to turn on and off.
+
+
+
+LED Light - Lights up when current passes through.
+Lowers voltage by 0.1 V. May explode if voltage exceeds 18 V.
+
+______________________________________________________________"
+horizontal_alignment = 1
+
+[node name="CloseInstructions" type="Button" parent="InstructionsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.893
+anchor_top = 0.056
+anchor_right = 0.893
+anchor_bottom = 0.056
+offset_left = -15.8
+offset_top = -16.0
+offset_right = 16.2
+offset_bottom = 16.0
+grow_horizontal = 0
+text = "X"
+
+[node name="Warning" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -540.0
+offset_right = 320.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1242, 0.16065, 0.27, 0.501961)
+
+[node name="WarningBorder" type="ColorRect" parent="Warning"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -190.0
+offset_right = 250.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2484, 0.3213, 0.54, 1)
+
+[node name="WarningBox" type="ColorRect" parent="Warning/WarningBorder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1242, 0.16065, 0.27, 1)
+
+[node name="CloseWarning" type="Button" parent="Warning/WarningBorder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.932
+anchor_top = 0.084
+anchor_right = 0.932
+anchor_bottom = 0.084
+offset_left = -16.0
+offset_top = -15.92
+offset_right = 16.0
+offset_bottom = 16.08
+grow_horizontal = 0
+text = "X"
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Actions/HBoxContainer/StartStop" to="." method="_on_start_stop_pressed"]
+[connection signal="toggled" from="Actions/HBoxContainer/Wires" to="." method="_on_wires_toggled"]
+[connection signal="pressed" from="Actions/HBoxContainer/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="Actions/HBoxContainer/Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="InstructionsPanel/CloseInstructions" to="." method="_on_close_instructions_pressed"]
+[connection signal="pressed" from="Warning/WarningBorder/CloseWarning" to="." method="_on_close_warning_pressed"]
