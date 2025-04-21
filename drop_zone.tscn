@@ -6,16 +6,17 @@
 size = Vector2(48.4478, 74.1441)
 
 [node name="drop_zone" type="Marker2D" groups=["zone"]]
-position = Vector2(203, 125)
-scale = Vector2(0.79188, -0.801711)
+position = Vector2(605, 338)
+scale = Vector2(0.241912, -0.187475)
 script = ExtResource("1_40bt2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["zone"]]
 position = Vector2(0, 7.99073e-06)
-scale = Vector2(0.109558, 0.0859048)
+scale = Vector2(0.0478227, 0.041809)
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" groups=["zone"]]
 position = Vector2(0, -0.000135521)
+scale = Vector2(0.396689, 0.408831)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" groups=["zone"]]
 position = Vector2(-7.62939e-06, 3.8147e-05)

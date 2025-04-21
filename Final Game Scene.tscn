@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://dhb4y650jm6pm"]
+[gd_scene load_steps=25 format=3 uid="uid://dhb4y650jm6pm"]
 
 [ext_resource type="Texture2D" uid="uid://457vy8ghpwc4" path="res://bg.png" id="1_40mt5"]
-[ext_resource type="Script" uid="uid://bybjid2dbo5tw" path="res://final_game_scene.gd" id="1_snrcq"]
+[ext_resource type="Script" path="res://final_game_scene.gd" id="1_snrcq"]
 [ext_resource type="FontFile" uid="uid://bd80av7tr5vg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4ntfl"]
 [ext_resource type="Theme" uid="uid://ybgaj70dgrr5" path="res://BlackAndWhite2.tres" id="3_4ntfl"]
 [ext_resource type="Texture2D" uid="uid://cf1ptk7nwyvmo" path="res://cc939ca06d62a659599474b2cbe4a717.png" id="4_40mt5"]
+[ext_resource type="Script" path="res://COMPONENTS CONTROL.gd" id="4_ia8r8"]
 [ext_resource type="PackedScene" uid="uid://c1vtcm2u7kc8l" path="res://Component Scenes/Battery9VReverse.tscn" id="6_klqkj"]
 [ext_resource type="PackedScene" uid="uid://djiirvbx4ciiq" path="res://Component Scenes/Capacitor.tscn" id="7_xh1og"]
 [ext_resource type="PackedScene" uid="uid://w1eaufg4tstt" path="res://Component Scenes/Diode.tscn" id="8_1cftu"]
@@ -40,58 +41,42 @@ var glow_strength: float = 0.0  # For controlling glow intensity
 var simulation_start = false  # Flag for simulation start
 var current_position = 0.0  # To animate the flow of the current along the path
 
-# Called when the node enters the scene tree for the first time
 func _ready(): 
 	rest_nodes = get_tree().get_nodes_in_group(\"zone\")  # Get all nodes in the \"zone\" group
 	rest_point = global_position  # Set original position
-
-	# Log the rest position (simulating component identification)
 	print(\"Component placed at: \", rest_point)
 
-# Check if component is inside any drop zone when simulation starts
 func _physics_process(delta: float) -> void:
-	# If simulation is active, check if component is in any drop zone
 	if simulation_start:
 		var glowing = false
 		for child in rest_nodes:
-			if global_position.distance_to(child.global_position) < 150:  # Inside the drop zone
+			if global_position.distance_to(child.global_position) < 150:
 				glowing = true
 				break
 
-		# If component is inside a drop zone, light it up
 		if glowing:
-			glow_strength = lerp(glow_strength, 1.0, 0.1)  # Smooth glow
+			glow_strength = lerp(glow_strength, 1.0, 0.1)
 		else:
-			glow_strength = lerp(glow_strength, 0.0, 0.1)  # Fade glow when not inside drop zone
+			glow_strength = lerp(glow_strength, 0.0, 0.1)
+		
+		queue_redraw()
 
-# Start simulation when the start button is pressed
 func _on_start_simulation_pressed() -> void:
-	# Start the simulation by setting simulation_start to true
 	simulation_start = true
-	
-	# Optionally, you could add some effect or feedback when the simulation starts
-	# For example, change the color of the component to indicate simulation mode
-	modulate = Color(1, 0, 0, 1)  # Change to red to indicate the simulation has started
-	
-	# Reset current position in case the simulation was reset
-	current_position = 0.0  # Ensure the current flow starts from the beginning
-
+	current_position = 0.0
 	print(\"Simulation started.\")
 
-# Add glowing effect when inside drop zone
 func _draw() -> void:
-	# Only draw the glowing effect if the component is inside a valid drop zone
 	if simulation_start:
 		var glowing = false
 		for child in rest_nodes:
-			if global_position.distance_to(child.global_position) < 150:  # Inside drop zone
+			if global_position.distance_to(child.global_position) < 150:
 				glowing = true
 				break
-		
-		# If glowing condition is met, draw the glow
+
 		if glowing:
-			var glow_color = Color(1, 1, 0, glow_strength)  # Yellow glow when inside drop zone
-			draw_circle(global_position, 25, glow_color)  # Draw a glowing circle around the component 	 	 	 	
+			var glow_color = Color(1, 1, 0, glow_strength)
+			draw_circle(size / 2, 25, glow_color)  # Use local position
 "
 
 [sub_resource type="GDScript" id="GDScript_7sp7y"]
@@ -125,84 +110,87 @@ tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
 script = SubResource("GDScript_nq346")
 
-[node name="drop_zone" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(66.2239, 64.7221)
+[node name="Control" type="Control" parent="DROP ZONE"]
+layout_mode = 2
+
+[node name="drop_zone" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(48.2239, 13.7221)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone3" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(66.2239, 428.784)
+[node name="drop_zone3" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(48.2239, 377.784)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone4" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(66.2239, 307.43)
+[node name="drop_zone4" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(48.2239, 256.43)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone5" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(66.2239, 186.076)
+[node name="drop_zone5" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(48.2239, 135.076)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone2" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(186.906, 64.7394)
+[node name="drop_zone2" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(168.906, 13.7394)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone6" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(186.906, 428.801)
+[node name="drop_zone6" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(168.906, 377.801)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone7" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(186.906, 307.447)
+[node name="drop_zone7" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(168.906, 256.447)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone8" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(186.906, 186.093)
+[node name="drop_zone8" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(168.906, 135.093)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone9" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(303.772, 64.7394)
+[node name="drop_zone9" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(285.772, 13.7394)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone10" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(303.772, 428.801)
+[node name="drop_zone10" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(285.772, 377.801)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone11" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(303.772, 307.447)
+[node name="drop_zone11" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(285.772, 256.447)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone12" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(303.772, 186.093)
+[node name="drop_zone12" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(285.772, 135.093)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone13" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(420.637, 64.7394)
+[node name="drop_zone13" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(402.637, 13.7394)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone14" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(420.637, 428.801)
+[node name="drop_zone14" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(402.637, 377.801)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone15" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(420.637, 307.447)
+[node name="drop_zone15" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(402.637, 256.447)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone16" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(420.637, 186.093)
+[node name="drop_zone16" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(402.637, 135.093)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone17" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(537.503, 64.7394)
+[node name="drop_zone17" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(519.503, 13.7394)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone18" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(537.503, 428.801)
+[node name="drop_zone18" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(519.503, 377.801)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone19" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(537.503, 307.447)
+[node name="drop_zone19" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(519.503, 256.447)
 scale = Vector2(0.771195, -0.810756)
 
-[node name="drop_zone20" parent="DROP ZONE" instance=ExtResource("9_kkqry")]
-position = Vector2(537.503, 186.093)
+[node name="drop_zone20" parent="DROP ZONE/Control" instance=ExtResource("9_kkqry")]
+position = Vector2(519.503, 135.093)
 scale = Vector2(0.771195, -0.810756)
 
 [node name="COMPONENTS" type="GraphFrame" parent="."]
@@ -213,53 +201,6 @@ offset_right = 224.0
 offset_bottom = 524.0
 tint_color_enabled = true
 tint_color = Color(1, 1, 1, 0.75)
-
-[node name="ResistorV" parent="COMPONENTS" instance=ExtResource("8_80des")]
-position = Vector2(40, 42)
-
-[node name="ResistorH" parent="COMPONENTS" instance=ExtResource("9_wgtak")]
-position = Vector2(48, 80)
-
-[node name="Battery9VReverse" parent="COMPONENTS" instance=ExtResource("6_klqkj")]
-position = Vector2(112, 42)
-
-[node name="Capacitor" parent="COMPONENTS" instance=ExtResource("7_xh1og")]
-position = Vector2(168, 56)
-
-[node name="Diode" parent="COMPONENTS" instance=ExtResource("8_1cftu")]
-position = Vector2(168, 95)
-
-[node name="Closed Switch" parent="COMPONENTS" instance=ExtResource("9_emb2f")]
-position = Vector2(104, 152)
-
-[node name="Open Switch" parent="COMPONENTS" instance=ExtResource("10_vvv16")]
-position = Vector2(32, 144)
-scale = Vector2(0.90702, 3.628)
-
-[node name="LED" parent="COMPONENTS" instance=ExtResource("11_vvv16")]
-position = Vector2(175, 152)
-
-[node name="Battery9V" parent="COMPONENTS" instance=ExtResource("12_0pqqw")]
-position = Vector2(104, 97)
-
-[node name="LRWIRE" parent="COMPONENTS" instance=ExtResource("18_sbp4i")]
-position = Vector2(86, 352)
-scale = Vector2(0.90702, 3.628)
-
-[node name="LLWIRE" parent="COMPONENTS" instance=ExtResource("17_5qsv8")]
-position = Vector2(37, 352)
-
-[node name="URWIRE" parent="COMPONENTS" instance=ExtResource("15_7sp7y")]
-position = Vector2(97, 416)
-
-[node name="VWIRE" parent="COMPONENTS" instance=ExtResource("16_i3gui")]
-position = Vector2(160, 416)
-
-[node name="HWIRE" parent="COMPONENTS" instance=ExtResource("17_f083b")]
-position = Vector2(168, 360)
-
-[node name="ULWIRE" parent="COMPONENTS" instance=ExtResource("18_i3gui")]
-position = Vector2(37, 416)
 
 [node name="GraphFrame3" type="GraphFrame" parent="."]
 layout_mode = 0
@@ -369,4 +310,61 @@ theme_override_fonts/font = ExtResource("2_4ntfl")
 theme_override_font_sizes/font_size = 10
 text = "WIRES"
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 34.0
+offset_top = 131.0
+offset_right = 206.0
+offset_bottom = 512.0
+script = ExtResource("4_ia8r8")
+
+[node name="ResistorV" parent="Control" instance=ExtResource("8_80des")]
+position = Vector2(22, -9)
+
+[node name="ResistorH" parent="Control" instance=ExtResource("9_wgtak")]
+position = Vector2(30, 29)
+
+[node name="Battery9VReverse" parent="Control" instance=ExtResource("6_klqkj")]
+position = Vector2(94, -9)
+
+[node name="Capacitor" parent="Control" instance=ExtResource("7_xh1og")]
+position = Vector2(150, 5)
+
+[node name="Diode" parent="Control" instance=ExtResource("8_1cftu")]
+position = Vector2(150, 44)
+
+[node name="Closed Switch" parent="Control" instance=ExtResource("9_emb2f")]
+position = Vector2(86, 101)
+
+[node name="Open Switch" parent="Control" instance=ExtResource("10_vvv16")]
+position = Vector2(14, 93)
+scale = Vector2(0.90702, 3.628)
+
+[node name="LED" parent="Control" instance=ExtResource("11_vvv16")]
+position = Vector2(157, 101)
+
+[node name="Battery9V" parent="Control" instance=ExtResource("12_0pqqw")]
+position = Vector2(86, 46)
+
+[node name="LRWIRE" parent="Control" instance=ExtResource("18_sbp4i")]
+position = Vector2(68, 301)
+scale = Vector2(0.90702, 3.628)
+
+[node name="LLWIRE" parent="Control" instance=ExtResource("17_5qsv8")]
+position = Vector2(19, 301)
+
+[node name="URWIRE" parent="Control" instance=ExtResource("15_7sp7y")]
+position = Vector2(79, 365)
+
+[node name="VWIRE" parent="Control" instance=ExtResource("16_i3gui")]
+position = Vector2(142, 365)
+
+[node name="HWIRE" parent="Control" instance=ExtResource("17_f083b")]
+position = Vector2(150, 309)
+
+[node name="ULWIRE" parent="Control" instance=ExtResource("18_i3gui")]
+position = Vector2(19, 365)
+
 [connection signal="pressed" from="START SIMULATION" to="DROP ZONE" method="_on_start_simulation_pressed"]
+[connection signal="pressed" from="START SIMULATION" to="Control" method="_on_start_simulation_pressed"]
