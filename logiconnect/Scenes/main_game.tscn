@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://iiewpwl1weyj"]
 
-[ext_resource type="Script" uid="uid://bfmtsxvrjx185" path="res://Scripts/main_game.gd" id="1_18r40"]
+[ext_resource type="Script" path="res://Scripts/main_game.gd" id="1_18r40"]
 [ext_resource type="PackedScene" uid="uid://ctic877gy6gd8" path="res://Scenes/circuit_grid.tscn" id="1_bb2iq"]
 [ext_resource type="PackedScene" uid="uid://cclwpjkgod1xn" path="res://Scenes/component_button.tscn" id="1_mgc0q"]
 [ext_resource type="Texture2D" uid="uid://bd2g4a86ykpau" path="res://Assets/Sprites/HBattery.png" id="2_bb2iq"]
@@ -66,8 +66,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_73nn6"]
 _data = {
-&"RESET": SubResource("Animation_6y7pd"),
-&"fade_in": SubResource("Animation_18r40")
+"RESET": SubResource("Animation_6y7pd"),
+"fade_in": SubResource("Animation_18r40")
 }
 
 [sub_resource type="Theme" id="Theme_6y7pd"]
@@ -83,7 +83,7 @@ script = ExtResource("1_18r40")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_73nn6")
+"": SubResource("AnimationLibrary_73nn6")
 }
 
 [node name="Components" type="ColorRect" parent="."]

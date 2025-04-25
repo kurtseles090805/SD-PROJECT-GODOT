@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cclwpjkgod1xn"]
 
-[ext_resource type="Script" uid="uid://p4rofwemotrb" path="res://Scripts/component_button.gd" id="1_cvs5m"]
+[ext_resource type="Script" path="res://Scripts/component_button.gd" id="1_cvs5m"]
 
 [node name="Component_Button" type="TextureRect"]
 custom_minimum_size = Vector2(128, 128)
